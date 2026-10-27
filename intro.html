@@ -1,0 +1,3360 @@
+﻿<!doctype html>
+<html lang="si">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12151b">
+  <meta name="description" content="ඉංජිනේරු තාක්ෂණවේදයේ හැඳින්වීම, විකාශනය, බලපෑම් සහ තිරසර භාවිතය පිළිබඳ 12 ශ්‍රේණිය සඳහා සිංහල පාඩම.">
+  <title>ඉංජිනේරු තාක්ෂණවේදයට හැඳින්වීම | 12 ශ්‍රේණිය</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20261024">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #12151b;
+  --bg-raised: #171b23;
+  --surface: #1a1f28;
+  --surface-raised: #202631;
+  --text: #f3f6fb;
+  --muted: #a3adbb;
+  --soft: #778393;
+  --line: rgba(177, 194, 216, .14);
+  --blue: #0a84ff;
+  --cyan: #00d2ff;
+  --green: #61d8ad;
+  --amber: #ffc66d;
+  --red: #ff858b;
+  --radius: 18px;
+  --content: 1160px;
+  font-family: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #12151b !important;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: 82px;
+}
+
+body {
+  margin: 0;
+  background-color: #12151b !important;
+  background: var(--bg, #12151b) !important;
+  color: #f3f6fb !important;
+  color: var(--text, #f3f6fb) !important;
+  font-size: 18px;
+  line-height: 1.85;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 20;
+  top: 10px;
+  left: 10px;
+  padding: 10px 16px;
+  transform: translateY(-160%);
+  border-radius: 8px;
+  background: var(--cyan);
+  color: #071219;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid var(--line);
+  background: rgba(18, 21, 27, .88);
+  backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  display: flex;
+  width: min(100% - 48px, var(--content));
+  min-height: 72px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(13px, 2.2vw, 28px);
+}
+
+.main-nav a {
+  color: var(--muted);
+  font-size: .98rem;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--cyan);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  min-height: min(720px, calc(100svh - 72px));
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+  align-items: center;
+  width: min(100% - 48px, var(--content));
+  margin: 0 auto;
+  padding: 84px 0 102px;
+}
+
+.hero-grid {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -14vw;
+  bottom: 0;
+  left: 22%;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(128, 165, 207, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(128, 165, 207, .04) 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: linear-gradient(90deg, transparent, #000 25%, #000 78%, transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.eyebrow,
+.section-kicker {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  gap: 10px;
+  color: var(--cyan);
+  font-size: .96rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.eyebrow-line {
+  width: 26px;
+  height: 1px;
+  background: var(--cyan);
+}
+
+.eyebrow-dot,
+.section-kicker span {
+  color: var(--soft);
+}
+
+.hero h1 {
+  max-width: 700px;
+  margin: 22px 0 18px;
+  font-size: clamp(2.4rem, 5.3vw, 4.45rem);
+  font-weight: 700;
+  letter-spacing: -.04em;
+  line-height: 1.32;
+}
+
+.hero h1 span,
+.closing h2 span {
+  color: var(--cyan);
+}
+
+.hero-lead {
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+}
+
+.hero-actions {
+  display: flex;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 9px 17px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: #0056b3;
+  color: white;
+  box-shadow: 0 8px 26px rgba(10, 132, 255, .22);
+}
+
+.button-primary:hover {
+  background: #086bc7;
+}
+
+.button-quiet {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, .025);
+  color: var(--text);
+}
+
+.button-quiet:hover {
+  border-color: rgba(0, 210, 255, .45);
+  background: rgba(0, 210, 255, .06);
+}
+
+.hero-facts {
+  display: flex;
+  margin-top: 48px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.hero-facts div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 9px;
+  color: var(--soft);
+  font-size: .95rem;
+}
+
+.fact-number {
+  grid-row: span 2;
+  color: var(--text);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  width: min(100%, 430px);
+  aspect-ratio: 1;
+  margin: auto;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(0, 210, 255, .22);
+  border-radius: 50%;
+}
+
+.orbit-outer {
+  width: 96%;
+  height: 96%;
+  background: radial-gradient(circle, rgba(0, 210, 255, .035), transparent 64%);
+}
+
+.orbit-inner {
+  width: 72%;
+  height: 72%;
+  border-color: rgba(10, 132, 255, .4);
+  box-shadow: 0 0 45px rgba(10, 132, 255, .08), inset 0 0 45px rgba(10, 132, 255, .04);
+}
+
+.orbit-core {
+  width: 48%;
+  height: 48%;
+  border-color: rgba(0, 210, 255, .3);
+  border-style: dashed;
+}
+
+.orbit-center {
+  position: relative;
+  display: grid;
+  width: 116px;
+  height: 116px;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .52);
+  border-radius: 34px;
+  background: linear-gradient(145deg, #1c3446, #17212d 70%);
+  box-shadow: 0 0 75px rgba(0, 210, 255, .16), 0 18px 40px rgba(0, 0, 0, .3);
+  color: var(--cyan);
+  font-size: 3rem;
+  transform: rotate(45deg);
+}
+
+.orbit-center span {
+  transform: rotate(-45deg);
+}
+
+.orbit-label {
+  position: absolute;
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #171d25;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.orbit-label-top {
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.orbit-label-right {
+  top: 50%;
+  right: -3%;
+  transform: translateY(-50%);
+}
+
+.orbit-label-bottom {
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.orbit-label-left {
+  top: 50%;
+  left: -3%;
+  transform: translateY(-50%);
+}
+
+.orbit-spark {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 18px 4px rgba(0, 210, 255, .55);
+}
+
+.spark-one {
+  top: 19%;
+  right: 22%;
+}
+
+.spark-two {
+  bottom: 21%;
+  left: 18%;
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  box-shadow: 0 0 18px 4px rgba(10, 132, 255, .6);
+}
+
+.hero-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  color: var(--soft);
+  font-size: .92rem;
+}
+
+.hero-bottom span:last-child {
+  color: #8995a3;
+}
+
+.section {
+  width: min(100% - 48px, var(--content));
+  margin: 0 auto;
+  padding: 100px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  max-width: 750px;
+  margin-bottom: 38px;
+}
+
+.section-kicker {
+  margin-bottom: 12px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: .96rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.65rem);
+  letter-spacing: -.025em;
+  line-height: 1.45;
+}
+
+.section-intro {
+  max-width: 680px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1.18rem; line-height: 1.85;
+}
+
+.definition-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid rgba(0, 210, 255, .2);
+  border-radius: var(--radius);
+  background: linear-gradient(120deg, rgba(10, 132, 255, .1), transparent 68%), var(--surface);
+}
+
+.definition-icon,
+.small-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .35);
+  border-radius: 14px;
+  background: rgba(0, 210, 255, .08);
+  color: var(--cyan);
+  font-size: 1.35rem;
+}
+
+.card-label {
+  margin: 0;
+  color: var(--cyan);
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.definition-text {
+  max-width: 900px;
+  margin: 4px 0 10px;
+  font-size: clamp(1.15rem, 2.3vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.definition-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem; line-height: 1.8;
+}
+
+.definition-index {
+  position: absolute;
+  right: 24px;
+  bottom: -37px;
+  color: rgba(184, 203, 225, .035);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.needs-grid,
+.sustain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.need-card,
+.sustain-card {
+  padding: clamp(22px, 3.5vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.need-card-main {
+  background: linear-gradient(145deg, rgba(10, 132, 255, .09), transparent 60%), var(--surface);
+}
+
+.card-topline,
+.sustain-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-symbol,
+.sustain-symbol {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(10, 132, 255, .34);
+  border-radius: 12px;
+  background: rgba(10, 132, 255, .11);
+  color: #65b6ff;
+  font-size: 1.04rem;
+  font-weight: 700;
+}
+
+.card-symbol-cyan {
+  border-color: rgba(0, 210, 255, .33);
+  background: rgba(0, 210, 255, .08);
+  color: var(--cyan);
+}
+
+.pill {
+  padding: 4px 10px;
+  border: 1px solid rgba(10, 132, 255, .28);
+  border-radius: 999px;
+  background: rgba(10, 132, 255, .08);
+  color: #8fc8ff;
+  font-size: .88rem; font-weight: 600;
+  white-space: nowrap;
+}
+
+.pill-cyan {
+  border-color: rgba(0, 210, 255, .25);
+  background: rgba(0, 210, 255, .06);
+  color: #81e9fb;
+}
+
+.need-card h3,
+.sustain-card h3 {
+  margin: 18px 0 8px;
+  font-size: 1.34rem;
+}
+
+.need-card > p, .sustain-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem; line-height: 1.8;
+}
+
+.example-box {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--blue);
+  border-radius: 0 10px 10px 0;
+  background: rgba(10, 132, 255, .07);
+}
+
+.example-box > span, .local-example strong {
+  color: #8fc8ff;
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.example-box p, .local-example p {
+  margin: 5px 0 0;
+  color: #c4ceda;
+  font-size: 1.02rem; line-height: 1.8;
+}
+
+.insight-strip {
+  display: flex;
+  margin-top: 18px;
+  padding: 19px 22px;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid rgba(255, 198, 109, .2);
+  border-radius: 12px;
+  background: rgba(255, 198, 109, .045);
+}
+
+.insight-mark {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 198, 109, .12);
+  color: var(--amber);
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+.insight-strip p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem; line-height: 1.8;
+}
+
+.insight-strip strong {
+  color: var(--amber);
+}
+
+.timeline-section {
+  overflow: hidden;
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding-top: 24px;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 36px;
+  right: 6%;
+  left: 6%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan), rgba(0, 210, 255, .2));
+  content: "";
+}
+
+.era-card {
+  position: relative;
+  z-index: 1;
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface);
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.era-card:hover,
+.era-card[open] {
+  border-color: rgba(0, 210, 255, .45);
+}
+
+.era-card[open] {
+  transform: translateY(-3px);
+  background: linear-gradient(180deg, rgba(10, 132, 255, .09), transparent 75%), var(--surface);
+}
+
+.era-card summary {
+  display: grid;
+  min-height: 125px;
+  padding: 13px 14px;
+  align-content: start;
+  justify-items: start;
+  gap: 7px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.era-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.era-marker {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .35);
+  border-radius: 50%;
+  background: #152630;
+  color: var(--cyan);
+  font-family: "Segoe UI", sans-serif;
+  font-size: .92rem;
+  font-weight: 700;
+}
+
+.era-name {
+  padding-right: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.era-arrow {
+  position: absolute;
+  top: 15px;
+  right: 13px;
+  color: var(--cyan);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  transition: transform .2s ease;
+}
+
+.era-card[open] .era-arrow {
+  transform: rotate(45deg);
+}
+
+.era-content {
+  padding: 0 14px 16px;
+}
+
+.era-caption {
+  margin: 0 0 6px;
+  color: var(--cyan);
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.era-content p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem; line-height: 1.8;
+  line-height: 1.75;
+}
+
+.era-content .era-caption:not(:first-child) {
+  margin-top: 13px;
+}
+
+.era-highlights {
+  display: flex;
+  margin: 8px 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+}
+
+.era-highlights li {
+  padding: 3px 9px;
+  border: 1px solid rgba(0, 210, 255, .18);
+  border-radius: 999px;
+  background: rgba(0, 210, 255, .045);
+  color: #b6c6d5;
+  font-size: .98rem; line-height: 1.7;
+  line-height: 1.7;
+}
+
+.era-inventions {
+  display: grid;
+  margin: 10px 0 0;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+}
+
+.era-inventions li {
+  display: grid;
+  min-width: 0;
+  padding: 11px 12px;
+  gap: 4px;
+  border: 1px solid rgba(0, 210, 255, .16);
+  border-radius: 10px;
+  background: rgba(0, 210, 255, .035);
+}
+
+.era-inventions strong {
+  color: #d7eaff;
+  font-size: 1.02rem;
+}
+
+.era-inventions span {
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: 1.75;
+}
+
+.era-inventions small {
+  color: var(--cyan);
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+.timeline-hint {
+  margin: 16px 0 0;
+  color: var(--soft);
+  font-size: .95rem;
+}
+
+.timeline-hint span {
+  margin-right: 6px;
+  color: var(--cyan);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.impact-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.impact-number {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: var(--soft);
+  font-family: "Segoe UI", sans-serif;
+  font-size: .95rem;
+}
+
+.impact-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  margin-bottom: 12px;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .24);
+  border-radius: 13px;
+  background: rgba(0, 210, 255, .07);
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.impact-economy {
+  border-color: rgba(10, 132, 255, .28);
+  background: rgba(10, 132, 255, .08);
+  color: #72baff;
+}
+
+.impact-environment {
+  border-color: rgba(97, 216, 173, .25);
+  background: rgba(97, 216, 173, .07);
+  color: var(--green);
+}
+
+.impact-card h3 {
+  margin: 0 0 18px;
+  font-size: 1.35rem;
+}
+
+.impact-column {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.impact-column > span {
+  color: var(--green);
+  font-size: .95rem; font-weight: 700;
+  font-weight: 700;
+}
+
+.impact-column p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 1.04rem; line-height: 1.8;
+}
+
+.impact-column.impact-negative > span {
+  color: var(--amber);
+}
+
+.balance-note {
+  display: flex;
+  margin-top: 18px;
+  padding: 18px 22px;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid rgba(0, 210, 255, .18);
+  border-radius: 12px;
+  background: rgba(0, 210, 255, .035);
+}
+
+.balance-note > span {
+  color: var(--cyan);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.45rem;
+}
+
+.balance-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem; line-height: 1.8;
+}
+
+.sustain-grid {
+  align-items: stretch;
+}
+
+.appropriate-card {
+  background: linear-gradient(150deg, rgba(10, 132, 255, .075), transparent 55%), var(--surface);
+}
+
+.sustainable-card {
+  background: linear-gradient(150deg, rgba(97, 216, 173, .06), transparent 58%), var(--surface);
+}
+
+.sustain-symbol {
+  width: 46px;
+  height: 46px;
+  font-size: .84rem;
+}
+
+.sustain-symbol-green {
+  border-color: rgba(97, 216, 173, .3);
+  background: rgba(97, 216, 173, .08);
+  color: var(--green);
+}
+
+.pill-blue {
+  border-color: rgba(10, 132, 255, .25);
+  background: rgba(10, 132, 255, .07);
+  color: #8fc8ff;
+}
+
+.pill-green {
+  border-color: rgba(97, 216, 173, .25);
+  background: rgba(97, 216, 173, .07);
+  color: #8ce5c2;
+}
+
+.sustain-card .sustain-definition {
+  margin-top: 0;
+  color: var(--text);
+  font-size: 1.12rem; line-height: 1.85;
+  font-weight: 500;
+}
+
+.principle-list {
+  display: grid;
+  margin: 22px 0 0;
+  padding: 0;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 1.04rem; line-height: 1.8;
+  list-style: none;
+}
+
+.principle-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.principle-list li span {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.local-example {
+  margin-top: 22px;
+  padding: 15px 17px;
+  border-left: 2px solid var(--blue);
+  border-radius: 0 10px 10px 0;
+  background: rgba(10, 132, 255, .07);
+}
+
+.three-pillars {
+  display: grid;
+  margin-top: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.three-pillars > div {
+  display: flex;
+  min-width: 0;
+  padding: 14px 8px;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .025);
+  text-align: center;
+}
+
+.pillar-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 8px;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(0, 210, 255, .09);
+  color: var(--cyan);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.pillar-prosperity {
+  background: rgba(10, 132, 255, .12);
+  color: #72baff;
+}
+
+.pillar-planet {
+  background: rgba(97, 216, 173, .1);
+  color: var(--green);
+}
+
+.three-pillars strong {
+  font-size: 1.05rem;
+}
+
+.three-pillars small {
+  margin-top: 4px;
+  color: var(--soft);
+  font-size: .88rem; line-height: 1.6;
+  line-height: 1.5;
+}
+
+.sustain-card .sustain-footnote {
+  margin-top: 15px;
+  color: var(--soft);
+  font-size: .95rem;
+}
+
+.management-strip {
+  display: grid;
+  margin-top: 18px;
+  padding: 22px 24px;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 17px;
+  border: 1px solid rgba(0, 210, 255, .18);
+  border-radius: 14px;
+  background: linear-gradient(100deg, rgba(0, 210, 255, .06), transparent 70%), var(--bg-raised);
+}
+
+.management-mark {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .3);
+  border-radius: 12px;
+  background: rgba(0, 210, 255, .08);
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.management-copy h3 {
+  margin: 0;
+  font-size: .93rem;
+}
+
+.management-copy p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 1.04rem; line-height: 1.8;
+}
+
+.management-steps {
+  display: flex;
+  max-width: 230px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.management-steps span {
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #b5c4d4;
+  font-size: .95rem;
+  white-space: nowrap;
+}
+
+.closing {
+  position: relative;
+  overflow: hidden;
+  width: min(100% - 48px, var(--content));
+  margin: 30px auto 80px;
+  padding: clamp(35px, 6vw, 68px);
+  border: 1px solid rgba(0, 210, 255, .18);
+  border-radius: 22px;
+  background: linear-gradient(110deg, rgba(10, 132, 255, .12), transparent 65%), #171d26;
+}
+
+.closing-glow {
+  position: absolute;
+  top: -130px;
+  right: -30px;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: rgba(0, 210, 255, .07);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.closing h2 {
+  position: relative;
+  margin: 12px 0;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.5;
+}
+
+.closing > p:not(.section-kicker) {
+  position: relative;
+  max-width: 650px;
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.back-to-top {
+  position: relative;
+  display: inline-flex;
+  margin-top: 25px;
+  align-items: center;
+  gap: 9px;
+  color: var(--cyan);
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer {
+  display: flex;
+  width: min(100% - 48px, var(--content));
+  margin: 0 auto;
+  padding: 22px 0 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--soft);
+  font-size: .95rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer span {
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 620px;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, .7fr);
+  }
+
+  .hero-art {
+    width: 100%;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 14px;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .era-card summary {
+    min-height: 105px;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .header-inner {
+    width: min(100% - 32px, var(--content));
+    min-height: 64px;
+  }
+
+  .main-nav {
+    max-width: 54%;
+    justify-content: flex-start;
+    gap: 14px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
+    font-size: .88rem;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 1.02rem;
+  }
+
+  .hero,
+  .section,
+  .closing,
+  .site-footer {
+    width: min(100% - 36px, var(--content));
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 75px 0 72px;
+  }
+
+  .hero-art {
+    width: min(74vw, 330px);
+    margin: 38px auto 8px;
+  }
+
+  .orbit-center {
+    width: 90px;
+    height: 90px;
+    border-radius: 27px;
+    font-size: 2.4rem;
+  }
+
+  .hero-bottom {
+    bottom: 20px;
+  }
+
+  .hero-bottom span:first-child {
+    display: none;
+  }
+
+  .hero-bottom span:last-child {
+    margin-left: auto;
+  }
+
+  .hero-facts {
+    margin-top: 32px;
+    gap: 17px;
+  }
+
+  .hero-facts div {
+    column-gap: 6px;
+    font-size: .88rem;
+  }
+
+  .fact-number {
+    font-size: 1.08rem;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 27px;
+  }
+
+  .definition-card {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .needs-grid,
+  .sustain-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .management-strip {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .management-steps {
+    max-width: none;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    padding-left: 51px;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card {
+    padding: 22px;
+  }
+
+  .closing {
+    margin-top: 12px;
+    margin-bottom: 54px;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-nav {
+    max-width: calc(100% - 55px);
+    gap: 10px;
+  }
+
+  .main-nav a {
+    font-size: .85rem;
+  }
+
+  .hero,
+  .section,
+  .closing,
+  .site-footer {
+    width: min(100% - 28px, var(--content));
+  }
+
+  .hero h1 {
+    font-size: 2.15rem;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-facts {
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .hero-facts div {
+    column-gap: 5px;
+    font-size: .85rem;
+  }
+
+  .fact-number {
+    font-size: .96rem;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .era-card summary {
+    min-height: 75px;
+    grid-template-columns: 28px 1fr 18px;
+    align-items: center;
+    justify-items: stretch;
+    gap: 10px;
+  }
+
+  .era-marker {
+    grid-row: 1;
+  }
+
+  .era-name {
+    grid-column: 2;
+    padding: 0;
+  }
+
+  .era-arrow {
+    position: static;
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .era-content {
+    padding-top: 0;
+  }
+
+  .three-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .three-pillars > div {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    justify-items: start;
+    padding: 10px 12px;
+    column-gap: 8px;
+    text-align: left;
+  }
+
+  .pillar-icon {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .three-pillars small {
+    margin-top: 0;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .site-footer span {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.need-card h3,
+.sustain-card h3 {
+  margin-top: 0;
+}
+
+.management-strip {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.resource-comparison h3 {
+  margin: 0;
+  font-size: .95rem;
+}
+
+.resource-comparison p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem; line-height: 1.8;
+}
+
+.resource-comparison {
+  display: grid;
+  margin-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.resource-comparison article {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg-raised);
+}
+
+@media (max-width: 700px) {
+  .resource-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .management-strip {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .management-steps {
+    grid-column: auto;
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+}
+
+.technology-types {
+  margin-top: 32px;
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+
+.technology-types > h3,
+.resource-heading {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f3f6fb;
+}
+
+.technology-types > p {
+  max-width: 860px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.technology-types-grid {
+  display: grid;
+  margin-top: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 720px) {
+  .technology-types-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.tech-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.tech-icon-badge {
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(10, 132, 255, .12);
+  border: 1px solid rgba(10, 132, 255, .28);
+}
+
+.tech-card-num {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--cyan);
+  background: rgba(0, 210, 255, .08);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 210, 255, .22);
+  font-family: monospace;
+}
+
+.technology-types-grid article {
+  padding: 22px 24px;
+  border: 1px solid rgba(10, 132, 255, .22);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(10, 132, 255, .05), rgba(255, 255, 255, .02));
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.technology-types-grid article:hover {
+  transform: translateY(-2px);
+  border-color: rgba(10, 132, 255, .45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+.technology-types-grid h4,
+.need-card h4,
+.sustain-subheading {
+  margin: 0;
+  color: #b9dfff;
+  font-size: 1.22rem;
+  font-weight: 700;
+}
+
+.technology-types-grid p {
+  margin: 8px 0 0;
+  color: #d1d8e2;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.process-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  counter-reset: none;
+}
+
+.process-list li {
+  display: flex;
+  min-width: 0;
+  padding: 20px;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.process-number {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .3);
+  border-radius: 11px;
+  background: rgba(0, 210, 255, .07);
+  color: var(--cyan);
+  font-family: "Segoe UI", sans-serif;
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.process-list h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.process-list p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem; line-height: 1.8;
+}
+
+.process-example {
+  margin-top: 16px;
+}
+
+.need-card > p + p {
+  margin-top: 12px;
+}
+
+.need-card h4 {
+  margin-top: 22px;
+}
+
+.check-list {
+  display: grid;
+  margin: 10px 0 0;
+  padding-left: 20px;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 1.04rem; line-height: 1.8;
+}
+
+.resource-heading {
+  margin: 28px 0 12px;
+}
+
+.resource-comparison {
+  margin-top: 0;
+}
+
+.sustain-card .sustain-subheading {
+  margin-top: 22px;
+}
+
+.sustain-card > p:not(.sustain-definition, .sustain-footnote) {
+  margin-top: 7px;
+}
+
+@media (max-width: 900px) {
+  .technology-types-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .technology-types-grid,
+  .process-list {
+    grid-template-columns: 1fr;
+  }
+
+  .process-list li {
+    padding: 17px;
+  }
+}
+
+.exam-concepts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.landmark-note {
+  display: grid;
+  margin-top: 18px;
+  padding: 18px 22px;
+  grid-template-columns: minmax(0, .55fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(0, 210, 255, .2);
+  border-radius: 14px;
+  background: rgba(0, 210, 255, .035);
+}
+
+.landmark-note h3 {
+  margin: 0;
+  color: #b9dfff;
+  font-size: 1.2rem;
+}
+
+.landmark-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem; line-height: 1.8;
+}
+
+.landmark-note p + p {
+  margin-top: 7px;
+}
+
+.landmark-note strong {
+  color: var(--cyan);
+}
+
+.exam-concept {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface);
+}
+
+.exam-concept h3,
+.management-study h3,
+.industry-study h3,
+.self-check h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.exam-concept > p,
+.management-study > p,
+.industry-study > div:first-child > p:last-child {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem; line-height: 1.85;
+}
+
+.exam-concept .exam-example {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  color: #c6d5e4;
+}
+
+.exam-example strong {
+  color: var(--cyan);
+}
+
+.management-study,
+.industry-study,
+.self-check {
+  margin-top: 18px;
+  padding: clamp(21px, 3vw, 30px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+
+.management-flow {
+  display: grid;
+  margin: 20px 0 0;
+  padding: 0;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+}
+
+.management-flow li {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface);
+}
+
+.management-flow strong,
+.management-flow span {
+  display: block;
+}
+
+.management-flow strong {
+  color: #b9dfff;
+  font-size: 1.04rem;
+}
+
+.management-flow span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .96rem;
+}
+
+.industry-study {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(110deg, rgba(10, 132, 255, .08), transparent 60%), var(--bg-raised);
+}
+
+.industry-study h3 {
+  margin-top: 5px;
+}
+
+.industry-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.industry-example-grid > div {
+  display: grid;
+  padding: 13px;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.industry-example-grid strong {
+  color: var(--cyan);
+  font-size: 1.02rem;
+}
+
+.industry-example-grid span {
+  color: var(--muted);
+  font-size: .98rem; line-height: 1.7;
+}
+
+.self-check h3 {
+  margin-bottom: 10px;
+}
+
+.self-check details {
+  border-top: 1px solid var(--line);
+}
+
+.self-check summary {
+  padding: 13px 24px 13px 0;
+  color: #cbd8e6;
+  font-size: 1.08rem; font-weight: 600;
+  cursor: pointer;
+}
+
+.self-check details > p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 1.04rem; line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .management-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .industry-study {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .exam-concepts {
+    grid-template-columns: 1fr;
+  }
+
+  .landmark-note {
+    grid-template-columns: 1fr;
+  }
+
+  .management-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .management-flow,
+  .industry-example-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.history-context,
+.engineering-scope,
+.role-comparison,
+.materials-study,
+.workshop-safety,
+.source-panel {
+  margin-top: 18px;
+  padding: clamp(20px, 3.5vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+
+.history-context {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  border-color: rgba(0, 210, 255, .22);
+  background: linear-gradient(105deg, rgba(0, 210, 255, .07), transparent 70%), var(--bg-raised);
+}
+
+.history-context-mark {
+  padding: 6px 11px;
+  border: 1px solid rgba(0, 210, 255, .25);
+  border-radius: 999px;
+  background: rgba(0, 210, 255, .07);
+  color: var(--cyan);
+  font-size: .95rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.history-context h3,
+.extension-heading h3,
+.source-panel h3 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.history-context p,
+.extension-heading > p:last-child,
+.source-panel > p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1.02rem; line-height: 1.8;
+}
+
+.extension-heading {
+  max-width: 820px;
+}
+
+.extension-heading .card-label {
+  margin: 0 0 5px;
+}
+
+.scope-grid,
+.material-grid {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.scope-grid article,
+.material-card,
+.role-card {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--surface);
+}
+
+.scope-grid h4,
+.role-card h4,
+.material-card h4,
+.property-panel h4 {
+  margin: 0;
+  color: #dceaff;
+  font-size: 1.22rem;
+}
+
+.scope-grid p,
+.material-card p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 1.04rem; line-height: 1.8;
+}
+
+.role-grid {
+  display: grid;
+  margin-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.role-card-accent {
+  border-color: rgba(0, 210, 255, .24);
+  background: linear-gradient(145deg, rgba(0, 210, 255, .055), transparent 70%), var(--surface);
+}
+
+.role-card ul {
+  display: grid;
+  margin: 12px 0 0;
+  padding-left: 19px;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 1.02rem; line-height: 1.8;
+}
+
+.role-note {
+  margin: 14px 0 0;
+  padding: 12px 15px;
+  border-left: 2px solid var(--cyan);
+  border-radius: 0 9px 9px 0;
+  background: rgba(0, 210, 255, .045);
+  color: var(--muted);
+  font-size: .96rem; line-height: 1.7;
+}
+
+.role-note strong {
+  color: var(--cyan);
+}
+
+.materials-study {
+  background: linear-gradient(145deg, rgba(97, 216, 173, .04), transparent 65%), var(--bg-raised);
+}
+
+.material-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.material-tag {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 3px 9px;
+  border: 1px solid rgba(0, 210, 255, .2);
+  border-radius: 999px;
+  background: rgba(0, 210, 255, .055);
+  color: var(--cyan);
+  font-size: .88rem; font-weight: 600;
+  font-weight: 700;
+}
+
+.material-tag-green {
+  border-color: rgba(97, 216, 173, .25);
+  background: rgba(97, 216, 173, .06);
+  color: var(--green);
+}
+
+.material-tag-violet {
+  border-color: rgba(160, 133, 255, .25);
+  background: rgba(160, 133, 255, .06);
+  color: #c5b5ff;
+}
+
+.material-tag-amber {
+  border-color: rgba(255, 198, 109, .25);
+  background: rgba(255, 198, 109, .06);
+  color: var(--amber);
+}
+
+.property-panel {
+  margin-top: 15px;
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(12, 16, 22, .48);
+}
+
+.property-grid {
+  display: grid;
+  margin: 14px 0 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.property-grid > div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.property-grid dt {
+  color: #b9dfff;
+  font-size: .98rem;
+  font-weight: 700;
+}
+
+.property-grid dd {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.property-reminder {
+  margin: 12px 0 0;
+  color: var(--soft);
+  font-size: .96rem;
+}
+
+.workshop-safety {
+  border-color: rgba(255, 198, 109, .18);
+  background: linear-gradient(150deg, rgba(255, 198, 109, .045), transparent 60%), var(--bg-raised);
+}
+
+.safety-list {
+  display: grid;
+  margin: 20px 0 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  counter-reset: safety;
+}
+
+.safety-list li {
+  position: relative;
+  min-width: 0;
+  padding: 14px 14px 14px 48px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(18, 21, 27, .68);
+  counter-increment: safety;
+}
+
+.safety-list li::before {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid rgba(255, 198, 109, .3);
+  border-radius: 8px;
+  background: rgba(255, 198, 109, .08);
+  color: var(--amber);
+  content: counter(safety, decimal-leading-zero);
+  font-family: "Segoe UI", sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+}
+
+.safety-list strong,
+.safety-list span {
+  display: block;
+}
+
+.safety-list strong {
+  color: #f1dfbf;
+  font-size: 1.05rem;
+}
+
+.safety-list span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .98rem; line-height: 1.7;
+}
+
+.safety-warning {
+  margin: 15px 0 0;
+  padding: 13px 15px;
+  border: 1px solid rgba(255, 198, 109, .2);
+  border-radius: 11px;
+  background: rgba(255, 198, 109, .055);
+  color: #d7c5a5;
+  font-size: 1.02rem; line-height: 1.8;
+}
+
+.safety-warning strong {
+  color: var(--amber);
+}
+
+.source-panel {
+  background: var(--surface);
+}
+
+.source-panel ul {
+  display: grid;
+  margin: 14px 0 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  list-style: none;
+}
+
+.source-panel li {
+  min-width: 0;
+}
+
+.source-panel a, .source-panel .source-citation {
+  display: block;
+  height: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--bg-raised);
+  color: #b9dfff;
+  font-size: .98rem;
+}
+
+.source-panel a {
+  text-decoration-color: rgba(185, 223, 255, .3);
+  text-underline-offset: 3px;
+}
+
+.source-panel a:hover {
+  border-color: rgba(0, 210, 255, .35);
+  color: var(--cyan);
+}
+
+.source-panel a:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.source-panel .source-note {
+  margin-top: 12px;
+  color: var(--soft);
+  font-size: .95rem;
+}
+
+@media (max-width: 900px) {
+  .scope-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .property-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .history-context {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .scope-grid,
+  .role-grid,
+  .material-grid,
+  .safety-list,
+  .source-panel ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1250px) {
+  .header-inner {
+    gap: 16px;
+  }
+
+  .main-nav {
+    min-width: 0;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    gap: 14px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --content: 1360px;
+  }
+
+  .source-panel a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    font-size: 1.02rem;
+  }
+}
+
+.activity-section {
+  position: relative;
+}
+
+.simulation-card {
+  overflow: hidden;
+  margin-top: 18px;
+  padding: clamp(20px, 3.5vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 0 0, rgba(0, 210, 255, .09), transparent 42%),
+    var(--bg-raised);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .15);
+}
+
+.simulation-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.simulation-heading h3 {
+  margin: 0;
+  font-size: clamp(1.08rem, 2vw, 1.38rem);
+}
+
+.simulation-heading > div > p:last-child {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem; line-height: 1.8;
+}
+
+.simulation-heading .card-label {
+  margin: 0 0 4px;
+  color: var(--cyan);
+  font-size: .92rem; font-weight: 600;
+  font-weight: 700;
+}
+
+.activity-symbol {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .3);
+  border-radius: 15px;
+  background: rgba(0, 210, 255, .08);
+  color: var(--cyan);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.activity-symbol-violet {
+  border-color: rgba(160, 133, 255, .32);
+  background: rgba(160, 133, 255, .1);
+  color: #c5b5ff;
+  font-size: 1.2rem;
+}
+
+.simulation-grid {
+  display: grid;
+  margin-top: 26px;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 20px;
+}
+
+.sim-controls,
+.sim-results {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: rgba(12, 16, 22, .55);
+}
+
+.sim-controls {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+
+.sim-control {
+  display: grid;
+  gap: 10px;
+  color: #dce7f3;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.sim-control > span:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sim-control output {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(0, 210, 255, .22);
+  border-radius: 9px;
+  background: rgba(0, 210, 255, .08);
+  color: var(--cyan);
+  font-variant-numeric: tabular-nums;
+}
+
+.sim-control input {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--cyan);
+  cursor: pointer;
+}
+
+.sim-control input:focus-visible,
+.quiz-option:focus-visible,
+.quiz-next:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  color: var(--soft);
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.sim-note {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--soft);
+  font-size: .95rem;
+}
+
+.sim-results h4, .quiz-area h4 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.sim-results-list {
+  display: grid;
+  margin: 15px 0 0;
+  padding: 0;
+  gap: 15px;
+  list-style: none;
+}
+
+.sim-result-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sim-result-heading strong {
+  color: #dce7f3;
+  font-size: 1.08rem;
+}
+
+.sim-result-heading > span {
+  flex: 0 0 auto;
+  color: var(--cyan);
+  font-size: .96rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.sim-score-track {
+  overflow: hidden;
+  height: 7px;
+  margin-top: 7px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.sim-score-track > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  transition: width .35s ease;
+}
+
+.sim-result-item:first-child .sim-score-track > span {
+  background: linear-gradient(90deg, #00a8ff, #61d8ad);
+}
+
+.sim-result-item > p {
+  margin: 5px 0 0;
+  color: var(--soft);
+  font-size: 1.02rem; line-height: 1.8;
+}
+
+.sim-recommendation {
+  margin: 17px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(97, 216, 173, .18);
+  border-radius: 11px;
+  background: rgba(97, 216, 173, .055);
+  color: #b9f0d9;
+  font-size: 1.08rem; line-height: 1.85;
+}
+
+.quiz-card {
+  background:
+    radial-gradient(ellipse at 100% 0, rgba(160, 133, 255, .1), transparent 42%),
+    var(--bg-raised);
+}
+
+.quiz-area {
+  margin-top: 24px;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: rgba(12, 16, 22, .55);
+}
+
+.quiz-meta {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--cyan);
+  font-size: 1.02rem; font-weight: 700;
+  font-weight: 700;
+}
+
+.quiz-meta span:last-child {
+  color: var(--muted);
+}
+
+.quiz-area h4 {
+  max-width: 780px;
+  line-height: 1.8;
+}
+
+.quiz-options {
+  display: grid;
+  margin-top: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quiz-option {
+  min-height: 76px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface);
+  color: #cbd8e6;
+  font: inherit;
+  font-size: 1.06rem; padding: 14px 18px; line-height: 1.7;
+  line-height: 1.65;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.quiz-option:not(:disabled):hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 210, 255, .45);
+  background: rgba(0, 210, 255, .06);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-option.is-correct {
+  border-color: rgba(97, 216, 173, .55);
+  background: rgba(97, 216, 173, .1);
+  color: #b9f0d9;
+}
+
+.quiz-option.is-incorrect {
+  border-color: rgba(255, 133, 139, .42);
+  background: rgba(255, 133, 139, .07);
+  color: #ffc0c3;
+}
+
+.quiz-feedback {
+  min-height: 1.8em;
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: 1.08rem; line-height: 1.8;
+}
+
+.quiz-next {
+  margin-top: 13px;
+  cursor: pointer;
+}
+
+.quiz-next[hidden] {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .simulation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-controls {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sim-note {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .sim-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-option {
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 420px) {
+  .simulation-heading {
+    gap: 11px;
+  }
+
+  .activity-symbol {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .sim-controls,
+  .sim-results {
+    padding: 16px;
+  }
+}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#ප්‍රධාන-අන්තර්ගතය">ප්‍රධාන අන්තර්ගතයට යන්න</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="back-to-portal-btn" href="index.html#g12" onclick="if(document.referrer&&document.referrer.includes('index.html')){this.href='index.html#g12';}else if(window.location.protocol==='file:'&&!window.location.href.includes('index.html')){this.href='Final.html#g12';}" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:rgba(245,158,11,0.18);color:#f59e0b;font-weight:700;text-decoration:none;border:1px solid rgba(245,158,11,0.45);font-size:0.96rem;font-weight:700;padding:8px 16px;margin-right:12px;white-space:nowrap;transition:all 0.2s ease;">← 12 වසර පාඩම් වෙත</a>
+      <a class="brand" href="#ආරම්භය" aria-label="පාඩමේ මුල් පිටුව">
+        <span>ඉංජිනේරු තාක්ෂණවේදය</span>
+      </a>
+      <nav class="main-nav" aria-label="පාඩම් කොටස්">
+        <a href="#හැඳින්වීම">හැඳින්වීම</a>
+        <a href="#විසඳුම්-ක්‍රියාවලිය">විසඳුම් ක්‍රියාවලිය</a>
+        <a href="#අවශ්‍යතා">අවශ්‍යතා</a>
+        <a href="#කාලරේඛාව">කාලරේඛාව</a>
+        <a href="#අමතර-පාඩම්">අමතර පාඩම්</a>
+        <a href="#විභාග-සටහන">විභාග සටහන</a>
+        <a href="#අත්හදාබැලීම්">අත්හදාබැලීම්</a>
+        <a href="#බලපෑම්">බලපෑම්</a>
+        <a href="#තිරසර-තාක්ෂණය">තිරසර තාක්ෂණය</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="ප්‍රධාන-අන්තර්ගතය">
+    <section class="hero" id="ආරම්භය" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> 12 ශ්‍රේණිය</p>
+        <h1 id="hero-title">ඉංජිනේරු තාක්ෂණවේදයට <span>හැඳින්වීම</span></h1>
+        <p class="hero-lead">මිනිස් අවශ්‍යතා හඳුනාගෙන, දැනුම හා කුසලතා යොදාගනිමින් ජීවිතය වඩා යහපත් කරන විසඳුම් සොයා යමු.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#හැඳින්වීම">පාඩම ආරම්භ කරන්න <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="#කාලරේඛාව">තාක්ෂණයේ ගමන්මඟ බලන්න <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-facts" aria-label="පාඩමේ තොරතුරු">
+          <div><span class="fact-number">01</span><span>මූලික අදහස</span></div>
+          <div><span class="fact-number">05</span><span>ඓතිහාසික යුග</span></div>
+          <div><span class="fact-number">03</span><span>බලපෑම් ක්ෂේත්‍ර</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-outer"></div>
+        <div class="orbit orbit-inner"></div>
+        <div class="orbit orbit-core"></div>
+        <div class="orbit-label orbit-label-top">දැනුම</div>
+        <div class="orbit-label orbit-label-right">නිර්මාණය</div>
+        <div class="orbit-label orbit-label-bottom">විසඳුම</div>
+        <div class="orbit-label orbit-label-left">අවශ්‍යතාව</div>
+        <div class="orbit-center"></div>
+        <span class="orbit-spark spark-one"></span>
+        <span class="orbit-spark spark-two"></span>
+      </div>
+      <div class="hero-bottom"><span>දැනුමෙන් විසඳුමට</span><span>පහළට යාමට අනුචලනය කරන්න ↓</span></div>
+    </section>
+
+    <section class="section intro-section" id="හැඳින්වීම" aria-labelledby="intro-title">
+      <div class="section-heading">
+        <p class="section-kicker">01 <span>·</span> මූලික සංකල්පය</p>
+        <h2 id="intro-title">තාක්ෂණය කියන්නේ කුමක්ද?</h2>
+        <p class="section-intro">තාක්ෂණය යනු හුදෙක් යන්ත්‍රයක් හෝ උපකරණයක් පමණක් නොවේ. එය මිනිස් ගැටලු විසඳන පුළුල් ක්‍රියාවලියකි.</p>
+      </div>
+      <div class="definition-card">
+        <div>
+          <p class="card-label">තාක්ෂණය</p>
+          <p class="definition-text">ඉංජිනේරු තාක්ෂණවේදය යනු ගණිතය, විද්‍යාව සහ ඉංජිනේරු මූලධර්ම සමඟ තාක්ෂණික දැනුම, කුසලතා හා මෙවලම් භාවිත කර, අවශ්‍යතා සඳහා සැලසුම් කළ විසඳුම් ප්‍රායෝගිකව ක්‍රියාත්මක කිරීම, පරීක්ෂා කිරීම හා වැඩිදියුණු කිරීම කෙරෙහි අවධානය යොමු කරන ව්‍යවහාරික ක්ෂේත්‍රයකි.</p>
+          <p class="definition-note">එහි විෂය පථයට නිර්මාණ හා නිෂ්පාදනය පමණක් නොව, ස්ථාපනය, ක්‍රියාත්මක කිරීම, පරීක්ෂාව, තත්ත්ව පාලනය, නඩත්තුව, ආරක්ෂාව හා පරිසර බලපෑම්ද ඇතුළත් වේ.</p>
+        </div>
+        <span class="definition-index" aria-hidden="true">01</span>
+      </div>
+      <div class="technology-types">
+        <div class="tech-types-header">
+          <span class="card-label">මූලික සංකල්ප</span>
+          <h3>තාක්ෂණය යනු උපකරණ පමණක් නොවේ</h3>
+          <p>ගැටලුවක් විසඳීමට එකට ක්‍රියා කරන දැනුම, ක්‍රම, ද්‍රව්‍ය, උපකරණ සහ සංවිධානාත්මක ක්‍රියාවලීන් සියල්ල තාක්ෂණයට අයත් වේ.</p>
+        </div>
+        <div class="technology-types-grid">
+          <article class="tech-type-card">
+            <div class="tech-card-top">
+              <span class="tech-icon-badge" aria-hidden="true">💡</span>
+              <span class="tech-card-num">01</span>
+            </div>
+            <h4>දැනුම හා කුසලතා</h4>
+            <p>දේවල් ක්‍රියා කරන ආකාරය පිළිබඳ අවබෝධය සහ ඒවා ප්‍රායෝගිකව කිරීමට ඇති හැකියාව.</p>
+          </article>
+          <article class="tech-type-card">
+            <div class="tech-card-top">
+              <span class="tech-icon-badge" aria-hidden="true">⚙️</span>
+              <span class="tech-card-num">02</span>
+            </div>
+            <h4>මෙවලම් හා යන්ත්‍ර</h4>
+            <p>අතින් භාවිත කරන සරල උපකරණවල සිට වැඩ පහසු කරන යන්ත්‍ර හා පාලන උපකරණ දක්වා.</p>
+          </article>
+          <article class="tech-type-card">
+            <div class="tech-card-top">
+              <span class="tech-icon-badge" aria-hidden="true">🧱</span>
+              <span class="tech-card-num">03</span>
+            </div>
+            <h4>ද්‍රව්‍ය හා සම්පත්</h4>
+            <p>නිර්මාණයට අවශ්‍ය අමුද්‍රව්‍ය, ජලය, බලශක්තිය, කාලය සහ මිනිස් ශ්‍රමය.</p>
+          </article>
+          <article class="tech-type-card">
+            <div class="tech-card-top">
+              <span class="tech-icon-badge" aria-hidden="true">🔄</span>
+              <span class="tech-card-num">04</span>
+            </div>
+            <h4>ක්‍රම හා පද්ධති</h4>
+            <p>භාණ්ඩයක් නිපදවීම, ඉදිකිරීම, ප්‍රවාහනය හෝ සේවාවක් සැපයීම සඳහා අනුගමනය කරන පියවර හා ඒවායේ සම්බන්ධතාව.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section" id="විසඳුම්-ක්‍රියාවලිය" aria-labelledby="process-title">
+      <div class="section-heading">
+        <p class="section-kicker">02 <span>·</span> අදහසකින් විසඳුමකට</p>
+        <h2 id="process-title">තාක්ෂණික විසඳුමක් ගොඩනැගෙන්නේ කෙසේද?</h2>
+        <p class="section-intro">ප්‍රයෝජනවත් විසඳුමක් හදිසියේ තෝරාගන්නේ නැත. ගැටලුව හඳුනාගැනීමේ සිට ප්‍රතිඵල පරීක්ෂා කිරීම දක්වා පියවරෙන් පියවර ඉදිරියට යයි.</p>
+      </div>
+      <ol class="process-list">
+        <li><span class="process-number">01</span><div><h3>අවශ්‍යතාව හඳුනාගන්න</h3><p>කාටද ගැටලුව තිබෙන්නේ, එය ඇතිවන්නේ කොතැනද සහ විසඳුමෙන් ඉටු විය යුත්තේ කුමක්ද යන්න පැහැදිලි කරගන්න.</p></div></li>
+        <li><span class="process-number">02</span><div><h3>තොරතුරු හා සීමා සොයන්න</h3><p>පවතින දැනුම, දේශීය ද්‍රව්‍ය, කුසලතා, කාලය, පිරිවැය සහ ආරක්ෂක අවශ්‍යතා විමසා බලන්න.</p></div></li>
+        <li><span class="process-number">03</span><div><h3>විකල්ප විසඳුම් සලකා බලන්න</h3><p>එකම පිළිතුරකට ඉක්මන් නොවී, භාවිතයට පහසු සහ පරිසරයට හානි අඩු විකල්ප කිහිපයක් සසඳන්න.</p></div></li>
+        <li><span class="process-number">04</span><div><h3>ගැළපෙන විසඳුම සැලසුම් කරන්න</h3><p>අවශ්‍ය ද්‍රව්‍ය හා ක්‍රියාමාර්ග තෝරා, විසඳුම ක්‍රියා කරන ආකාරය සටහනක් හෝ ආකෘතියක් මඟින් පෙන්වන්න.</p></div></li>
+        <li><span class="process-number">05</span><div><h3>නිර්මාණය කර පරීක්ෂා කරන්න</h3><p>සැලසුම ක්‍රියාත්මක කර, එය සැබෑ අවශ්‍යතාව සපුරාලනවාද සහ ආරක්ෂිතද යන්න පරීක්ෂා කරන්න.</p></div></li>
+        <li><span class="process-number">06</span><div><h3>ප්‍රතිඵල ඇගයීමෙන් වැඩිදියුණු කරන්න</h3><p>ලැබුණු ප්‍රතිඵල, පිරිවැය හා බලපෑම් සසඳා අඩුපාඩු නිවැරදි කර විසඳුම වැඩිදියුණු කරන්න.</p></div></li>
+      </ol>
+      <aside class="local-example process-example"><strong>උදාහරණය — ගෙවත්තේ ජලය ඉතිරි කිරීම</strong><p>මුලින් ජලය වැඩිපුර වැයවන තැන හඳුනාගන්න. පස, වගාව සහ ලැබෙන ජල ප්‍රමාණය බලන්න. ඉන්පසු වැසි ජලය රැස්කිරීම හෝ බිංදු ජල සම්පාදනය වැනි විකල්ප සසඳා, පහසුවෙන් නඩත්තු කළ හැකි ක්‍රමයක් පරීක්ෂා කර තෝරන්න.</p></aside>
+    </section>
+
+    <section class="section needs-section" id="අවශ්‍යතා" aria-labelledby="needs-title">
+      <div class="section-heading">
+        <p class="section-kicker">03 <span>·</span> මිනිසා සහ තාක්ෂණය</p>
+        <h2 id="needs-title">අවශ්‍යතා, කැමැත්ත සහ තාක්ෂණය</h2>
+        <p class="section-intro">මිනිසාගේ අවශ්‍යතා තාක්ෂණික විසඳුම් බිහිවීමට මූලික හේතුවකි. අවශ්‍යතාවක් සහ කැමැත්තක් එකම දෙයක් නොවේ.</p>
+      </div>
+      <div class="needs-grid">
+        <article class="need-card need-card-main">
+          <h3>අවශ්‍යතාව</h3>
+          <p>ජීවිතය පවත්වාගෙන යාමට, ආරක්ෂාවට හෝ යහපැවැත්මට අත්‍යවශ්‍ය වන දෙයකි. ජලය, ආහාර, නිවාස, සෞඛ්‍යය, ප්‍රවාහනය හා සන්නිවේදනයට අදාළ ගැටලු අවශ්‍යතා ඇති කරයි.</p>
+          <p>අවශ්‍යතාව පුද්ගලයා, ප්‍රදේශය, දේශගුණය හා පවතින සම්පත් අනුව වෙනස් වේ. එබැවින් එක් ප්‍රදේශයක සාර්ථක විසඳුමක් තවත් ප්‍රදේශයකට ඒ ආකාරයෙන්ම ගැළපෙන්නේ නැත.</p>
+          <div class="example-box"><span>ශ්‍රී ලංකාවේ උදාහරණ</span><p>වියළි කලාපයේ වගාවට ජලය සපයන වාරිමාර්ග ක්‍රමයක්, පිරිසිදු පානීය ජලය ලබාගැනීමේ ක්‍රමයක් හෝ තද වැසි සහ සුළංවලට ඔරොත්තු දෙන නිවසක්.</p></div>
+        </article>
+        <article class="need-card">
+          <h3>කැමැත්ත</h3>
+          <p>අත්‍යවශ්‍ය නොවුණත් වැඩි පහසුවක්, සතුටක් හෝ තෘප්තියක් ලබාගැනීමට පුද්ගලයෙකු කැමති වන දෙයකි. කැමැත්ත ඉටු කිරීමට සම්පත් වැය වන බැවින් එය අවශ්‍යතාවක් සමඟ පටලවා නොගත යුතුය.</p>
+          <div class="example-box"><span>දෛනික උදාහරණ</span><p>දුරකථනයක් මඟින් පවුල හා හදිසි සේවා සම්බන්ධ කරගැනීම අවශ්‍යතාවක් විය හැකිය. නවතම මාදිලියේ දුරකථනයක් තෝරාගැනීම අමතර කැමැත්තක් විය හැකිය.</p></div>
+          <h4>විසඳුමක් තෝරාගැනීමට පෙර</h4>
+          <ul class="check-list">
+            <li>මෙය විසඳන්නේ කාගේ සැබෑ ගැටලුවද?</li>
+            <li>දේශීයව ලබාගත හැකි ද්‍රව්‍ය හා කුසලතා මොනවාද?</li>
+            <li>භාවිතයට, නඩත්තුවට හා අලුත්වැඩියාවට පහසුද?</li>
+            <li>මිනිසුන්ට සහ පරිසරයට ඇති ප්‍රතිඵල මොනවාද?</li>
+          </ul>
+        </article>
+      </div>
+      <aside class="insight-strip">
+        <span class="insight-mark" aria-hidden="true">!</span>
+        <p><strong>සිතා බලන්න</strong> — ප්‍රදේශයක ජල හිඟය අඩු කිරීමට තාක්ෂණික විසඳුමක් සැලසුම් කරන විට, එහි පිරිවැය, දේශීය සම්පත් සහ ජනතාවගේ සැබෑ අවශ්‍යතා සලකා බැලිය යුත්තේ ඇයි?</p>
+      </aside>
+    </section>
+
+    <section class="section timeline-section" id="කාලරේඛාව" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <p class="section-kicker">04 <span>·</span> තාක්ෂණයේ විකාශනය</p>
+        <h2 id="timeline-title">මිනිස් ඉතිහාසය හැඩගැස්වූ සොයාගැනීම්</h2>
+        <p class="section-intro">සෑම යුගයකම මිනිසා තම අවශ්‍යතා අනුව මෙවලම් හා ක්‍රම දියුණු කළේය. යුගයක් තෝරා එහි විශේෂත්වය කියවන්න.</p>
+      </div>
+      <div class="timeline">
+        <details class="era-card" open>
+          <summary><span class="era-marker">01</span><span class="era-name">ගල් යුගය</span><span class="era-arrow" aria-hidden="true">+</span></summary>
+          <div class="era-content"><p class="era-caption">මූලික මෙවලම් සහ දිවි පැවැත්ම</p><p>ගල්, ලී හා අස්ථි යොදා සරල කැපුම් සහ සීරීම් මෙවලම් සකස් කිරීමෙන් දඩයම් කිරීම, ආහාර සකස් කිරීම සහ ආරක්ෂාව සලසාගැනීම පහසු විය. ගින්දර භාවිතයෙන් ආහාර පිසීම, උණුසුම ලබාගැනීම සහ රාත්‍රියේ ආරක්ෂාව වැඩි කරගැනීම හැකි විය.</p><p>මෙවලම් සෑදීමේ දැනුම පරම්පරාවෙන් පරම්පරාවට බෙදාගැනීමත් සමඟ මිනිසුන්ට පරිසරයට වඩා හොඳින් හැඩගැසීමට හැකි විය.</p></div>
+        </details>
+        <details class="era-card">
+          <summary><span class="era-marker">02</span><span class="era-name">ලෝකඩ යුගය</span><span class="era-arrow" aria-hidden="true">+</span></summary>
+          <div class="era-content"><p class="era-caption">ලෝහ මිශ්‍රණයෙන් නව හැකියාවන්</p><p>තඹ හා ටින් මිශ්‍ර කර ලෝකඩ නිපදවීමත් සමඟ ගල් මෙවලම්වලට වඩා වෙනස් හැඩ සහ කාර්ය සඳහා සුදුසු මෙවලම්, ආයුධ හා භාණ්ඩ සෑදීමට හැකි විය.</p><p>ලෝහ උණු කිරීම, අච්චුවලට වත් කිරීම සහ අවශ්‍ය හැඩයට සකස් කිරීම සඳහා විශේෂ දැනුමක් අවශ්‍ය විය. එම කුසලතා හුවමාරු වෙද්දී ශිල්ප, වෙළෙඳාම සහ විවිධ කාර්යයන් සඳහා භාණ්ඩ නිෂ්පාදනයද දියුණු විය.</p></div>
+        </details>
+        <details class="era-card">
+          <summary><span class="era-marker">03</span><span class="era-name">යකඩ යුගය</span><span class="era-arrow" aria-hidden="true">+</span></summary>
+          <div class="era-content"><p class="era-caption">කෘෂිකර්මය හා ඉදිකිරීම් දියුණු වීම</p><p>යකඩ උණු කිරීම සහ හැඩගැස්වීමෙන් ශක්තිමත්, කල්පවතින මෙවලම් හා උපකරණ නිපදවිය හැකි විය. නගුල් හා වෙනත් ගොවි උපකරණ මඟින් වගා කටයුතු පුළුල් කිරීමටත් ඉදිකිරීම් හා දැව වැඩ කිරීමටත් සහාය ලැබිණි.</p><p>යකඩ නිෂ්පාදනයට ඉන්ධන, අමුද්‍රව්‍ය සහ විශේෂ ශිල්ප දැනුම අවශ්‍ය වූ අතර, එය සමාජයේ කාර්ය බෙදීම හා හුවමාරුව තවදුරටත් දියුණු කළේය.</p></div>
+        </details>
+        <details class="era-card">
+          <summary><span class="era-marker">04</span><span class="era-name">කාර්මික විප්ලවය</span><span class="era-arrow" aria-hidden="true">+</span></summary>
+          <div class="era-content"><p class="era-caption">යන්ත්‍රගත නිෂ්පාදනයේ ආරම්භය</p><p>වාෂ්ප බලය භාවිත කළ යන්ත්‍ර මඟින් අතින් සිදු කළ බොහෝ කාර්යයන් වේගවත් කර, එකම භාණ්ඩය විශාල ප්‍රමාණයෙන් නිපදවීමට හැකි විය. කර්මාන්තශාලා සහ දුම්රිය ව්‍යාප්ත වීමෙන් නිෂ්පාදන මධ්‍යස්ථාන හා වෙළෙඳපොළ අතර ප්‍රවාහනය වේගවත් විය.</p><p>කර්මාන්තශාලා වැඩ සහ නගරවල ජනගහනය වර්ධනය වීමත් සමඟ රැකියා රටා, සේවා තත්ත්ව සහ දෛනික ජීවිතය වෙනස් විය. සිමෙන්ති වැනි ද්‍රව්‍ය විශාල ඉදිකිරීම් සඳහාත්, එකම මිනුම් අනුව සාදන හුවමාරු කළ හැකි කොටස් යන්ත්‍ර නඩත්තුව සඳහාත් වැදගත් විය.</p><p class="era-caption">නව නිපැයුම් හා ඒවාට දායක වූවන්</p><ul class="era-inventions">
+            <li><strong>වාෂ්ප එන්ජිම</strong><span>තෝමස් නිව්කොමන් 1712 දී මුල් ප්‍රායෝගික වාෂ්ප එන්ජිමක් නිපදවූ අතර, ජේම්ස් වොට් 1769 දී වෙන් කළ වාෂ්ප ඝනීභවකය සඳහා පේටන්ට් ලබාගෙන එන්ජිම වැඩිදියුණු කළේය.</span><small>යුගය: 18 වන සියවසේ කාර්මික විප්ලවය</small></li>
+            <li><strong>පෝට්ලන්ඩ් සිමෙන්ති</strong><span>ජෝසප් ඇස්ප්ඩින් 1824 දී එයට පේටන්ට් බලපත්‍රයක් ලබාගත්තේය; ඔහුගේ පුත් විලියම් ඇස්ප්ඩින් පසුව එහි දියුණුවට දායක විය.</span><small>යුගය: 19 වන සියවසේ මුල් කාර්මික විප්ලවය</small></li>
+            <li><strong>එකිනෙකට හුවමාරු කළ හැකි කොටස්</strong><span>එලයි විට්නි මෙම ක්‍රමය ප්‍රචලිත කළ අයෙකු ලෙස සැලකේ. එකම ප්‍රමිතියෙන් කොටස් සෑදීමේ අදහසට තවත් මුල් දායකයෝද සිටියහ.</span><small>යුගය: 18–19 වන සියවස්; කාර්මික විප්ලවය</small></li>
+          </ul></div>
+        </details>
+        <details class="era-card">
+          <summary><span class="era-marker">05</span><span class="era-name">තොරතුරු තාක්ෂණ යුගය</span><span class="era-arrow" aria-hidden="true">+</span></summary>
+          <div class="era-content"><p class="era-caption">දත්ත, පරිගණක සහ සන්නිවේදනය</p><p>ට්‍රාන්සිස්ටර හා පරිගණක දියුණුවෙන් තොරතුරු ගණනය කිරීම, ගබඩා කිරීම සහ සැකසීම වේගවත් විය. චන්ද්‍රිකා මඟින් දුරස්ථ ප්‍රදේශ අතර සන්නිවේදනය හා තොරතුරු හුවමාරුවට නව මඟක් ලැබිණි.</p><p>මෙම තාක්ෂණයන් අධ්‍යාපනය, සෞඛ්‍ය සේවා, කර්මාන්ත හා වෙළෙඳාම සම්බන්ධ කරයි. ඒ සමඟ තොරතුරු ආරක්ෂාව, විදුලි බලය සහ විද්‍යුත් අපද්‍රව්‍ය නිසි ලෙස කළමනාකරණය කිරීමේ අවශ්‍යතාවද ඇති වේ.</p><p class="era-caption">නව නිපැයුම් හා ඒවාට දායක වූවන්</p><ul class="era-inventions">
+            <li><strong>ට්‍රාන්සිස්ටරය</strong><span>ජෝන් බාර්ඩීන් හා වෝල්ටර් බ්‍රැටන් 1947 දී පළමු ක්‍රියාකාරී ලක්ෂ්‍ය-සම්බන්ධතා ට්‍රාන්සිස්ටරය නිර්මාණය කළහ; විලියම් ෂොක්ලිද එහි දියුණුවට දායක විය.</span><small>යුගය: 20 වන සියවසේ මැද; ඉලෙක්ට්‍රොනික තාක්ෂණය</small></li>
+            <li><strong>ජෙට් එන්ජිම</strong><span>ෆ්‍රෑන්ක් විට්ල් සහ හාන්ස් ෆොන් ඔහයින් එකිනෙකාගෙන් ස්වාධීනව ජෙට් එන්ජින් දියුණු කළහ.</span><small>යුගය: 20 වන සියවසේ 1930–1940 දශක; ගුවන් තාක්ෂණය</small></li>
+            <li><strong>කෘත්‍රිම චන්ද්‍රිකාව</strong><span>1957 දී සෝවියට් සංගමය ස්පුට්නික් 1 යැවීය. ප්‍රධාන සැලසුම් මෙහෙයවූයේ සර්ගෙයි කොරොලෙව් වන අතර, එය විශාල කණ්ඩායමක සාමූහික කාර්යයකි.</span><small>යුගය: 20 වන සියවසේ අභ්‍යවකාශ යුගය</small></li>
+            <li><strong>පරිගණකය</strong><span>චාල්ස් බැබේජ් 1830 දශකයේ විශ්ලේෂණ යන්ත්‍රය සැලසුම් කළේය; එය පරිගණකයේ මුල් අදහසකි. නවීන පරිගණකය බොහෝ දෙනාගේ දායකත්වයෙන් දියුණු වූ බැවින් තනි නිපැයුම්කරුවෙකු නැත.</span><small>යුගය: 19 වන සියවසේ මුල් සැලැස්ම; නවීන පරිගණක යුගය 20 වන සියවස</small></li>
+            <li><strong>නැනෝ තාක්ෂණය</strong><span>රිචඩ් ෆයින්මන් 1959 දී ඉතා කුඩා පරිමාණයේ ද්‍රව්‍ය හැසිරවීමේ අදහස් ඉදිරිපත් කළේය. “නැනෝ තාක්ෂණය” යන පදය නොරියෝ ටනිගුචි 1974 දී භාවිත කළේය; මෙය එක් පුද්ගලයෙකුගේ නිපැයුමක් නොව ක්ෂේත්‍රයකි.</span><small>යුගය: 20 වන සියවසේ නවීන විද්‍යා හා තාක්ෂණ යුගය</small></li>
+          </ul></div>
+        </details>
+      </div>
+      <p class="timeline-hint"><span aria-hidden="true">↳</span> එක් එක් යුගය විවෘත කර එහි තොරතුරු කියවන්න</p>
+      <aside class="landmark-note">
+        <h3>නිපැයුම්කරුවන් හඳුනාගැනීමේදී</h3>
+        <div>
+          <p>ගල්, ලෝකඩ හා යකඩ යුගවල මුල් මෙවලම් හා ලෝහ සැකසුම් ක්‍රම පරම්පරා ගණනාවක් අතර සාමූහිකව දියුණු වූ බැවින් ඒවායේ එක් නිපැයුම්කරුවෙකුගේ නමක් වාර්තා වී නැත.</p>
+          <p>පරිගණකය, චන්ද්‍රිකා සහ නැනෝ තාක්ෂණය වැනි ක්ෂේත්‍රද බොහෝ පුද්ගලයන්ගේ හා කණ්ඩායම්වල දායකත්වයෙන් වර්ධනය විය. පහත නම් අදාළ සන්ධිස්ථානයට දායක වූ අය පෙන්වයි; සෑම විටම එකම නිර්මාපකයා අදහස් නොවේ.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section engineering-extension" id="අමතර-පාඩම්" aria-labelledby="extension-title">
+      <div class="section-heading">
+        <p class="section-kicker">05 <span>·</span> ඉංජිනේරු දැනුම තවදුරටත්</p>
+        <h2 id="extension-title">කාර්යභාර, ද්‍රව්‍ය හා ආරක්ෂාව</h2>
+        <p class="section-intro">කාලරේඛාවෙන් තාක්ෂණයේ ඉතිහාසය හඳුනාගත් පසු, එය අද ක්‍රියාත්මක කරන පුද්ගලයන්, භාවිත කරන ද්‍රව්‍ය සහ ආරක්ෂිත වැඩපොළක් ගැනත් ඉගෙනගනිමු.</p>
+      </div>
+
+      <article class="history-context">
+        <div class="history-context-mark" aria-hidden="true">ඉතිහාසය</div>
+        <div>
+          <h3>තාක්ෂණික ඉතිහාසය ශ්‍රී ලංකාවටත් සම්බන්ධයි</h3>
+          <p>ලෝකයේ ගල්, ලෝකඩ හා යකඩ යුගවලින් යන්ත්‍රගත නිෂ්පාදනය සහ තොරතුරු තාක්ෂණය දක්වා සිදු වූ වෙනස්කම් ඉහත කාලරේඛාවෙන් බලන්න. ශ්‍රී ලංකාවේ පොළොන්නරුව 12 වන සියවසේ පරාක්‍රමබාහු රජුගේ කාලයේ නිර්මාණය වූ සැලසුම්ගත නගරයක නටබුන් දරන ඓතිහාසික උදාහරණයකි. මෙවැනි නගර හා ඉදිකිරීම් අධ්‍යයනය කිරීමෙන් ජලය, ද්‍රව්‍ය, ශ්‍රමය සහ සැලසුම් දැනුම මිනිස් අවශ්‍යතා සඳහා යොදාගත් ආකාරය විමසිය හැකිය.</p>
+        </div>
+      </article>
+
+      <div class="engineering-scope">
+        <div class="extension-heading">
+          <p class="card-label">විෂය පථය</p>
+          <h3>ඉංජිනේරු තාක්ෂණය ක්‍රියාත්මක වන ක්ෂේත්‍ර</h3>
+          <p>ගැටලුව හඳුනාගැනීමේ සිට පද්ධතියක් හෝ භාණ්ඩයක් භාවිතයෙන් ඉවත් කරන තෙක් එහි ජීවන චක්‍රය පුරා තාක්ෂණික තීරණ තිබේ.</p>
+        </div>
+        <div class="scope-grid">
+          <article><h4>සිවිල් හා ඉදිකිරීම්</h4><p>ගොඩනැගිලි, මාර්ග, පාලම්, ජල සැපයුම් හා වාරිමාර්ග පද්ධති.</p></article>
+          <article><h4>යාන්ත්‍රික හා නිෂ්පාදන</h4><p>යන්ත්‍ර, මෙවලම්, නිෂ්පාදන ක්‍රම, නඩත්තුව හා තත්ත්ව පාලනය.</p></article>
+          <article><h4>විදුලි හා ඉලෙක්ට්‍රොනික</h4><p>විදුලි බලය, පාලන පද්ධති, සන්නිවේදනය හා ඉලෙක්ට්‍රොනික උපකරණ.</p></article>
+          <article><h4>රසායනික හා ක්‍රියාවලි</h4><p>අමුද්‍රව්‍ය ආරක්ෂිතව සැකසීම, ආහාර හා ද්‍රව්‍ය නිෂ්පාදනය, අපද්‍රව්‍ය පාලනය.</p></article>
+          <article><h4>තොරතුරු හා ස්වයංක්‍රීයකරණය</h4><p>පරිගණක, දත්ත, සංවේදක, යන්ත්‍ර පාලනය හා ස්වයංක්‍රීය ක්‍රියාවලි.</p></article>
+          <article><h4>සියලු ක්ෂේත්‍රවල පොදු වගකීම්</h4><p>ආරක්ෂාව, ප්‍රමිතීන්, පිරිවැය, පරිසර බලපෑම්, කණ්ඩායම් සන්නිවේදනය හා අඛණ්ඩ වැඩිදියුණු කිරීම.</p></article>
+        </div>
+      </div>
+
+      <div class="role-comparison">
+        <div class="extension-heading">
+          <p class="card-label">කාර්යභාර</p>
+          <h3>ඉංජිනේරුවා සහ ඉංජිනේරු තාක්ෂණවේදියා</h3>
+          <p>දෙදෙනාම ගැටලු විසඳීමට සහයෝගයෙන් කටයුතු කරති. පහත දැක්වෙන්නේ සාමාන්‍යයෙන් දක්නට ලැබෙන අවධානයයි; නිශ්චිත වගකීම් රට, ක්ෂේත්‍රය, පුහුණුව හා සේවා ස්ථානය අනුව වෙනස් විය හැකිය.</p>
+        </div>
+        <div class="role-grid">
+          <article class="role-card">
+            <h4>ඉංජිනේරුවා</h4>
+            <ul>
+              <li>ගැටලුව හා අවශ්‍යතා විශ්ලේෂණය කර විකල්ප තාක්ෂණික විසඳුම් සැලසුම් කරයි.</li>
+              <li>ගණිතය හා විද්‍යාත්මක මූලධර්ම යොදාගෙන ගණනය කිරීම්, ආකෘති හා සැලසුම් පරීක්ෂා කරයි.</li>
+              <li>ආරක්ෂාව, විශ්වසනීයත්වය, ප්‍රමිතීන් හා සමාජ-පාරිසරික බලපෑම් සලකා තීරණ ගනී.</li>
+            </ul>
+          </article>
+          <article class="role-card role-card-accent">
+            <h4>ඉංජිනේරු තාක්ෂණවේදියා</h4>
+            <ul>
+              <li>සැලසුම්, ක්‍රම හා තාක්ෂණික උපදෙස් ප්‍රායෝගිකව ක්‍රියාත්මක කිරීමට දායක වේ.</li>
+              <li>උපකරණ තෝරාගැනීම, ස්ථාපනය, ක්‍රියාත්මක කිරීම, පරීක්ෂාව හා නඩත්තුව සිදු කරයි.</li>
+              <li>මිනුම් හා පරීක්ෂණ ප්‍රතිඵල සටහන් කර, ගැටලු හඳුනාගෙන ගුණාත්මකභාවය වැඩිදියුණු කිරීමට සහාය වේ.</li>
+            </ul>
+          </article>
+        </div>
+        <p class="role-note"><strong>වැදගත්:</strong> මෙය එකිනෙකට වෙන් වූ හෝ උසස්-පහත් මට්ටම් නොවේ. සැලසුම් කිරීම, පරීක්ෂා කිරීම හා ක්‍රියාත්මක කිරීමේදී භූමිකා බොහෝවිට එකිනෙකට සම්බන්ධ වේ.</p>
+      </div>
+
+      <div class="materials-study">
+        <div class="extension-heading">
+          <p class="card-label">මූලික ඉංජිනේරු ද්‍රව්‍ය</p>
+          <h3>ද්‍රව්‍යයක ගුණාංගය අනුව භාවිතය තෝරමු</h3>
+          <p>ද්‍රව්‍යය සකස් කරන ආකාරය, එහි අභ්‍යන්තර ව්‍යුහය හා සංයුතිය එහි ගුණාංග සහ කාර්යසාධනයට බලපායි.</p>
+        </div>
+        <div class="material-grid">
+          <article class="material-card">
+            <span class="material-tag">ලෝහ හා මිශ්‍ර ලෝහ</span>
+            <h4>වානේ, යකඩ, ඇලුමිනියම්, තඹ</h4>
+            <p>බොහෝ ලෝහ ශක්තිමත් වන අතර හැඩගැස්විය හැකිය. තඹ විදුලිය හොඳින් ගෙනයයි; ඇලුමිනියම් සාපේක්ෂව සැහැල්ලුය; වානේ ව්‍යුහ හා යන්ත්‍ර කොටස් සඳහා යොදාගනී.</p>
+          </article>
+          <article class="material-card">
+            <span class="material-tag material-tag-green">සෙරමික් හා වීදුරු</span>
+            <h4>ගඩොල්, ටයිල්, සිමෙන්ති, වීදුරු</h4>
+            <p>තාපයට ඔරොත්තු දීම හා තද බව බොහෝවිට ප්‍රයෝජනවත්ය; එහෙත් පහරකදී බිඳෙනසුලු විය හැකිය. ගොඩනැගිලි, ආවරණ, පරිවාරක හා ජනෙල් සඳහා යොදාගනී.</p>
+          </article>
+          <article class="material-card">
+            <span class="material-tag material-tag-violet">බහුඅණුක හා ප්ලාස්ටික්</span>
+            <h4>පොලිඑතිලීන්, පීවීසී, රබර්</h4>
+            <p>බොහෝ විට සැහැල්ලු, විඛාදනයට ඔරොත්තු දෙන සහ විදුලි පරිවාරක ලෙස භාවිත කළ හැකිය. නල, ආවරණ හා පරිවාරක සඳහා යොදාගත්තද තාපයට හානි වීම සහ අපද්‍රව්‍ය කළමනාකරණය සලකා බැලිය යුතුය.</p>
+          </article>
+          <article class="material-card">
+            <span class="material-tag material-tag-amber">දැව හා සංයුක්ත ද්‍රව්‍ය</span>
+            <h4>දැව, ප්ලයිවුඩ්, තන්තු-ශක්තිමත් ද්‍රව්‍ය, කොන්ක්‍රීට්</h4>
+            <p>දැව සැහැල්ලු හා පහසුවෙන් වැඩ කළ හැකි ස්වභාවික සංයුක්ත ද්‍රව්‍යයකි. සංයුක්ත ද්‍රව්‍ය එකිනෙකට වෙනස් ද්‍රව්‍ය එක් කර ගුණාංග සකස් කරයි; කොන්ක්‍රීට් සම්පීඩන බලයට හොඳින් ඔරොත්තු දෙන නමුත් ඇදීමේ ශක්තිය සඳහා ශක්තිමත් කිරීම අවශ්‍ය විය හැකිය.</p>
+          </article>
+        </div>
+        <div class="property-panel">
+          <h4>ගුණාංග කියවන්නේ මෙහෙමයි</h4>
+          <dl class="property-grid">
+            <div><dt>ශක්තිය</dt><dd>බරක් හෝ බලයක් යටතේ බිඳීම හෝ ස්ථිරව හැඩය වෙනස් වීම නොවී ඔරොත්තු දීම.</dd></div>
+            <div><dt>තද බව</dt><dd>මතුපිට සීරීම, කැපීම හෝ ගෙවී යාමට ඇති ප්‍රතිරෝධය.</dd></div>
+            <div><dt>දෘඪතාව</dt><dd>බලපෑමකදී බිඳී යාමට පෙර ශක්තිය අවශෝෂණය කරගැනීමේ හැකියාව.</dd></div>
+            <div><dt>ඇදෙන හැකියාව</dt><dd>කැඩී නොයා ඇදීමෙන් දිගු වී කම්බියක් වැනි හැඩයකට පත් කළ හැකි වීම.</dd></div>
+            <div><dt>පහරදී හැඩගැස්වීමේ හැකියාව</dt><dd>කැඩී නොයා තහඩුවක් හෝ වෙනත් හැඩයක් ලෙස තද කර සකස් කළ හැකි වීම.</dd></div>
+            <div><dt>ඝනත්වය</dt><dd>එකම පරිමාවක ඇති ද්‍රව්‍ය ප්‍රමාණය; බර සහ සැහැල්ලු බව සසඳීමට උපකාරී වේ.</dd></div>
+            <div><dt>විදුලි හා තාප සන්නායකතාව</dt><dd>විදුලි ධාරාව හෝ තාපය ගමන් කරවීමේ හැකියාව.</dd></div>
+            <div><dt>විඛාදන ප්‍රතිරෝධය</dt><dd>තෙතමනය, වාතය හෝ රසායනික ද්‍රව්‍ය නිසා දිරායාමට ඔරොත්තු දීම.</dd></div>
+          </dl>
+          <p class="property-reminder">එකම ද්‍රව්‍ය වර්ගයේ සියලු ද්‍රව්‍යවල ගුණ එකම නොවේ. මිශ්‍රණය, නිෂ්පාදන ක්‍රමය, තාප සැකසීම හා පරිසරය අනුව ගුණ වෙනස් විය හැකිය.</p>
+        </div>
+      </div>
+
+      <div class="workshop-safety">
+        <div class="extension-heading">
+          <p class="card-label">වැඩපොළ ආරක්ෂාව</p>
+          <h3>මෙවලමක් අතට ගන්නට පෙර ආරක්ෂාව තහවුරු කරන්න</h3>
+          <p>යන්ත්‍ර හා මෙවලම් භාවිතයට පෙර ගුරුවරයාගේ උපදෙස් පිළිපදින්න. පුහුණුව හෝ අවසරය නොමැතිව යන්ත්‍රයක් ක්‍රියාත්මක නොකරන්න.</p>
+        </div>
+        <ol class="safety-list">
+          <li><strong>සුදුසු ඇඳුම් හා ආරක්ෂක උපකරණ පළඳින්න.</strong><span>ඇස් ආරක්ෂක කණ්ණාඩි, ආරක්ෂිත පාවහන්, ඇසීමේ හෝ ශ්වසන ආරක්ෂාව අවශ්‍ය කාර්යයට ගැළපෙන ලෙස භාවිත කරන්න. දිගු හිසකෙස් බැඳ, ආභරණ ඉවත් කර, ලිහිල් ඇඳුම් සකස් කරන්න.</span></li>
+          <li><strong>මෙවලම සහ ආරක්ෂක ආවරණ පරීක්ෂා කරන්න.</strong><span>හානි වූ කේබල්, බිඳුණු මෙවලම් හෝ නොමැති ආවරණ සහිත යන්ත්‍ර භාවිත නොකරන්න; දෝෂ වහාම භාර ගුරුවරයාට දන්වන්න.</span></li>
+          <li><strong>කාර්යයට සුදුසු මෙවලම තෝරන්න.</strong><span>නිවැරදි මෙවලම හා යන්ත්‍ර සැකසුම භාවිත කර, නිෂ්පාදක උපදෙස් සහ ආරක්ෂිත ක්‍රම අනුගමනය කරන්න.</span></li>
+          <li><strong>වැඩ කොටස තදින් සවි කරන්න.</strong><span>කැපීමේදී හෝ විදුම් කිරීමේදී වැඩ කොටස අතින් පමණක් අල්ලා නොසිට සුදුසු කලම්පයක් හෝ රඳවනයක් භාවිත කරන්න.</span></li>
+          <li><strong>යන්ත්‍රය ක්‍රියාත්මක වන විට අවධානයෙන් සිටින්න.</strong><span>කැරකෙන කොටස් අසල අත්, ලිහිල් ඇඳුම් හා හිසකෙස් තබා නොගන්න. උපකරණයට අනුව අත්වැසුම් ආරක්ෂිතද යන්න ගුරුවරයාගෙන් අසන්න; කැරකෙන යන්ත්‍ර අසල ඒවා අල්ලාගැනීමේ අවදානමක් තිබිය හැකිය.</span></li>
+          <li><strong>යන්ත්‍රය ක්‍රියාත්මකව තිබියදී සැකසීම හෝ පිරිසිදු කිරීම නොකරන්න.</strong><span>කොටසක් මාරු කිරීම, හිරවූ ද්‍රව්‍ය ඉවත් කිරීම හෝ පිරිසිදු කිරීම අවශ්‍ය නම් යන්ත්‍රය නවතා, බලය වෙන් කිරීම පිළිබඳ උපදෙස් ලබාගන්න.</span></li>
+          <li><strong>වැඩබිම පිළිවෙළට හා වියළිව තබන්න.</strong><span>අවහිරතා, වැගිරුණු තෙල් හෝ ද්‍රව්‍ය ඉවත් කර, මෙවලම් භාවිතයෙන් පසු නියමිත ස්ථානයේ තබන්න.</span></li>
+          <li><strong>අනෙක් අයගේ ආරක්ෂිත දුර රකින්න.</strong><span>අවධානය වෙනතකට යොමු නොකරන්න; යන්ත්‍රය වටා අනවශ්‍ය ලෙස රැස් නොවන්න; පියාසර කළ හැකි කැබලිවලින් අන් අය ආරක්ෂා කරන්න.</span></li>
+          <li><strong>හදිසි අවස්ථාවකට සූදානම් වන්න.</strong><span>නැවතුම් බොත්තම, ප්‍රථමාධාර හා ගිනි ආරක්ෂක උපකරණ ඇති ස්ථාන දැනගන්න; අනතුරක් හෝ තුවාලයක් සිදු වුවහොත් වහාම දන්වන්න.</span></li>
+          <li><strong>අවසන් වූ පසු ආරක්ෂිතව නවතා භාරදෙන්න.</strong><span>යන්ත්‍රය නවතා උපදෙස් අනුව බලය විසන්ධි කර, වැඩබිම හා මෙවලම් පරීක්ෂා කර භාර දෙන්න.</span></li>
+        </ol>
+        <p class="safety-warning"><strong>මතක තබාගන්න:</strong> මෙය සාමාන්‍ය අධ්‍යාපනික මඟපෙන්වීමකි; එක් එක් යන්ත්‍රයේ නීති වෙනස් විය හැකිය. පාසලේ ආරක්ෂණ නීති, ගුරුවරයාගේ උපදෙස්, යන්ත්‍රයේ උපදෙස් සහ ශ්‍රී ලංකාවේ අදාළ නීති සැමවිටම ප්‍රමුඛ වේ.</p>
+      </div>
+
+    </section>
+
+    <section class="section exam-section" id="විභාග-සටහන" aria-labelledby="exam-title">
+      <div class="section-heading">
+        <p class="section-kicker">06 <span>·</span> වැදගත් පද හා සම්බන්ධතා</p>
+        <h2 id="exam-title">විභාගයට මතක තබාගත යුතු කරුණු</h2>
+        <p class="section-intro">පදවල අර්ථය පමණක් නොව, ඒවා උදාහරණයකට සම්බන්ධ කර පැහැදිලි කිරීමටත් පුහුණු වන්න.</p>
+      </div>
+      <div class="exam-concepts">
+        <article class="exam-concept">
+          <h3>තාක්ෂණික හැරවුම් ලක්ෂ්‍යය</h3>
+          <p>මිනිසුන් වැඩ කරන, නිෂ්පාදනය කරන හෝ ජීවත් වන ආකාරය සැලකිය යුතු ලෙස වෙනස් කළ සොයාගැනීමක් හෝ තාක්ෂණික වෙනසක් හැරවුම් ලක්ෂ්‍යයක් ලෙස හඳුන්වයි.</p>
+          <p class="exam-example"><strong>උදාහරණ:</strong> වාෂ්ප බලයෙන් ක්‍රියා කළ යන්ත්‍ර, ට්‍රාන්සිස්ටරය සහ පරිගණකය.</p>
+        </article>
+        <article class="exam-concept">
+          <h3>තාක්ෂණය යල්පැනීම</h3>
+          <p>නව දැනුම, නව තාක්ෂණ හෝ වෙනස් වූ අවශ්‍යතා හේතුවෙන් කලින් භාවිත කළ තාක්ෂණයක් අඩු ප්‍රයෝජනවත්, අකාර්යක්ෂම හෝ යෝග්‍ය නොවන තත්ත්වයට පත්වීමයි.</p>
+          <p class="exam-example"><strong>සලකා බලන්න:</strong> යල්පැන ගිය උපකරණයක් වෙනුවට අලුත් එකක් තෝරන විට පිරිවැය, අලුත්වැඩියාව සහ ඉවතලන ද්‍රව්‍යවල පාරිසරික බලපෑමද සසඳන්න.</p>
+        </article>
+        <article class="exam-concept">
+          <h3>තාක්ෂණය මානවකරණය කිරීම</h3>
+          <p>තාක්ෂණික විසඳුම් සැලසුම් හා භාවිත කරන විට මිනිසාගේ සැබෑ අවශ්‍යතා, ආරක්ෂාව, පහසුව, හැකියාවන් සහ යහපැවැත්ම මූලික කරගැනීමයි.</p>
+          <p class="exam-example"><strong>උදාහරණ:</strong> භාවිත කරන්නාට තේරුම්ගත හැකි, ආරක්ෂිත සහ ඔහුගේ හෝ ඇයගේ හැකියාවට ගැළපෙන උපකරණයක් සැලසුම් කිරීම.</p>
+        </article>
+        <article class="exam-concept">
+          <h3>තාක්ෂණයේ වාණිජකරණය</h3>
+          <p>නව අදහසක්, දැනුමක් හෝ නිර්මාණයක් මිනිසුන්ට භාවිත කළ හැකි භාණ්ඩයක් හෝ සේවාවක් බවට පත් කර, අවශ්‍ය පරිශීලකයන් වෙත ලබාදීමේ ක්‍රියාවලියයි.</p>
+          <p class="exam-example"><strong>මතක තබාගන්න:</strong> නිර්මාණය ක්‍රියාකාරී වීම පමණක් ප්‍රමාණවත් නොවේ; එය අවශ්‍යතාවකට ගැළපිය යුතු අතර නිෂ්පාදනය හා භාවිතයද ප්‍රායෝගික විය යුතුය.</p>
+        </article>
+      </div>
+      <div class="management-study">
+        <h3>තාක්ෂණ කළමනාකරණයේ ප්‍රධාන කාර්යයන්</h3>
+        <p>අරමුණක් සාර්ථක කරගැනීමට තාක්ෂණික දැනුම, මිනිසුන් සහ අනෙකුත් සම්පත් එකට සම්බන්ධ කර නිසි ලෙස යොදාගැනීම තාක්ෂණ කළමනාකරණයට අයත් වේ.</p>
+        <ol class="management-flow">
+          <li><strong>සැලසුම්කරණය</strong><span>අරමුණු, කාර්යයන්, කාලය හා අවශ්‍ය සම්පත් තීරණය කිරීම.</span></li>
+          <li><strong>සැලසුම් නිර්මාණය</strong><span>අවශ්‍යතාවට ගැළපෙන විසඳුම හා එය ක්‍රියා කරන ආකාරය සකස් කිරීම.</span></li>
+          <li><strong>සංවිධානය</strong><span>කාර්යයන්, පුද්ගලයන් හා සම්පත් පිළිවෙළකට සම්බන්ධ කිරීම.</span></li>
+          <li><strong>මෙහෙයුම</strong><span>සැලසුමට අනුව නිෂ්පාදනය හෝ සේවාව ක්‍රියාත්මක කිරීම.</span></li>
+          <li><strong>පාලනය</strong><span>ප්‍රගතිය හා ප්‍රතිඵල පරීක්ෂා කර අඩුපාඩු නිවැරදි කිරීම.</span></li>
+        </ol>
+      </div>
+      <div class="industry-study">
+        <div>
+          <p class="card-label">උදාහරණයක් විමසන ආකාරය</p>
+          <h3>දේශීය කර්මාන්තයක තාක්ෂණය හඳුනාගැනීම</h3>
+          <p>කර්මාන්තයක් ගැන ප්‍රශ්නයක් ලැබුණු විට භාවිත කරන තාක්ෂණය පමණක් ලැයිස්තුගත නොකරන්න. අවශ්‍යතාව, භාවිත කරන ක්‍රම, යොදාගන්නා සම්පත් සහ ලැබෙන ප්‍රතිඵල එකිනෙකට සම්බන්ධ කර විස්තර කරන්න.</p>
+        </div>
+        <div class="industry-example-grid">
+          <div><strong>කර්මාන්තය</strong><span>තේ නිෂ්පාදනය හෝ ඇඟලුම් නිෂ්පාදනය</span></div>
+          <div><strong>තාක්ෂණික ක්‍රම</strong><span>සැකසීම, මිනුම් කිරීම, යන්ත්‍ර භාවිතය හා තත්ත්ව පරීක්ෂාව</span></div>
+          <div><strong>සම්පත්</strong><span>මිනිස් ශ්‍රමය, අමුද්‍රව්‍ය, ජලය, බලශක්තිය හා උපකරණ</span></div>
+          <div><strong>විමසිය යුතු ප්‍රතිඵල</strong><span>නිෂ්පාදන ගුණාත්මකභාවය, කාර්යක්ෂමතාව, නාස්තිය, රැකියා හා පරිසර බලපෑම</span></div>
+        </div>
+      </div>
+      <div class="self-check">
+        <h3>ඔබටම පිළිතුරු දී බලන්න</h3>
+        <details>
+          <summary>තාක්ෂණික හැරවුම් ලක්ෂ්‍යයක් යනු කුමක්ද? උදාහරණයක් දෙන්න.</summary>
+          <p>මිනිස් ජීවිතය හෝ වැඩ කරන ක්‍රම සැලකිය යුතු ලෙස වෙනස් කළ සොයාගැනීමක් හෝ තාක්ෂණික වෙනසකි. උදාහරණයක් ලෙස, වාෂ්ප බලයෙන් ක්‍රියා කළ යන්ත්‍ර නිෂ්පාදනය හා ප්‍රවාහනය වෙනස් කළේය.</p>
+        </details>
+        <details>
+          <summary>තාක්ෂණය යල්පැනීමෙන් පසු තීරණයක් ගන්නා විට සලකා බැලිය යුත්තේ මොනවාද?</summary>
+          <p>නව විසඳුමේ ප්‍රයෝජනය, පිරිවැය, පවතින සම්පත්, අලුත්වැඩියා හැකියාව, පරිශීලක අවශ්‍යතා සහ පැරණි උපකරණ ඉවතලීමෙන් ඇතිවන පාරිසරික බලපෑම සලකා බලන්න.</p>
+        </details>
+        <details>
+          <summary>තාක්ෂණික විසඳුමක් මානවකරණය වී ඇති බව පෙන්වන කරුණු මොනවාද?</summary>
+          <p>එය මිනිසුන්ගේ සැබෑ අවශ්‍යතාවකට ගැළපීම, භාවිතයට පහසු හා ආරක්ෂිත වීම සහ විවිධ පරිශීලකයන්ගේ හැකියාවන් හා යහපැවැත්ම සැලකිල්ලට ගැනීම එයට ඇතුළත් වේ.</p>
+        </details>
+        <details>
+          <summary>දේශීය කර්මාන්තයක තාක්ෂණයේ බලපෑම පිළිතුරකදී පැහැදිලි කරන්නේ කෙසේද?</summary>
+          <p>කර්මාන්තය, එහි භාවිත කරන තාක්ෂණික ක්‍රම, අවශ්‍ය මානව හා පරිසර සම්පත්, නිෂ්පාදනයට හෝ සේවාවට ලැබෙන ප්‍රයෝජන සහ ඇතිවිය හැකි අභියෝග එකට සම්බන්ධ කර පැහැදිලි කරන්න.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section activity-section" id="අත්හදාබැලීම්" aria-labelledby="activity-title">
+      <div class="section-heading">
+        <p class="section-kicker">07 <span>·</span> අත්හදා බලමු</p>
+        <h2 id="activity-title">තාක්ෂණය තෝරමු, අදහස පරීක්ෂා කරමු</h2>
+        <p class="section-intro">පහත අනුකරණ දෙකෙන් සම්පත් සීමා යටතේ තාක්ෂණයක් තෝරාගැනීමත්, පාඩමේ ප්‍රධාන අදහස් හඳුනාගැනීමත් පුහුණු වන්න.</p>
+      </div>
+
+      <article class="simulation-card" aria-labelledby="water-simulation-title">
+        <div class="simulation-heading">
+          <span class="activity-symbol" aria-hidden="true">ජල</span>
+          <div>
+            <p class="card-label">අනුකරණය 01</p>
+            <h3 id="water-simulation-title">ගෙවත්තට ගැළපෙන ජල විසඳුමක් තෝරන්න</h3>
+            <p>පවතින අයවැය, නඩත්තු කුසලතා සහ ජල අවශ්‍යතාව වෙනස් කර ප්‍රතිඵලය බලන්න.</p>
+          </div>
+        </div>
+        <div class="simulation-grid">
+          <div class="sim-controls">
+            <label class="sim-control" for="sim-budget">
+              <span>ලබාගත හැකි අයවැය <output id="sim-budget-value" for="sim-budget">3</output></span>
+              <input id="sim-budget" type="range" min="1" max="5" value="3">
+              <span class="range-ends"><span>සීමිත</span><span>වැඩි</span></span>
+            </label>
+            <label class="sim-control" for="sim-skill">
+              <span>ප්‍රදේශයේ නඩත්තු කුසලතා <output id="sim-skill-value" for="sim-skill">3</output></span>
+              <input id="sim-skill" type="range" min="1" max="5" value="3">
+              <span class="range-ends"><span>අඩු</span><span>ඉහළ</span></span>
+            </label>
+            <label class="sim-control" for="sim-demand">
+              <span>වගාවේ ජල අවශ්‍යතාව <output id="sim-demand-value" for="sim-demand">3</output></span>
+              <input id="sim-demand" type="range" min="1" max="5" value="3">
+              <span class="range-ends"><span>අඩු</span><span>ඉහළ</span></span>
+            </label>
+            <p class="sim-note">මෙය පාඩම සඳහා සකස් කළ සරල අනුකරණයකි. සැබෑ ව්‍යාපෘතියකට ස්ථානීය පරීක්ෂණ හා නිවැරදි තාක්ෂණික ගණනය කිරීම් අවශ්‍ය වේ.</p>
+          </div>
+          <div class="sim-results">
+            <h4>ගැළපීම අනුව ප්‍රතිඵල</h4>
+            <ol id="sim-results-list" class="sim-results-list" aria-live="polite"></ol>
+            <p id="sim-recommendation" class="sim-recommendation" role="status">සම්පත් තෝරන විට ගැළපෙන විකල්පය මෙහි පෙන්වයි.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="simulation-card quiz-card" aria-labelledby="quiz-title">
+        <div class="simulation-heading">
+          <span class="activity-symbol activity-symbol-violet" aria-hidden="true">?</span>
+          <div>
+            <p class="card-label">අනුකරණය 02</p>
+            <h3 id="quiz-title">තාක්ෂණික තීරණය හඳුනාගන්න</h3>
+            <p>සැබෑ ජීවිතයට සමීප අවස්ථාවක් කියවා ගැළපෙන පිළිතුර තෝරන්න.</p>
+          </div>
+        </div>
+        <div id="quiz-area" class="quiz-area" aria-live="polite">
+          <div class="quiz-meta"><span id="quiz-progress">ප්‍රශ්නය 1 / 4</span><span id="quiz-score">ලකුණු 0</span></div>
+          <h4 id="quiz-question">ගම්මානයක ජල ගැටලුවකට තාක්ෂණයක් තෝරන විට වඩාත් සුදුසු කරුණ කුමක්ද?</h4>
+          <div id="quiz-options" class="quiz-options">
+            <button type="button" class="quiz-option">වඩාත්ම මිල අධික උපකරණය තෝරාගැනීම</button>
+            <button type="button" class="quiz-option">ප්‍රදේශයේ අවශ්‍යතා, සම්පත් සහ නඩත්තු හැකියාව සලකා බැලීම</button>
+            <button type="button" class="quiz-option">අනෙක් ප්‍රදේශයක භාවිත වන ක්‍රමය නොවෙනස්ව යෙදීම</button>
+          </div>
+          <p id="quiz-feedback" class="quiz-feedback" role="status">ඔබේ පිළිතුර තෝරා ප්‍රතිඵලය බලන්න.</p>
+          <button id="quiz-next" class="button button-primary quiz-next" type="button" hidden>ඊළඟ ප්‍රශ්නය <span aria-hidden="true">→</span></button>
+        </div>
+      </article>
+    </section>
+
+    <section class="section impact-section" id="බලපෑම්" aria-labelledby="impact-title">
+      <div class="section-heading">
+        <p class="section-kicker">08 <span>·</span> ප්‍රතිඵල විමසමු</p>
+        <h2 id="impact-title">තාක්ෂණයේ බලපෑම්</h2>
+        <p class="section-intro">තාක්ෂණික වෙනසක් ප්‍රයෝජන ගෙන දෙන අතරම අභියෝගද ඇති කළ හැකිය. එහි ප්‍රතිඵල සමාජය, ආර්ථිකය හා පරිසරය තුළ විමසා බලමු.</p>
+      </div>
+      <div class="impact-grid">
+        <article class="impact-card">
+          <h3>සමාජයට</h3>
+          <div class="impact-column"><span class="impact-positive">ධනාත්මක</span><p>සන්නිවේදනය, දැනුම හා අධ්‍යාපනය වෙත ප්‍රවේශය පහසු කරයි. සෞඛ්‍ය, ප්‍රවාහන හා දෛනික සේවා වඩා කාර්යක්ෂමව සැපයීමට දායක විය හැකිය. උදාහරණයක් ලෙස, දුරස්ථ ප්‍රදේශවලට දුරකථන සන්නිවේදනයෙන් තොරතුරු හා සේවා ලබාගත හැකිය.</p></div>
+          <div class="impact-column impact-negative"><span>අභියෝග</span><p>තාක්ෂණයට ප්‍රවේශයේ අසමානතා, පෞද්ගලිකත්වය හා ආරක්ෂාව පිළිබඳ ගැටලු සහ ඇතැම් කාර්යයන් හෝ රැකියා වෙනස් වීම ඇති කළ හැකිය. නව ක්‍රම භාවිතයට පුහුණුව හා පහසුකම් අවශ්‍ය වේ.</p></div>
+        </article>
+        <article class="impact-card">
+          <h3>ආර්ථිකයට</h3>
+          <div class="impact-column"><span class="impact-positive">ධනාත්මක</span><p>දේශීය කෘෂිකර්මාන්තය, තේ හා ඇඟලුම් වැනි කර්මාන්තවල නිෂ්පාදන ප්‍රමාණය, ගුණාත්මකභාවය හා කාර්යක්ෂමතාව වැඩි කිරීමටත් නව සේවා හා ආදායම් අවස්ථා බිහිකිරීමටත් දායක විය හැකිය. යන්ත්‍ර සහ නිවැරදි මිනුම් භාවිතය නිෂ්පාදන අඩු නාස්තියකින් සකස් කිරීමට උපකාරී වේ.</p></div>
+          <div class="impact-column impact-negative"><span>අභියෝග</span><p>යන්ත්‍ර, පුහුණුව හා යටිතල පහසුකම් සඳහා ආයෝජන අවශ්‍ය විය හැකිය. තාක්ෂණික වෙනස්කම් සමඟ ඇතැම් කුසලතා යාවත්කාලීන කිරීමට සිදු වන අතර, කුඩා නිෂ්පාදකයන්ට වියදම් දැරීම අපහසු විය හැකිය.</p></div>
+        </article>
+        <article class="impact-card">
+          <h3>පරිසරයට</h3>
+          <div class="impact-column"><span class="impact-positive">ධනාත්මක</span><p>ජලය හා බලශක්තිය කාර්යක්ෂමව භාවිත කිරීමට, අපද්‍රව්‍ය අඩු කිරීමට සහ පුනර්ජනනීය බලශක්තිය යොදාගැනීමට උපකාරී විය හැකිය. වැසි ජලය රැස් කිරීම හා සූර්ය බලශක්තිය භාවිතය එයට උදාහරණ වේ.</p></div>
+          <div class="impact-column impact-negative"><span>අභියෝග</span><p>අමුද්‍රව්‍ය හා බලශක්තිය අධිකව භාවිත කිරීම, නිෂ්පාදන අපද්‍රව්‍ය සහ දූෂණය නිසි ලෙස පාලනය නොකළහොත් පරිසරයට හානි සිදු වේ. උපකරණ නිෂ්පාදනයේදී හා ඉවතලන විටද පරිසර බලපෑම් ඇති විය හැකිය.</p></div>
+        </article>
+      </div>
+      <h3 class="resource-heading">තාක්ෂණය සම්පත් භාවිත කරන ආකාරය</h3>
+      <div class="resource-comparison">
+        <article>
+          <h3>මානව සම්පත් කෙරෙහි බලපෑම</h3>
+          <p>තාක්ෂණය මිනිසුන්ගේ දැනුම, කුසලතා හා ශ්‍රමය යොදාගෙන ක්‍රියාත්මක වේ. එය කාර්යයන් පහසු කර නව කුසලතා ඉගෙනීමට ඉඩ සලසන අතර, වෙනස් වන වැඩ ක්‍රමවලට ගැළපෙන පුහුණුවද අවශ්‍ය කරයි.</p>
+        </article>
+        <article>
+          <h3>පරිසර සම්පත් කෙරෙහි බලපෑම</h3>
+          <p>ද්‍රව්‍ය, ජලය, භූමිය හා බලශක්තිය ලබාගැනීමේ සිට භාවිතය සහ අපද්‍රව්‍ය කළමනාකරණය දක්වා සෑම අදියරක්ම සලකා බලන්න. සම්පත් ඉතිරි කිරීම, නැවත භාවිතය සහ පරිසර හානිය අවම කිරීම තාක්ෂණික තේරීමේ කොටසකි.</p>
+        </article>
+      </div>
+      <div class="balance-note"><span aria-hidden="true">◎</span><p>තාක්ෂණික විසඳුමක සාර්ථකත්වය එහි ක්‍රියාකාරීත්වයෙන් පමණක් නොව, ජනතාවට සහ පරිසරයට ඇති සමස්ත බලපෑමෙන්ද මැනිය යුතුය.</p></div>
+    </section>
+
+    <section class="section sustainable-section" id="තිරසර-තාක්ෂණය" aria-labelledby="sustainable-title">
+      <div class="section-heading">
+        <p class="section-kicker">09 <span>·</span> අනාගතය සඳහා තෝරාගැනීම</p>
+        <h2 id="sustainable-title">යෝග්‍ය තාක්ෂණය හා තිරසර සංවර්ධනය</h2>
+        <p class="section-intro">හොඳ විසඳුමක් යනු ගැටලුවකට පිළිතුරු දෙන අතරම, එය භාවිත කරන ජනතාවට හා පරිසරයට ගැළපෙන විසඳුමකි.</p>
+      </div>
+      <div class="sustain-grid">
+        <article class="sustain-card appropriate-card">
+          <h3>යෝග්‍ය තාක්ෂණය</h3>
+          <p class="sustain-definition">යම් ප්‍රදේශයක ජනතාවගේ අවශ්‍යතා, සම්පත්, පරිසරය හා සමාජ තත්ත්වයන්ට ගැළපෙන තාක්ෂණයයි.</p>
+          <ul class="principle-list">
+            <li><span aria-hidden="true">✓</span> දේශීය අවශ්‍යතාවයට ගැළපීම</li>
+            <li><span aria-hidden="true">✓</span> ලබාගත හැකි සම්පත් හා කුසලතා භාවිතය</li>
+            <li><span aria-hidden="true">✓</span> දැරිය හැකි පිරිවැය සහ නඩත්තු පහසුව</li>
+            <li><span aria-hidden="true">✓</span> සමාජයට හා පරිසරයට ගැළපීම</li>
+          </ul>
+          <h4 class="sustain-subheading">ගැළපෙන තාක්ෂණයක් තෝරාගැනීමේදී</h4>
+          <p>එය විසඳිය යුතු ගැටලුවට සුදුසුද, භාවිත කරන්නන්ට තේරුම්ගත හැකිද, අවශ්‍ය ද්‍රව්‍ය සහ අලුත්වැඩියා පහසුකම් ප්‍රදේශයේ තිබේද යන්න විමසන්න. පිරිවැය පමණක් නොව, දිගුකාලීන නඩත්තුව හා සම්පත් වැයවීමද සැලකිල්ලට ගන්න.</p>
+          <div class="local-example"><strong>ප්‍රායෝගික උදාහරණය</strong><p>ගම්මානයක ජල අවශ්‍යතාව සඳහා දේශීය ද්‍රව්‍ය යොදා පහසුවෙන් නඩත්තු කළ හැකි වැසි ජල රැස්කිරීමේ ක්‍රමයක් තෝරාගැනීම.</p></div>
+        </article>
+        <article class="sustain-card sustainable-card">
+          <h3>තිරසර සංවර්ධනය</h3>
+          <p class="sustain-definition">වර්තමාන පරපුරේ අවශ්‍යතා සපුරාලන අතර, අනාගත පරපුරට තම අවශ්‍යතා සපුරාලීමට ඇති හැකියාවට හානි නොවන ලෙස සිදුකරන සංවර්ධනයයි.</p>
+          <div class="three-pillars" aria-label="තිරසර සංවර්ධනයේ පැතිකඩ තුන">
+            <div><strong>සමාජය</strong><small>සෞඛ්‍යය, ආරක්ෂාව, සමානාත්මතාව හා යහපැවැත්ම</small></div>
+            <div><strong>ආර්ථිකය</strong><small>රැකියා, නිෂ්පාදනය හා සම්පත් වගකීමෙන් යෙදවීම</small></div>
+            <div><strong>පරිසරය</strong><small>සම්පත් සුරැකීම, දූෂණය හා අපද්‍රව්‍ය අඩු කිරීම</small></div>
+          </div>
+          <p class="sustain-footnote">මෙම පැතිකඩ තුන සමබරව සලකා බැලීමෙන් එක් අංශයක දියුණුව වෙනත් අංශයකට හෝ අනාගත පරපුරට හානි නොවන බව තහවුරු කළ හැකිය.</p>
+        </article>
+      </div>
+      <aside class="management-strip">
+        <div class="management-copy">
+          <h3>මිනිසා කේන්ද්‍ර කරගත් තාක්ෂණය</h3>
+          <p>තාක්ෂණික විසඳුමක් සැලසුම් කරන විට එය භාවිත කරන පුද්ගලයන්ගේ අවශ්‍යතා, ආරක්ෂාව, පහසුව හා හැකියාවන් මුල් තැනට ගන්න. සම්පත් වගකීමෙන් භාවිත කර, ක්‍රියාත්මක කිරීමෙන් පසු ප්‍රතිඵල පරීක්ෂා කර අවශ්‍ය වෙනස්කම් කරන්න.</p>
+        </div>
+        <div class="management-steps" aria-label="තාක්ෂණ කළමනාකරණයේ කාර්යයන්">
+          <span>සැලසුම්කරණය</span>
+          <span>මෙහෙයවීම</span>
+          <span>පාලනය</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing-glow" aria-hidden="true"></div>
+      <p class="section-kicker">ප්‍රධාන අදහස</p>
+      <h2 id="closing-title">තාක්ෂණය තෝරන විට<br><span>අනාගතයත් සලකා බලමු.</span></h2>
+      <p>අවශ්‍යතාව හඳුනාගන්න. ගැළපෙන විසඳුම තෝරන්න. එහි බලපෑම වගකීමෙන් විමසන්න.</p>
+      <a href="#ආරම්භය" class="back-to-top">ඉහළට යන්න <span aria-hidden="true">↑</span></a>
+    </section>
+
+    <section class="section sources-section" id="මූලාශ්‍ර" aria-labelledby="sources-title">
+      <div class="section-heading">
+        <p class="section-kicker">අමතර කියවීම</p>
+        <h2 id="sources-title">භාවිත කළ මූලාශ්‍ර</h2>
+        <p class="section-intro">මෙම පාඩමේ කරුණු සකස් කිරීමට පරීක්ෂා කළ මූලික හා අමතර මූලාශ්‍ර සියල්ල මෙහි දැක්වේ.</p>
+      </div>
+      <aside class="source-panel">
+        <h3>පාඩම් මූලාශ්‍ර හා විමර්ශන</h3>
+        <ul>
+          <li><span class="source-citation"><strong>මෙම පාඩමේ ප්‍රධාන තොරතුරු ලබාගත් මූලාශ්‍රය:</strong> අ.පො.ස. උසස් පෙළ, 12 ශ්‍රේණිය, ඉංජිනේරු තාක්ෂණවේදය — සිංහල මාධ්‍ය ගුරු මාර්ගෝපදේශය</span></li>
+          <li><a href="https://www.nie.ac.lk/" target="_blank" rel="noopener noreferrer">ජාතික අධ්‍යාපන ආයතනයේ නිල වෙබ් අඩවිය</a></li>
+          <li><a href="https://www.abet.org/accreditation/accreditation-criteria/criteria-for-accrediting-engineering-technology-programs-2025-2026/" target="_blank" rel="noopener noreferrer">ඉංජිනේරු තාක්ෂණ අධ්‍යයන නිර්ණායක හා කුසලතා</a></li>
+          <li><a href="https://whc.unesco.org/en/list/201/" target="_blank" rel="noopener noreferrer">පොළොන්නරුව පිළිබඳ ලෝක උරුම විස්තරය</a></li>
+          <li><a href="https://www.asme.org/about-asme/engineering-history" target="_blank" rel="noopener noreferrer">ඉංජිනේරු ඉතිහාසය පිළිබඳ වෘත්තීය සංගමයේ ලිපිය</a></li>
+          <li><a href="https://eng.libretexts.org/Bookshelves/Materials_Science" target="_blank" rel="noopener noreferrer">ද්‍රව්‍ය විද්‍යාව පිළිබඳ විවෘත අධ්‍යයන පොත් එකතුව</a></li>
+          <li><a href="https://www.nist.gov/mml/materials-science-and-engineering-division" target="_blank" rel="noopener noreferrer">ද්‍රව්‍ය විද්‍යාව, ව්‍යුහය හා ගුණාංග පිළිබඳ පර්යේෂණ</a></li>
+          <li><a href="https://www.hse.gov.uk/work-equipment-machinery/puwer-overview.htm" target="_blank" rel="noopener noreferrer">වැඩ උපකරණ භාවිතය හා ආරක්ෂණ අවශ්‍යතා පිළිබඳ මඟපෙන්වීම</a></li>
+          <li><a href="https://www.hse.gov.uk/work-equipment-machinery/training-competence.htm" target="_blank" rel="noopener noreferrer">උපකරණ භාවිතයට අවශ්‍ය පුහුණුව හා නිපුණතාව</a></li>
+          <li><a href="https://www.hse.gov.uk/work-equipment-machinery/inspection.htm" target="_blank" rel="noopener noreferrer">වැඩ උපකරණ පරීක්ෂා කිරීම පිළිබඳ මඟපෙන්වීම</a></li>
+          <li><a href="https://www.hse.gov.uk/work-equipment-machinery/maintenance.htm" target="_blank" rel="noopener noreferrer">වැඩ උපකරණ නඩත්තු කිරීම හා ආරක්ෂාව</a></li>
+        </ul>
+        <p class="source-note">ගුරු මාර්ගෝපදේශය මෙම පාඩමේ ප්‍රධාන තොරතුරු මූලාශ්‍රයයි. එම ලේඛනයට පොදු වෙබ් අඩවියක සෘජු ගොනු සබැඳියක් තහවුරු කළ නොහැකි බැවින් මෙහි මූලාශ්‍ර නාමය පමණක් දක්වා ඇත. අනෙකුත් මූලාශ්‍රවල නාම තෝරාගත් විට අදාළ වෙබ් අඩවිය විවෘත වේ. ඒවායේ කරුණු අදාළ ඉතිහාස, ද්‍රව්‍ය හා වැඩපොළ ආරක්ෂණ තොරතුරු පරීක්ෂා කිරීමට භාවිත කළ අමතර විමර්ශන වන අතර, ශ්‍රී ලංකා නීති හෝ විෂය නිර්දේශයට ආදේශක නොවේ. කරුණු සිංහලෙන් සාරාංශ කර ඇති අතර මුල් ලේඛනවල සම්පූර්ණ පරිවර්තන නොවේ.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ඉංජිනේරු තාක්ෂණවේදය</p>
+    <span>ඉගෙනීම, නිර්මාණය හා තිරසර අනාගතය සඳහා</span>
+  </footer>
+  <script>
+    const budgetInput = document.querySelector("#sim-budget");
+    const skillInput = document.querySelector("#sim-skill");
+    const demandInput = document.querySelector("#sim-demand");
+    const resultList = document.querySelector("#sim-results-list");
+    const recommendation = document.querySelector("#sim-recommendation");
+    const solutions = [
+      { name: "වැසි ජලය රැස් කිරීම", cost: 2, skill: 2, supply: 2, detail: "අඩු වියදමකින් සකස් කළ හැකි නමුත් ජල රැස්වීම වර්ෂාව මත රඳා පවතී." },
+      { name: "බිංදු ජල සම්පාදනය", cost: 3, skill: 3, supply: 4, detail: "ජලය ඉලක්කගතව සපයන අතර නල පද්ධතිය පරීක්ෂා කර නඩත්තු කළ යුතුය." },
+      { name: "විදුලි ජල පොම්පය", cost: 5, skill: 4, supply: 5, detail: "ජලය ලබාදීමේ හැකියාව ඉහළ වුවත් වැඩි වියදමක් හා බලශක්තියක් අවශ්‍ය වේ." }
+    ];
+
+    function updateSimulation() {
+      const budget = Number(budgetInput.value);
+      const skill = Number(skillInput.value);
+      const demand = Number(demandInput.value);
+      document.querySelector("#sim-budget-value").value = budget;
+      document.querySelector("#sim-skill-value").value = skill;
+      document.querySelector("#sim-demand-value").value = demand;
+
+      const ranked = solutions.map(solution => {
+        const penalties = Math.max(0, solution.cost - budget) * 18
+          + Math.max(0, solution.skill - skill) * 14
+          + Math.max(0, demand - solution.supply) * 17;
+        return { ...solution, score: Math.max(0, 100 - penalties) };
+      }).sort((first, second) => second.score - first.score);
+
+      resultList.replaceChildren(...ranked.map((solution, index) => {
+        const item = document.createElement("li");
+        item.className = "sim-result-item";
+        const heading = document.createElement("div");
+        heading.className = "sim-result-heading";
+        const name = document.createElement("strong");
+        name.textContent = `${index + 1}. ${solution.name}`;
+        const score = document.createElement("span");
+        score.textContent = `ගැළපීම ${solution.score}%`;
+        heading.append(name, score);
+        const track = document.createElement("div");
+        track.className = "sim-score-track";
+        track.setAttribute("role", "img");
+        track.setAttribute("aria-label", `${solution.name}: ගැළපීම ${solution.score}%`);
+        const bar = document.createElement("span");
+        bar.style.width = `${solution.score}%`;
+        track.append(bar);
+        const detail = document.createElement("p");
+        detail.textContent = solution.detail;
+        item.append(heading, track, detail);
+        return item;
+      }));
+
+      recommendation.textContent = `මෙම තේරීම් අනුව වඩාත් ගැළපෙන්නේ ${ranked[0].name} යි. තවත් සම්පත් හෝ කොන්දේසි වෙනස් කළ විට ප්‍රතිඵලයද වෙනස් විය හැකිය.`;
+    }
+
+    [budgetInput, skillInput, demandInput].forEach(input => input.addEventListener("input", updateSimulation));
+    updateSimulation();
+
+    const questions = [
+      {
+        question: "ගම්මානයක ජල ගැටලුවකට තාක්ෂණයක් තෝරන විට වඩාත් සුදුසු කරුණ කුමක්ද?",
+        options: ["වඩාත්ම මිල අධික උපකරණය තෝරාගැනීම", "ප්‍රදේශයේ අවශ්‍යතා, සම්පත් සහ නඩත්තු හැකියාව සලකා බැලීම", "අනෙක් ප්‍රදේශයක භාවිත වන ක්‍රමය නොවෙනස්ව යෙදීම"],
+        answer: 1,
+        explanation: "ප්‍රදේශයේ අවශ්‍යතා, සම්පත් සහ නඩත්තු හැකියාවට ගැළපෙන විසඳුමක් යෝග්‍ය තාක්ෂණයක් වේ."
+      },
+      {
+        question: "වාෂ්ප බලයෙන් ක්‍රියා කළ යන්ත්‍ර බහුල වීමෙන් ඇති වූ ප්‍රධාන වෙනස කුමක්ද?",
+        options: ["නිෂ්පාදනය හා ප්‍රවාහනය යන්ත්‍රගතව පුළුල් වීම", "සියලුම අත්කම් හා කුසලතා අතුරුදහන් වීම", "ගල් මෙවලම් පමණක් නිෂ්පාදනය කිරීම"],
+        answer: 0,
+        explanation: "වාෂ්ප බලය යන්ත්‍රගත නිෂ්පාදනය හා ප්‍රවාහනය පුළුල් කරමින් ජීවන හා වැඩ රටා වෙනස් කළේය."
+      },
+      {
+        question: "වර්තමාන අවශ්‍යතා සපුරාලන අතර අනාගත පරපුරේ හැකියාවට හානි නොකිරීම හඳුන්වන්නේ කුමක් ලෙසද?",
+        options: ["තාක්ෂණය යල්පැනීම", "වාණිජකරණය", "තිරසර සංවර්ධනය"],
+        answer: 2,
+        explanation: "අනාගත පරපුරට තම අවශ්‍යතා සපුරාලීමට ඇති හැකියාව රැකීම තිරසර සංවර්ධනයේ මූලික අදහසයි."
+      },
+      {
+        question: "තාක්ෂණික විසඳුමක් මානවකරණය කිරීමෙන් අදහස් වන්නේ කුමක්ද?",
+        options: ["නිෂ්පාදනයේ වේගය පමණක් වැඩි කිරීම", "මිනිසුන්ගේ අවශ්‍යතා, ආරක්ෂාව හා හැකියාවන්ට මුල් තැන දීම", "සියලුම කාර්යයන් යන්ත්‍රයකට පැවරීම"],
+        answer: 1,
+        explanation: "මානවකරණයේදී තාක්ෂණය සැලසුම් කර භාවිත කරන්නේ මිනිසුන්ගේ අවශ්‍යතා හා යහපැවැත්ම කේන්ද්‍ර කරගෙනය."
+      }
+    ];
+    let questionIndex = 0;
+    let score = 0;
+    let answered = false;
+    const questionElement = document.querySelector("#quiz-question");
+    const optionsElement = document.querySelector("#quiz-options");
+    const feedbackElement = document.querySelector("#quiz-feedback");
+    const nextButton = document.querySelector("#quiz-next");
+
+    function showQuestion() {
+      const question = questions[questionIndex];
+      answered = false;
+      document.querySelector("#quiz-progress").textContent = `ප්‍රශ්නය ${questionIndex + 1} / ${questions.length}`;
+      document.querySelector("#quiz-score").textContent = `ලකුණු ${score}`;
+      questionElement.textContent = question.question;
+      feedbackElement.textContent = "ඔබේ පිළිතුර තෝරා ප්‍රතිඵලය බලන්න.";
+      nextButton.hidden = true;
+      nextButton.textContent = "ඊළඟ ප්‍රශ්නය →";
+      optionsElement.replaceChildren(...question.options.map((option, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "quiz-option";
+        button.textContent = option;
+        button.addEventListener("click", () => answerQuestion(index));
+        return button;
+      }));
+    }
+
+    function answerQuestion(selectedIndex) {
+      if (answered) return;
+      answered = true;
+      const question = questions[questionIndex];
+      const correct = selectedIndex === question.answer;
+      if (correct) score += 1;
+      [...optionsElement.children].forEach((button, index) => {
+        button.disabled = true;
+        if (index === question.answer) button.classList.add("is-correct");
+        else if (index === selectedIndex) button.classList.add("is-incorrect");
+      });
+      document.querySelector("#quiz-score").textContent = `ලකුණු ${score}`;
+      feedbackElement.textContent = `${correct ? "නිවැරදියි!" : "මෙවර පිළිතුර නිවැරදි නැහැ."} ${question.explanation}`;
+      nextButton.hidden = false;
+      if (questionIndex === questions.length - 1) nextButton.textContent = "නැවත අරඹන්න";
+    }
+
+    nextButton.addEventListener("click", () => {
+      if (questionIndex === questions.length - 1) {
+        questionIndex = 0;
+        score = 0;
+      } else {
+        questionIndex += 1;
+      }
+      showQuestion();
+    });
+    showQuestion();
+  </script>
+</body>
+</html>

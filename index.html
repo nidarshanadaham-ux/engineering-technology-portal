@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="si">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1622">
+  <title>ආරක්ෂිත පිවිසුම | ඉංජිනේරු තාක්ෂණවේදය</title>
+  <style>
+    :root{color-scheme:dark;font-family:"Noto Sans Sinhala","Iskoola Pota","Nirmala UI",system-ui,sans-serif}
+    *{box-sizing:border-box}
+    body{min-height:100vh;margin:0;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at 50% 0,#174b7d 0,#0d2f55 45%,#091522 100%);color:#f0f6fc}
+    main{width:min(100%,440px);padding:30px 24px;border:1px solid rgba(43,160,184,.65);border-radius:18px;background:rgba(23,37,51,.96);box-shadow:0 20px 55px rgba(0,0,0,.4);text-align:center}
+    .icon{font-size:2.7rem;margin-bottom:10px}
+    h1{margin:0 0 8px;font-size:1.35rem}
+    p{margin:0 0 18px;color:#b9c9d6;line-height:1.7}
+    form{display:grid;gap:12px}
+    label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    input{width:100%;padding:13px 14px;border:1px solid #496276;border-radius:9px;background:#0d1822;color:#fff;font-size:1rem}
+    input:focus{outline:2px solid #52b7d1;outline-offset:2px}
+    button{padding:12px;border:0;border-radius:9px;background:#0b7a75;color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+    button:disabled{opacity:.7;cursor:wait}
+    #message{min-height:1.5em;margin:0;color:#ff9b9b;font-size:.9rem}
+    footer{margin-top:20px;padding-top:14px;border-top:1px solid #34495c;color:#a6b8c5;font-size:.78rem;line-height:1.6}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="icon" aria-hidden="true">🔐</div>
+    <h1>ආරක්ෂිත පිවිසුම</h1>
+    <p>උසස් පෙළ ඉංජිනේරු තාක්ෂණවේදය පාඩම් මාලාව සඳහා පිවිසීමට Passkey එක ඇතුළත් කරන්න.</p>
+    <form id="login-form">
+      <label for="passkey">Passkey</label>
+      <input id="passkey" name="passkey" type="password" autocomplete="current-password" placeholder="Passkey ඇතුළත් කරන්න" required>
+      <button id="submit" type="submit">පිවිසෙන්න →</button>
+      <p id="message" role="alert" aria-live="polite"></p>
+    </form>
+    <footer>Engineering Technology Educational Portal<br>K.A. Nirodha Maduranga · Karagaskada Central College</footer>
+  </main>
+  <script>
+    const form = document.getElementById("login-form");
+    const field = document.getElementById("passkey");
+    const button = document.getElementById("submit");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      message.textContent = "";
+      button.disabled = true;
+      try {
+        const response = await fetch("/api/auth", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ passkey: field.value })
+        });
+        if (response.status === 401) {
+          message.textContent = "වැරදි Passkey එකකි. නැවත උත්සාහ කරන්න.";
+          field.focus();
+          field.select();
+          return;
+        }
+        if (!response.ok) throw new Error("Login service returned " + response.status);
+        sessionStorage.setItem("et_site_auth_v2", "ok");
+        window.location.replace("/Final.html");
+      } catch (error) {
+        console.error("Could not sign in.", error);
+        message.textContent = "පිවිසුම් සේවාවට සම්බන්ධ විය නොහැක. පසුව නැවත උත්සාහ කරන්න.";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

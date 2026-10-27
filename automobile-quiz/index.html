@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="si">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d2f55">
+  <meta name="description" content="ශ්‍රී ලංකා අ.පො.ස. උසස් පෙළ 12 වසර ඉංජිනේරු තාක්ෂණවේදයේ මෝටර් රථ තාක්ෂණ ඒකකය සඳහා සිංහල ප්‍රශ්නාවලිය.">
+  <title>12 වසර ET · මෝටර් රථ තාක්ෂණ ප්‍රශ්නාවලිය</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;500;600;700;800&family=Noto+Serif+Sinhala:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #e8f0f7;
+      --muted: #aab9c8;
+      --line: #30475d;
+      --paper: #10263d;
+      --surface: #1a324a;
+      --page-bg: #091a2b;
+      --page-title: #fff;
+      --navy: #0d2f55;
+      --status-bg: #0d2f55;
+      --option-bg: #142c44;
+      --feedback-bg: #10243a;
+      --explanation-bg: #193149;
+      --soft-bg: #203a53;
+      --progress-bg: rgba(255,255,255,.25);
+      --blue: #1f6fb2;
+      --blue-soft: #e7f2fb;
+      --green: #4fd18b;
+      --green-soft: #173b30;
+      --red: #ff8585;
+      --red-soft: #452a32;
+      --gold: #e8a33d;
+      --blue-text: #15598f;
+      --red-text: #ffc0c4;
+      --neutral-text: #d7e3ed;
+      --subtle-text: #afc0d0;
+      --category-text: #d7e7f5;
+      --option-letter-text: #d2e0ec;
+      --option-letter-border: #40576d;
+      --highlight-border: #2ba0b8;
+      font-family: "Noto Sans Sinhala", "Iskoola Pota", "Nirmala UI", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      color: var(--ink);
+      background: var(--page-bg);
+      transition: background-color .2s ease, color .2s ease;
+    }
+
+    button { font: inherit; }
+
+    .page { width: min(940px, 100%); margin: 0 auto; padding: 22px 22px 48px; }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding: 14px 18px;
+      border-bottom: 3px solid var(--gold);
+      border-radius: 12px;
+      background: var(--navy);
+      color: var(--page-title);
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand h1 { font-family: "Noto Serif Sinhala", "Noto Sans Sinhala", "Iskoola Pota", serif; }
+    .top-actions { display: flex; align-items: center; gap: 8px; }
+
+    .brand-mark {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.1);
+      font-size: 23px;
+    }
+
+    .brand h1 { margin: 0; font-size: clamp(17px, 3vw, 22px); line-height: 1.4; }
+    .brand p { margin: 2px 0 0; color: rgba(255,255,255,.82); font-size: 13px; }
+
+    .restart {
+      padding: 9px 13px;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 10px;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .restart:hover { background: rgba(255,255,255,.12); }
+    .restart:focus-visible, .option:focus-visible {
+      outline: 3px solid #2ba0b8;
+      outline-offset: 3px;
+    }
+
+    .quiz-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--paper);
+      box-shadow: 0 12px 34px rgba(13,47,85,.1);
+    }
+
+    .status {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      padding: 16px 28px 14px;
+      border-bottom: 2px solid var(--gold);
+      border-radius: 21px 21px 0 0;
+      background: var(--status-bg);
+      box-shadow: 0 5px 16px rgba(13,47,85,.16);
+      backdrop-filter: blur(12px);
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .question-count { color: #fff; font-size: 14px; font-weight: 750; }
+    .score-pill, .wrong-pill, .attempted-pill {
+      padding: 7px 12px;
+      color: var(--blue-text);
+      border-radius: 999px;
+      background: #e7f2fb;
+      font-size: 13px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+    .wrong-pill { color: var(--red-text); background: var(--red-soft); }
+    .attempted-pill { color: #233a50; background: #e2eaf1; }
+
+    .progress-track { height: 8px; overflow: hidden; border-radius: 99px; background: var(--progress-bg); }
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--gold), #ffd887);
+      transition: width .25s ease;
+    }
+
+    .question-area { display: grid; gap: 18px; padding: 22px; }
+    .question-card {
+      scroll-margin-top: 114px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--option-bg);
+    }
+    .question-card.is-current { border-color: var(--highlight-border); box-shadow: 0 0 0 2px rgba(31,111,178,.1); }
+    .question-card + .question-card { margin-top: 0; }
+    .question-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .question-number { color: var(--subtle-text); font-size: 13px; font-weight: 800; }
+    .category {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      color: var(--category-text);
+      border-radius: 7px;
+      background: var(--soft-bg);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .question {
+      margin: 12px 0 18px;
+      font-size: clamp(18px, 2.5vw, 22px);
+      line-height: 1.65;
+      letter-spacing: -.15px;
+    }
+
+    .options { display: grid; gap: 11px; }
+
+    .option {
+      display: grid;
+      grid-template-columns: 35px 1fr;
+      align-items: start;
+      gap: 12px;
+      width: 100%;
+      padding: 14px 16px;
+      color: var(--ink);
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--option-bg);
+      cursor: pointer;
+      transition: border-color .16s ease, background .16s ease, transform .16s ease;
+    }
+
+    .option:not(:disabled):hover { transform: translateY(-1px); border-color: var(--blue); background: var(--surface); }
+    .option:disabled { cursor: default; }
+
+    .option-letter {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      color: var(--option-letter-text);
+      border: 1px solid var(--option-letter-border);
+      border-radius: 9px;
+      background: var(--surface);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .option-text { padding-top: 2px; font-size: 15px; line-height: 1.65; }
+    .option.correct { border-color: #79c69a; background: var(--green-soft); }
+    .option.correct .option-letter { color: #0b2a1c; border-color: var(--green); background: var(--green); }
+    .option.incorrect { border-color: #e29a9e; background: var(--red-soft); }
+    .option.incorrect .option-letter { color: #3a151a; border-color: var(--red); background: var(--red); }
+
+    .feedback {
+      display: none;
+      margin-top: 23px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--feedback-bg);
+    }
+
+    .feedback.visible { display: block; animation: appear .2s ease-out; }
+    @keyframes appear { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .feedback-heading { margin: 0 0 13px; font-size: 16px; }
+    .feedback-heading.good { color: var(--green); }
+    .feedback-heading.bad { color: var(--red); }
+    .explanations { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+    .explanations li {
+      padding: 11px 12px;
+      border-left: 3px solid #d6deed;
+      border-radius: 0 8px 8px 0;
+      background: var(--explanation-bg);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .explanations li.is-correct { border-left-color: var(--green); }
+    .explanations li.is-selected-wrong { border-left-color: var(--red); }
+    .explanation-label { display: block; margin-bottom: 3px; font-weight: 750; }
+
+    .footer-note { margin: 17px 0 0; color: var(--muted); text-align: center; font-size: 12px; line-height: 1.7; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    @media (max-width: 600px) {
+      .page { padding: 18px 12px 30px; }
+      .topbar { align-items: flex-start; margin-bottom: 15px; padding: 12px; }
+      .top-actions { align-items: stretch; }
+      .brand-mark { width: 40px; height: 40px; border-radius: 12px; }
+      .brand p { font-size: 11px; }
+      .restart { padding: 8px 10px; font-size: 12px; }
+      .quiz-card { border-radius: 17px; }
+      .status { padding: 12px 12px 11px; }
+      .status-row { gap: 7px; margin-bottom: 10px; }
+      .question-count { width: 100%; }
+      .score-pill, .wrong-pill, .attempted-pill { padding: 6px 9px; font-size: 12px; }
+      .question-area { gap: 13px; padding: 13px 10px; }
+      .question-card { padding: 16px 12px; scroll-margin-top: 136px; }
+      .question { margin: 12px 0 15px; }
+      .option { grid-template-columns: 31px 1fr; gap: 9px; padding: 12px 11px; }
+      .option-letter { width: 28px; height: 28px; }
+      .option-text { font-size: 14px; }
+      .feedback { padding: 14px 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">⚙️</div>
+        <div>
+          <h1>මෝටර් රථ තාක්ෂණ ප්‍රශ්නාවලිය</h1>
+          <p>12 වසර · අ.පො.ස. උසස් පෙළ ඉංජිනේරු තාක්ෂණවේදය</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="restart" id="restartButton" type="button">↻ මුල සිට</button>
+      </div>
+    </header>
+
+    <section class="quiz-card" aria-label="රථවාහන තාක්ෂණ ප්‍රශ්නාවලිය">
+      <div class="status">
+        <div class="status-row">
+          <div class="question-count" id="questionCount">ප්‍රශ්නය 1 / 80</div>
+          <div class="score-pill" id="score" aria-live="polite">ලකුණු 0</div>
+          <div class="wrong-pill" id="wrongCount" aria-live="polite">වැරදි 0</div>
+          <div class="attempted-pill" id="attemptedCount">පිළිතුරු 0 / 80</div>
+        </div>
+        <div class="progress-track" id="progressTrack" role="progressbar" aria-label="ප්‍රගතිය" aria-valuemin="0" aria-valuemax="80" aria-valuenow="1">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="question-area" id="questionList"></div>
+    </section>
+    <p class="footer-note">මෙම ප්‍රශ්න ඔබ ලබාදුන් 12 වසර මෝටර් රථ තාක්ෂණ මාතෘකා අනුව සකසා ඇත. නිල ගුරු මාර්ගෝපදේශය සමඟ සම්පූර්ණ ගැළපීම ස්වාධීනව තහවුරු කර නොමැත.</p>
+    <p class="footer-note">සෑම පිළිතුරකටම පසු නිවැරදි පිළිතුර සහ සියලු තේරීම් පිළිබඳ පැහැදිලි කිරීම් බලන්න.</p>
+    <p class="sr-only" id="announcement" aria-live="polite"></p>
+  </main>
+
+  <script src="questions.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var letters = ["A", "B", "C", "D"];
+      var categories = [
+        { end: 15, label: "එන්ජින් වර්ග, කොටස් සහ ක්‍රියාකාරිත්වය · 1–15" },
+        { end: 35, label: "ස්නේහන, සිසිලන සහ ඉන්ධන පද්ධති · 16–35" },
+        { end: 55, label: "ජ්වලන, ආරම්භක සහ බල සම්ප්‍රේෂණ පද්ධති · 36–55" },
+        { end: 70, label: "තිරිංග, සුක්කානම සහ අවලම්බන පද්ධති · 56–70" },
+        { end: 80, label: "අමතර ප්‍රශ්න · විෂය නිර්දේශයේ නැවත පුහුණුව · 71–80" }
+      ];
+
+      var answers = new Array(quizData.length).fill(null);
+      var questionCount = document.getElementById("questionCount");
+      var score = document.getElementById("score");
+      var wrongCount = document.getElementById("wrongCount");
+      var attemptedCount = document.getElementById("attemptedCount");
+      var progressTrack = document.getElementById("progressTrack");
+      var progressFill = document.getElementById("progressFill");
+      var questionList = document.getElementById("questionList");
+      var announcement = document.getElementById("announcement");
+
+      function getCategory(index) {
+        for (var i = 0; i < categories.length; i += 1) {
+          if (index + 1 <= categories[i].end) return categories[i].label;
+        }
+        return "";
+      }
+
+      function getScore() {
+        var correct = 0;
+        var wrong = 0;
+        var attempted = 0;
+        answers.forEach(function (answer, index) {
+          if (answer !== null) {
+            attempted += 1;
+            if (answer === quizData[index].answer) correct += 1;
+            else wrong += 1;
+          }
+        });
+        return { correct: correct, wrong: wrong, attempted: attempted };
+      }
+
+      function renderFeedback(question, selected, feedback, heading, list) {
+        feedback.classList.add("visible");
+        var isCorrect = selected === question.answer;
+        heading.className = "feedback-heading " + (isCorrect ? "good" : "bad");
+        heading.textContent = isCorrect
+          ? "✓ නිවැරදියි! එක් එක් තේරීම ගැන"
+          : "✕ නිවැරදි පිළිතුර: " + letters[question.answer] + " — එක් එක් තේරීම ගැන";
+        list.replaceChildren();
+
+        question.options.forEach(function (option, index) {
+          var item = document.createElement("li");
+          if (index === question.answer) item.classList.add("is-correct");
+          if (index === selected && index !== question.answer) item.classList.add("is-selected-wrong");
+          var label = document.createElement("span");
+          label.className = "explanation-label";
+          label.textContent = letters[index] + (index === question.answer ? " · නිවැරදි පිළිතුර" : "");
+          var detail = document.createElement("span");
+          detail.textContent = option.text + " — " + option.explanation;
+          item.append(label, detail);
+          list.appendChild(item);
+        });
+      }
+
+      function renderCard(question, index) {
+        var selected = answers[index];
+        var card = document.createElement("article");
+        card.className = "question-card";
+        card.id = "question-" + (index + 1);
+        card.dataset.questionIndex = String(index);
+
+        var header = document.createElement("div");
+        header.className = "question-header";
+        var number = document.createElement("span");
+        number.className = "question-number";
+        number.textContent = "ප්‍රශ්නය " + (index + 1) + " / " + quizData.length;
+        var categoryBadge = document.createElement("span");
+        categoryBadge.className = "category";
+        categoryBadge.textContent = getCategory(index);
+        header.append(number, categoryBadge);
+
+        var title = document.createElement("h2");
+        title.className = "question";
+        title.textContent = question.question;
+        var options = document.createElement("div");
+        options.className = "options";
+        options.setAttribute("role", "group");
+        options.setAttribute("aria-label", "ප්‍රශ්නය " + (index + 1) + " සඳහා පිළිතුරු තේරීම්");
+        var feedback = document.createElement("section");
+        feedback.className = "feedback";
+        feedback.setAttribute("aria-live", "polite");
+        feedback.setAttribute("aria-label", "පිළිතුරු පැහැදිලි කිරීම");
+        var heading = document.createElement("h3");
+        heading.className = "feedback-heading";
+        var list = document.createElement("ul");
+        list.className = "explanations";
+        feedback.append(heading, list);
+
+        question.options.forEach(function (option, optionIndex) {
+          var button = document.createElement("button");
+          button.type = "button";
+          button.className = "option";
+          button.disabled = selected !== null;
+          if (selected !== null && optionIndex === question.answer) button.classList.add("correct");
+          if (selected === optionIndex && optionIndex !== question.answer) button.classList.add("incorrect");
+          button.setAttribute("aria-pressed", String(selected === optionIndex));
+
+          var letter = document.createElement("span");
+          letter.className = "option-letter";
+          letter.textContent = letters[optionIndex];
+          var text = document.createElement("span");
+          text.className = "option-text";
+          text.textContent = option.text;
+          button.append(letter, text);
+          button.addEventListener("click", function () {
+            if (answers[index] !== null) return;
+            answers[index] = optionIndex;
+            updateCard(card, question, index);
+            updateScore();
+            announcement.textContent = optionIndex === question.answer
+              ? "ප්‍රශ්නය " + (index + 1) + ": නිවැරදියි."
+              : "ප්‍රශ්නය " + (index + 1) + ": වැරදියි. නිවැරදි පිළිතුර " + letters[question.answer] + ".";
+          });
+          options.appendChild(button);
+        });
+
+        card.append(header, title, options, feedback);
+        if (selected !== null) renderFeedback(question, selected, feedback, heading, list);
+        return card;
+      }
+
+      function updateCard(card, question, index) {
+        var selected = answers[index];
+        var buttons = card.querySelectorAll(".option");
+        buttons.forEach(function (button, optionIndex) {
+          button.disabled = selected !== null;
+          button.classList.toggle("correct", selected !== null && optionIndex === question.answer);
+          button.classList.toggle("incorrect", selected === optionIndex && optionIndex !== question.answer);
+          button.setAttribute("aria-pressed", String(selected === optionIndex));
+        });
+        var feedback = card.querySelector(".feedback");
+        if (selected !== null) {
+          renderFeedback(question, selected, feedback, feedback.querySelector(".feedback-heading"), feedback.querySelector(".explanations"));
+        } else {
+          feedback.classList.remove("visible");
+        }
+      }
+
+      function updateScore() {
+        var result = getScore();
+        score.textContent = "ලකුණු " + result.correct;
+        wrongCount.textContent = "වැරදි " + result.wrong;
+        attemptedCount.textContent = "පිළිතුරු " + result.attempted + " / " + quizData.length;
+      }
+
+      function updateCurrentQuestion() {
+        var cards = questionList.children;
+        if (!cards.length) return;
+        var stickyTop = document.querySelector(".status").getBoundingClientRect().bottom + 8;
+        var closestIndex = 0;
+        var closestDistance = Infinity;
+        Array.prototype.forEach.call(cards, function (card, index) {
+          var rect = card.getBoundingClientRect();
+          var distance = rect.top <= stickyTop && rect.bottom >= stickyTop
+            ? 0
+            : Math.min(Math.abs(rect.top - stickyTop), Math.abs(rect.bottom - stickyTop));
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        });
+        Array.prototype.forEach.call(cards, function (card, index) {
+          card.classList.toggle("is-current", index === closestIndex);
+        });
+        questionCount.textContent = "ප්‍රශ්නය " + (closestIndex + 1) + " / " + quizData.length;
+        progressFill.style.width = (((closestIndex + 1) / quizData.length) * 100) + "%";
+        progressTrack.setAttribute("aria-valuemax", String(quizData.length));
+        progressTrack.setAttribute("aria-valuenow", String(closestIndex + 1));
+      }
+
+      document.getElementById("restartButton").addEventListener("click", function () {
+        answers.fill(null);
+        questionList.replaceChildren();
+        quizData.forEach(function (question, index) {
+          questionList.appendChild(renderCard(question, index));
+        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        updateCurrentQuestion();
+        updateScore();
+        announcement.textContent = "ප්‍රශ්නාවලිය නැවත ආරම්භ කරන ලදී.";
+      });
+
+      quizData.forEach(function (question, index) {
+        questionList.appendChild(renderCard(question, index));
+      });
+      window.addEventListener("scroll", updateCurrentQuestion, { passive: true });
+      window.addEventListener("resize", updateCurrentQuestion);
+      updateScore();
+      updateCurrentQuestion();
+    }());
+  </script>
+</body>
+</html>

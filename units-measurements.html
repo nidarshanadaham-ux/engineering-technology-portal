@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="si"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ඒකක හා මිනුම් – සවිස්තර පාඩම</title>
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--ink:#21242c;--mute:#5b6270;--line:#dfe3ea;--acc:#1865f2;--acc2:#e8f0fe;--g:#00a37a;--gbg:#e3f6f0;--warn:#c4301f;--warnbg:#fdeceb;--hl:#fff6d6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171c;--card:#1c2027;--ink:#e8ebf0;--mute:#9aa3b2;--line:#2e343e;--acc:#7aa7ff;--acc2:#1d2a44;--g:#4fd8b0;--gbg:#15302a;--warn:#ff8f80;--warnbg:#3a201d;--hl:#3a3418}}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Sinhala","Iskoola Pota","Nirmala UI",system-ui,sans-serif;line-height:1.85;font-size:17px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:10px 14px}
+nav a{white-space:nowrap;color:var(--mute);text-decoration:none;padding:6px 14px;border-radius:20px;font-weight:600}
+nav a:hover,nav a:focus-visible{background:var(--acc2);color:var(--acc);outline:2px solid var(--acc)}
+header{background:var(--acc);color:#fff;padding:44px 20px}
+header div{max-width:880px;margin:auto}
+h1{margin:0 0 8px;font-size:clamp(2rem,6vw,3rem);line-height:1.3}
+header p{margin:0;opacity:.92}
+main{max-width:880px;margin:auto;padding:0 18px 60px}
+section{margin-top:48px}
+h2{font-size:1.65rem;margin:0 0 6px}
+h3{font-size:1.2rem;margin:22px 0 6px}
+.lead{color:var(--mute)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+.sum{background:var(--hl);border-inline-start:5px solid #e0a800;border-radius:10px;padding:14px 18px;margin:14px 0}
+.proof{background:var(--gbg);border:1px solid var(--g);border-radius:12px;padding:16px 20px;margin:14px 0}
+.proof b.t{color:var(--g)}
+.f{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:1.08em}
+.eq{display:block;margin:6px 0;padding:6px 10px;background:var(--card);border-radius:8px;font-family:Georgia,serif;font-style:italic;overflow-x:auto}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:start}
+th{background:var(--acc2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.grid .card{margin:0}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:0 18px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;color:var(--acc)}
+summary:focus-visible{outline:2px solid var(--acc)}
+details[open] summary{border-bottom:1px solid var(--line);margin-bottom:10px}
+details>*:last-child{margin-bottom:16px}
+label{display:block;font-weight:600;margin:10px 0 4px}
+input,select{width:100%;padding:10px;font-size:1rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-family:inherit}
+input:focus,select:focus{outline:2px solid var(--acc)}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.out{margin-top:14px;padding:14px;border-radius:10px;background:var(--acc2);font-size:1.2rem;font-weight:700;word-break:break-word}
+.how{margin-top:10px;padding:12px;border:1px dashed var(--line);border-radius:10px;color:var(--mute)}
+.warn{background:var(--warnbg);color:var(--warn);font-weight:700;padding:10px;border-radius:8px;margin-top:10px}
+.good{color:var(--g);font-weight:700;margin-top:10px}
+.scale{overflow-x:auto;padding:8px 0}
+.scale svg{min-width:760px;width:100%;height:auto}
+ul{padding-inline-start:22px}
+footer{text-align:center;color:var(--mute);padding:24px}
+</style></head><body>
+<nav aria-label="ප්‍රධාන සබැඳි"><a href="#base">මූලික රාශි</a><a href="#prefix">උපසර්ග</a><a href="#dim">මාන</a><a href="#err">මිනුම් දෝෂ</a></nav>
+<header><div><h1>ඒකක හා මිනුම්</h1><p>උසස් පෙළ භෞතික විද්‍යාව · පියවරෙන් පියවර සවිස්තර පාඩම</p></div></header>
+<main>
+
+<section id="base">
+<h2>මූලික හා ව්‍යුත්පන්න රාශි</h2>
+<p class="lead">මැනිය හැකි ඕනෑම දෙයක් භෞතික රාශියකි.</p>
+<div class="card"><b>අපට සම්මත ඒකක ඇයි?</b><br>
+එක් අයෙක් "මගේ දුර අඩි 10ක්" කියද්දී, තවෙකෙක් "පියවර 10ක්" කියුවොත් දෙදෙනාට එකඟ විය නොහැක. ලොව පුරා විද්‍යාඥයන්ට එකම භාෂාවෙන් මිනුම් කතා කිරීමට සහ ප්‍රතිඵල සසඳා බැලීමට සම්මත ඒකක පද්ධතියක් අවශ්‍යයි. ඒ සඳහා 1960 දී පිළිගත් <b>SI (Système International d'Unités)</b> පද්ධතිය අද ලොව පුරා භාවිත වේ.</div>
+<div class="scroll"><table>
+<thead><tr><th>මූලික රාශිය</th><th>SI ඒකකය</th><th>සංකේතය</th><th>මාන</th></tr></thead><tbody>
+<tr><td>දිග</td><td>මීටරය</td><td>m</td><td>L</td></tr>
+<tr><td>ස්කන්ධය</td><td>කිලෝග්‍රෑමය</td><td>kg</td><td>M</td></tr>
+<tr><td>කාලය</td><td>තත්පරය</td><td>s</td><td>T</td></tr>
+<tr><td>විද්‍යුත් ධාරාව</td><td>ඇම්පියරය</td><td>A</td><td>I</td></tr>
+<tr><td>උෂ්ණත්වය</td><td>කෙල්වින්</td><td>K</td><td>θ</td></tr>
+<tr><td>ද්‍රව්‍ය ප්‍රමාණය</td><td>මවුලය</td><td>mol</td><td>N</td></tr>
+<tr><td>ආලෝක තීව්‍රතාව</td><td>කැන්ඩෙලා</td><td>cd</td><td>J</td></tr></tbody></table></div>
+<p>පරිපූරක ඒකක: තල කෝණය – රේඩියනය (rad); ඝන කෝණය – ස්ටෙරේඩියනය (sr).</p>
+
+<h3>ව්‍යුත්පන්න ඒකක සෑදෙන ආකාරය</h3>
+<p>මූලික රාශි ගුණ කිරීමෙන් හෝ බෙදීමෙන් ව්‍යුත්පන්න රාශි සෑදේ.</p>
+<div class="proof"><b class="t">උදාහරණ 1: ප්‍රවේගය</b>
+<span class="eq">ප්‍රවේගය = විස්ථාපනය ÷ කාලය</span>
+<span class="eq">→ m ÷ s → m s<sup>−1</sup></span></div>
+<div class="proof"><b class="t">උදාහරණ 2: බලය</b>
+<span class="eq">බලය = ස්කන්ධය × ත්වරණය</span>
+<span class="eq">→ kg × m s<sup>−2</sup> → kg m s<sup>−2</sup></span>
+මෙම ඒකකයට <b>නිව්ටන් (N)</b> යැයි කියන්නේ සර් අයිසක් නිව්ටන් ගෞරවයටයි. 1 N = 1 kg m s<sup>−2</sup>.</div>
+<div class="grid">
+<div class="card"><b>ත්වරණය</b><br>ප්‍රවේග වෙනස ÷ කාලය<br><span class="f">m s<sup>−2</sup></span></div>
+<div class="card"><b>පීඩනය</b><br>බලය ÷ වර්ගඵලය<br><span class="f">N m<sup>−2</sup></span> = පැස්කල් (Pa)</div>
+<div class="card"><b>කාර්යය / ශක්තිය</b><br>බලය × විස්ථාපනය<br><span class="f">N m</span> = ජූල් (J)</div>
+<div class="card"><b>ක්ෂේත්‍රඵලය, පරිමාව</b><br><span class="f">m<sup>2</sup>, m<sup>3</sup></span></div></div>
+</section>
+
+<section id="prefix">
+<h2>උපසර්ග තේරුම් ගනිමු</h2>
+<p class="lead">10<sup>9</sup>, 10<sup>−6</sup> කටපාඩම් කරනවා වෙනුවට එදිනෙදා දේවල් සමඟ සම්බන්ධ කරගන්න.</p>
+<div class="grid">
+<div class="card"><b>ගිගා (G) = 10<sup>9</sup></b><br>ෆෝන් එකේ ගිගාබයිට් (GB). 64 GB යනු බයිට් 64 × 10<sup>9</sup> කි.</div>
+<div class="card"><b>මෙගා (M) = 10<sup>6</sup></b><br>කැමරාවේ මෙගාපික්සල් (MP). 12 MP = පික්සල් 12 මිලියනයක්.</div>
+<div class="card"><b>කිලෝ (k) = 10<sup>3</sup></b><br>කිලෝමීටරය = මීටර් 1000. කිලෝග්‍රෑම් = ග්‍රෑම් 1000.</div>
+<div class="card"><b>මිලි (m) = 10<sup>−3</sup></b><br>මිලිමීටරය කෝදුවේ කුඩාම ඉරකි. 1 mm = මීටරයෙන් දහසෙන් එකක්.</div>
+<div class="card"><b>මයික්‍රෝ (µ) = 10<sup>−6</sup></b><br>බැක්ටීරියාවක් මයික්‍රොමීටර් කිහිපයක් පමණ විශාලයි.</div>
+<div class="card"><b>නැනෝ (n) = 10<sup>−9</sup></b><br>පරිගණක චිපයක "නැනෝමීටර (nm) තාක්ෂණය" යන්නේ ට්‍රාන්සිස්ටර ඉතා කුඩා බවයි.</div></div>
+
+<h3>ගෙදරදීම දැක ගත හැකි උදාහරණ</h3>
+<p>මේවා ඔබේ ගෙදර ඇති දේවල්වල ලේබල් සහ ෆෝන් එකේ සැකසුම් බලා ඉගෙන ගන්න පුළුවන්.</p>
+<div class="scroll"><table>
+<thead><tr><th>උපසර්ගය</th><th>ගෙදර ඇති උදාහරණය</th><th>අර්ථය</th></tr></thead><tbody>
+<tr><td>ටෙරා (T)</td><td>පරිගණකයේ හෝ බාහිර හාඩ් ඩිස්කයේ 1 TB ධාරිතාව</td><td>1 TB = 1000 GB</td></tr>
+<tr><td>ගිගා (G)</td><td>ෆෝන් එකේ 8 GB RAM, Wi-Fi රවුටරයේ 2.4 GHz</td><td>1 GB = 10<sup>9</sup> බයිට්; 2.4 GHz = තත්පරයට චක්‍ර 2.4 × 10<sup>9</sup></td></tr>
+<tr><td>මෙගා (M)</td><td>MP3 ගීතයක් ≈ 4 MB; ගුවන්විදුලි 91.5 MHz; කැමරාවේ 12 MP</td><td>1 MB = 10<sup>6</sup> බයිට්</td></tr>
+<tr><td>කිලෝ (k)</td><td>සහල් පැකට් එකේ 1 kg; ගෙදර සිට කඩේට 2 km</td><td>1 kg = 1000 g; 2 km = 2000 m</td></tr>
+<tr><td>හෙක්ටෝ (h)</td><td>කාලගුණ වාර්තාවල වායු පීඩනය ≈ 1013 hPa</td><td>1 hPa = 100 Pa</td></tr>
+<tr><td>ඩෙකා (da)</td><td>ගෙදර දැකීම දුර්ලභයි (ඩෙකාමීටරය = 10 m)</td><td>10<sup>1</sup></td></tr>
+<tr><td>ඩෙසි (d)</td><td>ඩෙසිලීටරය = 100 ml (රසායනාගාර වීදුරු භාණ්ඩවල)</td><td>10<sup>−1</sup></td></tr>
+<tr><td>සෙන්ටි (c)</td><td>ඔබේ උස 150 cm; පාසල් කෝදුව සෙන්ටිමීටරවලින්</td><td>1 cm = 0.01 m</td></tr>
+<tr><td>මිලි (m)</td><td>බෝතලයේ 500 ml; පැරසිටමෝල් පෙත්තක 500 mg; පොතක ඝනකම mm</td><td>1 mm = 0.001 m; 1 mg = 0.001 g</td></tr>
+<tr><td>මයික්‍රෝ (µ)</td><td>හිසකෙස් ගහක පළල මයික්‍රොමීටර් 50–100 ක් පමණ; විටමින් පැකට් එකේ µg</td><td>1 µm = 10<sup>−6</sup> m</td></tr>
+<tr><td>නැනෝ (n)</td><td>ඇඟිලි නියපොත්ත වැඩෙන වේගය තත්පරයකට නැනෝමීටර් 1 ක් පමණ</td><td>1 nm = 10<sup>−9</sup> m</td></tr>
+<tr><td>පිකෝ (p)</td><td>පරමාණුවක විශාලත්වය පිකොමීටර් 100 ක් පමණ</td><td>1 pm = 10<sup>−12</sup> m</td></tr>
+</tbody></table></div>
+<details open><summary>ගෙදරදී උත්සාහ කරන්න</summary>
+<ul>
+<li><b>ඖෂධ පැකට් එකක්:</b> එහි mg ලියා ඇති ස්ථානය සොයන්න. 500 mg යනු කොපමණ ග්‍රෑම්ද? (500 × 10<sup>−3</sup> = 0.5 g)</li>
+<li><b>ෆෝන් එකේ Storage:</b> සැකසුම් වෙත ගොස් GB අගය බලා, එය MB බවට හරවන්න (× 1000).</li>
+<li><b>කෝදුවක්:</b> පොතක ඝනකම mm වලින් මැන, ඉහත පරිවර්තකයෙන් මීටර් බවට හරවන්න.</li>
+<li><b>ගෙදර ජල බෝතලය:</b> 1.5 l බෝතලයක් ml බවට හරවන්න (1.5 × 1000 = 1500 ml).</li>
+</ul></details>
+
+<h3>බල පඩිපෙළ (පිකෝ සිට ටෙරා දක්වා)</h3>
+<p>සෑම පියවරක්ම ගුණකයෙන් 10<sup>3</sup> (දහසක්) පැනීමකි (ඩෙසි, සෙන්ටි, ඩෙකා, හෙක්ටෝ හැර).</p>
+<div class="scale"><svg viewBox="0 0 760 130" role="img" aria-label="පිකෝ සිට ටෙරා දක්වා 10 බල පඩිපෙළ">
+<line x1="40" y1="60" x2="720" y2="60" stroke="var(--line)" stroke-width="4"/>
+<g font-size="13" text-anchor="middle" fill="var(--ink)" font-family="inherit">
+<circle cx="60" cy="60" r="9" fill="var(--acc)"/><text x="60" y="95">පිකෝ p</text><text x="60" y="30">10⁻¹²</text>
+<circle cx="170" cy="60" r="9" fill="var(--acc)"/><text x="170" y="95">නැනෝ n</text><text x="170" y="30">10⁻⁹</text>
+<circle cx="280" cy="60" r="9" fill="var(--acc)"/><text x="280" y="95">මයික්‍රෝ µ</text><text x="280" y="30">10⁻⁶</text>
+<circle cx="390" cy="60" r="9" fill="var(--acc)"/><text x="390" y="95">මිලි m</text><text x="390" y="30">10⁻³</text>
+<circle cx="500" cy="60" r="12" fill="var(--g)"/><text x="500" y="95" font-weight="700">මූලික ඒකකය</text><text x="500" y="30">10⁰</text>
+<circle cx="590" cy="60" r="9" fill="var(--acc)"/><text x="590" y="95">කිලෝ k</text><text x="590" y="30">10³</text>
+<circle cx="660" cy="60" r="9" fill="var(--acc)"/><text x="660" y="95">මෙගා M</text><text x="660" y="30">10⁶</text>
+<circle cx="715" cy="60" r="9" fill="var(--acc)"/><text x="715" y="115">ගිගා G 10⁹ · ටෙරා T 10¹²</text></g></svg></div>
+<div class="scroll"><table>
+<thead><tr><th>උපසර්ගය</th><th>සංකේතය</th><th>ගුණකය</th><th>උපසර්ගය</th><th>සංකේතය</th><th>ගුණකය</th></tr></thead><tbody>
+<tr><td>ටෙරා</td><td>T</td><td>10<sup>12</sup></td><td>ඩෙසි</td><td>d</td><td>10<sup>−1</sup></td></tr>
+<tr><td>ගිගා</td><td>G</td><td>10<sup>9</sup></td><td>සෙන්ටි</td><td>c</td><td>10<sup>−2</sup></td></tr>
+<tr><td>මෙගා</td><td>M</td><td>10<sup>6</sup></td><td>මිලි</td><td>m</td><td>10<sup>−3</sup></td></tr>
+<tr><td>කිලෝ</td><td>k</td><td>10<sup>3</sup></td><td>මයික්‍රෝ</td><td>µ</td><td>10<sup>−6</sup></td></tr>
+<tr><td>හෙක්ටෝ</td><td>h</td><td>10<sup>2</sup></td><td>නැනෝ</td><td>n</td><td>10<sup>−9</sup></td></tr>
+<tr><td>ඩෙකා</td><td>da</td><td>10<sup>1</sup></td><td>පිකෝ</td><td>p</td><td>10<sup>−12</sup></td></tr></tbody></table></div>
+
+<div class="card"><b>උපසර්ග පරිවර්තකය</b>
+<label for="pv">අගය</label><input id="pv" type="number" step="any" value="5">
+<div class="row"><div><label for="pf">මෙයින්</label><select id="pf"></select></div>
+<div><label for="pt">මෙයට</label><select id="pt"></select></div></div>
+<div class="out" id="pout" aria-live="polite"></div>
+<div class="how" id="phow" aria-live="polite"></div></div>
+</section>
+
+<section id="dim">
+<h2>මාන සහ මාන විශ්ලේෂණය</h2>
+<div class="card">මාන (L, M, T) මගින් භෞතික රාශියක මූලික ස්වභාවය පෙන්වයි. එය ඔබ භාවිත කරන ඒකක පද්ධතිය (m හෝ cm හෝ අඩි) කුමක් වුවත් වෙනස් නොවේ. උදාහරණයක් ලෙස, ප්‍රවේගය සැමවිටම "දිග ÷ කාලය" ය: <span class="f">[v] = LT<sup>−1</sup></span>.</div>
+<div class="sum"><b>මානවල සමජාතීයතා මූලධර්මය</b><br>එකම මාන ඇති රාශි පමණක් එකතු කිරීමට, අඩු කිරීමට හෝ සමාන කිරීමට හැක. (මීටර් සහ තත්පර එකතු කළ නොහැක.) එබැවින් නිවැරදි සමීකරණයක සෑම පදයකටම, වම් හා දකුණු පැත්තේ, එකම මාන තිබිය යුතුය.</div>
+<div class="proof"><b class="t">ඔප්පුව 1: බලයේ මාන</b>
+<span class="eq">[F] = [m] × [a]</span><span class="eq">= M × LT<sup>−2</sup></span><span class="eq">= MLT<sup>−2</sup></span></div>
+<div class="proof"><b class="t">ඔප්පුව 2: v = u + at පරීක්ෂාව</b>
+<span class="eq">වම් පස: [v] = LT<sup>−1</sup></span>
+<span class="eq">දකුණු පස: [u] = LT<sup>−1</sup>, [at] = LT<sup>−2</sup> × T = LT<sup>−1</sup></span>
+<span class="eq">LT<sup>−1</sup> = LT<sup>−1</sup> + LT<sup>−1</sup> (සෑම පදයකම මාන සමානයි)</span>
+එබැවින් සමීකරණය මානමය වශයෙන් නිවැරදිය. ✔</div>
+<details><summary>තවත් මාන (Read more)</summary>
+<p>ත්වරණය [a] = LT<sup>−2</sup> · ඝනත්වය [ρ] = ML<sup>−3</sup> · පීඩනය [P] = [F]÷[A] = MLT<sup>−2</sup> ÷ L<sup>2</sup> = ML<sup>−1</sup>T<sup>−2</sup></p></details>
+<details><summary>මාන විශ්ලේෂණයේ ප්‍රයෝජන (Read more)</summary>
+<ul><li>භෞතික සමීකරණයක නිරවද්‍යතාව පරීක්ෂා කිරීම (වම් පස මාන = දකුණු පස මාන).</li>
+<li>නියතයන්හි සහ නොදන්නා රාශිවල ඒකක සහ මාන සෙවීම.</li></ul>
+<p>සැ.යු.: මාන පරීක්ෂාවෙන් සමීකරණය "වැරදියි" කිව හැකි වුවද, "නිවැරදියි" යැයි සම්පූර්ණයෙන් තහවුරු නොවේ (අංක නියතයන් මානවලට නොපෙනේ).</p></details>
+</section>
+
+<section id="err">
+<h2>මිනුම් දෝෂ</h2>
+<div class="card"><b>කුඩාම මිනුම (Least Count)</b> යනු උපකරණයෙන් මැනිය හැකි කුඩාම අගයයි: මීටර කෝදුව 1 mm · වර්නියර් කැලිපරය 0.05 mm හෝ 0.02 mm · මයික්‍රොමීටරය 0.01 mm.</div>
+<details open><summary>මූලාංග දෝෂය (Zero Error)</summary>
+<p>උපකරණයේ ජহ්‍වා හෝ හිස් අගය 0 නොපෙන්වන්නේ නම් එය මූලාංග දෝෂයකි.</p>
+<ul><li><b>ධන මූලාංග දෝෂය:</b> හකු වසා ඇති විට 0 ට වඩා වැඩි කියවීමක් පෙන්වයි (උදා: +0.02 mm). නිවැරදි අගය = කියවීම − මූලාංග දෝෂය.</li>
+<li><b>ඍණ මූලාංග දෝෂය:</b> හකු වසා ඇති විට 0 ට අඩු කියවීමක් පෙන්වයි (උදා: −0.03 mm). නිවැරදි අගය = කියවීම − (−0.03) = කියවීම + 0.03.</li></ul>
+<div class="sum">සාමාන්‍ය සූත්‍රය: <b>නිවැරදි කියවීම = ලබාගත් කියවීම − මූලාංග දෝෂය</b> (ධන/ඍණ ලකුණ සමඟ).</div></details>
+<details><summary>දෝෂ වර්ග සහ සූත්‍ර</summary>
+<ul><li><b>උපරිම දෝෂය</b> බොහෝ විට උපකරණයේ කුඩාම මිනුමට සමානයි.</li>
+<li><b>භාගික දෝෂය</b> = උපරිම දෝෂය ÷ මිනුම</li>
+<li><b>ප්‍රතිශත දෝෂය</b> = (උපරිම දෝෂය ÷ මිනුම) × 100%</li></ul>
+<p>ප්‍රතිශත දෝෂය අවම කිරීමට මිනුම හැකිතාක් විශාලව ගන්න.</p></details>
+<div class="card"><b>ප්‍රතිශත දෝෂ ගණකය</b>
+<div class="row"><div><label for="ev">මනින ලද අගය (mm)</label><input id="ev" type="number" step="any" value="2.5"></div>
+<div><label for="el">කුඩාම මිනුම (mm)</label><input id="el" type="number" step="any" value="0.01"></div></div>
+<div class="how" id="esteps" aria-live="polite"></div></div>
+</section>
+</main>
+<footer>ඒකක හා මිනුම් · උසස් පෙළ භෞතික විද්‍යාව</footer>
+<script>
+const P=[["ටෙරා (T)",12],["ගිගා (G)",9],["මෙගා (M)",6],["කිලෝ (k)",3],["හෙක්ටෝ (h)",2],["ඩෙකා (da)",1],["මූලික ඒකකය",0],["ඩෙසි (d)",-1],["සෙන්ටි (c)",-2],["මිලි (m)",-3],["මයික්‍රෝ (µ)",-6],["නැනෝ (n)",-9],["පිකෝ (p)",-12]];
+const S=n=>String(n).replace(/-/g,"−");
+const pf=document.getElementById("pf"),pt=document.getElementById("pt"),pv=document.getElementById("pv"),po=document.getElementById("pout"),ph=document.getElementById("phow");
+P.forEach(([n,e])=>{const t=n+" = 10^"+e;pf.add(new Option(t,e));pt.add(new Option(t,e))});
+pf.value=3;pt.value=-6;
+const nm=e=>P.find(p=>p[1]==e)[0];
+function sci(x){if(x===0)return"0";const[m,e]=x.toExponential(6).split("e");return parseFloat(m)+" × 10<sup>"+S(parseInt(e))+"</sup>"}
+function conv(){const v=parseFloat(pv.value);if(isNaN(v)){po.textContent="අගයක් ඇතුළත් කරන්න.";ph.textContent="";return}
+const a=+pf.value,b=+pt.value,d=a-b,r=v*Math.pow(10,d);
+po.innerHTML=sci(v)+" ("+nm(a)+") = "+sci(r)+" ("+nm(b)+")";
+ph.innerHTML="<b>ක්‍රියාවලිය:</b> "+nm(a)+" (10<sup>"+S(a)+"</sup>) සිට "+nm(b)+" (10<sup>"+S(b)+"</sup>) දක්වා යාමට අපි ගුණ කරන්නේ 10<sup>"+S(a)+"</sup> ÷ 10<sup>"+S(b)+"</sup> = 10<sup>"+S(d)+"</sup> ගෙනි.<br>"+v+" × 10<sup>"+S(d)+"</sup> = "+sci(r)}
+[pv,pf,pt].forEach(e=>e.addEventListener("input",conv));conv();
+const ev=document.getElementById("ev"),el=document.getElementById("el"),es=document.getElementById("esteps");
+function calc(){const v=parseFloat(ev.value),l=parseFloat(el.value);
+if(isNaN(v)||isNaN(l)||v<=0||l<0){es.textContent="මනින ලද අගය (0 ට වැඩි) සහ කුඩාම මිනුම ඇතුළත් කරන්න.";return}
+const f=l/v,p=f*100;
+let h="<b>පියවර 1:</b> උපරිම දෝෂය = කුඩාම මිනුම = "+l+" mm<br><b>පියවර 2:</b> භාගික දෝෂය = "+l+" ÷ "+v+" = "+parseFloat(f.toPrecision(5))+"<br><b>පියවර 3:</b> ප්‍රතිශත දෝෂය = "+parseFloat(f.toPrecision(5))+" × 100 = <b>"+parseFloat(p.toPrecision(5))+" %</b>";
+h+=p>5?'<div class="warn">⚠️ දෝෂය ඉතා වැඩියි</div>':'<div class="good">✔ දෝෂය පිළිගත හැකි මට්ටමේ පවතී</div>';
+es.innerHTML=h}
+[ev,el].forEach(e=>e.addEventListener("input",calc));calc();
+</script></body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="si"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>ඉංජිනේරු ඇඳීම</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap">
+<style>
+:root{--bg:#f7f8fa;--fg:#1c2330;--card:#fff;--ac:#1d5fd1;--bd:#d5dae3;--mu:#5a6577;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12151c;--fg:#e6e9f0;--card:#1b2029;--ac:#6ea2ff;--bd:#323a49;--mu:#9aa5b8;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#12151c;--fg:#e6e9f0;--card:#1b2029;--ac:#6ea2ff;--bd:#323a49;--mu:#9aa5b8;color-scheme:dark}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 'Noto Sans Sinhala',system-ui,sans-serif}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--bd);display:flex;gap:4px;overflow-x:auto;padding:8px;z-index:5}
+nav a{white-space:nowrap;padding:4px 10px;border-radius:14px;color:var(--fg);text-decoration:none;font-size:14px}nav a.on{background:var(--ac);color:#fff}
+main{max-width:900px;margin:auto;padding:12px}
+section{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:14px 0}
+h1{font-size:26px}h2{font-size:20px;color:var(--ac);margin-top:0}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid var(--bd);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--bg)}
+svg{max-width:100%}.mu{color:var(--mu);font-size:14px}
+button,select{font:inherit;background:var(--bg);color:var(--fg);border:1px solid var(--bd);border-radius:6px;padding:4px 10px}
+button.p{background:var(--ac);color:#fff}
+#cv{width:100%;touch-action:none;background:#fff;border:1px solid var(--bd);border-radius:6px;cursor:crosshair}
+.ct{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+#fb{font-weight:700;padding:4px 8px;border-radius:6px}
+html{background:var(--bg);color:var(--fg)}input,select{background:var(--bg);color:var(--fg)}.hc{display:block;width:100%;text-align:left;padding:16px;margin:10px 0;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font-size:16px;line-height:1.6}.hc b{display:block;color:var(--ac);font-size:20px}</style></head><body>
+<div style="display:flex;gap:6px;flex-wrap:wrap;padding:6px 10px;background:var(--card);border-bottom:1px solid var(--bd)"><button id="t0">🏠 මුල් පිටුව</button><button id="t1">📚 පාඩම්</button><button id="t2">📐 සූත්‍ර</button><button id="t3">🧮 ගණකය</button></div><nav id="nv"></nav>
+<main id="mm" hidden>
+<h1>ඉංජිනේරු ඇඳීම <span class="mu">(Engineering Drawing)</span></h1>
+<p class="mu">උසස් පෙළ ඉංජිනේරු තාක්ෂණවේදය · ISO 128 / BS 8888 / SLS <button id="th">🌓</button></p>
+
+<section id="s1"><h2>1. හැඳින්වීම</h2><p>ඉංජිනේරු ඇඳීම යනු "ඉංජිනේරුවන්ගේ විශ්ව භාෂාවයි". නිෂ්පාදනයක හැඩය, සැබෑ මිනුම්, නිමාව සහ ද්‍රව්‍ය පිළිබඳ තොරතුරු නිර්මාණකරුවාගේ සිට කාර්මික ශිල්පියා දක්වා වෙනසකින් තොරව සන්නිවේදනය කිරීමට සම්මත නීති අනුව අඳින තාක්ෂණික රූපසටහන් මෙනමින් හැඳින්වේ.</p></section>
+
+<section id="s2"><h2>2. පැන්සල් ශ්‍රේණි</h2>
+<p>තුඩ = මිනිරන් (Graphite) + මැටි (Clay). <b>මැටි වැඩි</b> → දැඩි (H), රේඛා ලා. <b>මිනිරන් වැඩි</b> → මෘදු, තද කළු (B). ශ්‍රේණි 9H සිට 7B දක්වා (වර්ග 18).</p>
+<div class="tw"><table><tr><th>කාණ්ඩය</th><th>ශ්‍රේණි</th><th>භාවිතය</th></tr>
+<tr><td>දැඩි</td><td>9H–4H</td><td>ඉතා සියුම් ලා රේඛා; අධික තෙරපුමෙන් කඩදාසිය ඉරිය හැක</td></tr>
+<tr><td>මධ්‍යම</td><td>3H, 2H, H, F, HB, B</td><td>ඉංජිනේරු ඇඳීමේ ප්‍රධාන කාණ්ඩය (F = Firm, HB = Hard Black)</td></tr>
+<tr><td>මෘදු</td><td>2B–7B</td><td>ඉක්මනින් ගෙවේ, පැල්ලම් ඇති කරයි; චිත්‍ර කලාවට පමණි</td></tr></table></div>
+<ul><li><b>2H (හෝ 3H):</b> නිර්මාණ, ප්‍රක්ෂේපණ, මාන, මැද රේඛා, Hatching</li><li><b>H:</b> අවසාන මායිම්, කඩ ඉරි, ඊතල හිස්, අකුරු</li><li><b>HB:</b> තද වස්තු රේඛා, freehand, අකුරු, Border</li></ul></section>
+
+<section id="s3"><h2>3. පැන්සල් තුඩු සහ අඳින ආකාරය</h2>
+<p><b>යාන්ත්‍රික:</b> 0.18, 0.25, 0.35, 0.5, 0.7, 1.0, 1.4, 2.0 mm. <b>2:1 නීතිය:</b> ඝන : සිහින් රේඛා පළල = 2 : 1. 0.7 mm (HB/H) → ඝන; 0.35/0.5 mm (2H) → සිහින්.</p>
+<ul><li><b>කේතුකාකාර:</b> ලී 25–30 mm ඉවත්, මිනිරන් 8–10 mm. අකුරු, freehand, සාමාන්‍ය රේඛා.</li><li><b>නියන/පැතලි:</b> ඉක්මනින් නොගෙවේ; දිගු සරල රේඛා.</li><li><b>එක් පසක ඇල (Bevel):</b> කවකටුවට; ආනත පැත්ත කටුව දෙසට.</li></ul>
+<p><b>නිවැරදි ආකාරය:</b> කඩදාසියට ~60° ආනතියෙන් අඳින දිශාවට ඇල කර (තල්ලු නොකර) ඇඳීම; ඇඳීමේදී පැන්සල සෙමින් කරකැවීම; ඒකාකාර තෙරපුම; වමේ සිට දකුණට (තිරස්), පහළ සිට ඉහළට (සිරස්).</p></section>
+
+<section id="s4"><h2>4. සම්මත රේඛා වර්ග (ISO 128)</h2><div class="tw"><table id="lt"><tr><th>රේඛාව</th><th>දසුන</th><th>ඝනකම / පැන්සල</th><th>භාවිතය</th></tr></table></div></section>
+
+<section id="s5"><h2>5. කඩදාසි ප්‍රමාණ (ISO A)</h2>
+<p>දිග : පළල = 1 : √2. A0 වර්ගඵලය = 1 m².</p><div class="tw"><table><tr><th>වර්ගය</th><th>පළල × දිග (mm)</th><th>මායිම</th></tr>
+<tr><td>A0</td><td>841 × 1189</td><td rowspan="5">වම (ගොනුවට) 20 mm; අනෙක් පැති 3: 10 mm (A4: 5 හෝ 10 mm)</td></tr><tr><td>A1</td><td>594 × 841</td></tr><tr><td>A2</td><td>420 × 594</td></tr><tr><td>A3 (විභාග)</td><td>297 × 420</td></tr><tr><td>A4</td><td>210 × 297</td></tr></table></div>
+<p><b>හිසකොටුව (Title Block):</b> දකුණු පහළ කෙළවර, ≈170 × 65 mm; නම, දිනය, පරිමාණය, ඒකක (mm), ප්‍රක්ෂේපණ සංකේතය, මාතෘකාව.</p>
+<svg viewBox="0 0 420 300" width="320" role="img" aria-label="A3 කඩදාසිය, මායිම සහ හිසකොටුව"><rect x="1" y="1" width="418" height="298" fill="none" stroke="currentColor"/><rect x="20" y="10" width="390" height="280" fill="none" stroke="currentColor" stroke-width="2"/><rect x="240" y="225" width="170" height="65" fill="none" stroke="var(--ac)" stroke-width="2"/><text x="325" y="262" text-anchor="middle" fill="var(--ac)" font-size="12">හිසකොටුව 170×65</text><text x="10" y="150" font-size="9" fill="currentColor">20</text></svg></section>
+
+<section id="s6"><h2>6. ඇඳීමේ උපකරණ</h2><ul><li><b>ඇඳීමේ පුවරුව:</b> සුමට මතුපිට, වම් දාරය කෙළින්.</li><li><b>ටී රූල:</b> තිරස් සමාන්තර රේඛා; මුලු මට්ටම් රඳවයි.</li><li><b>මුලු මට්ටම්:</b> 45°-45°-90° සහ 30°-60°-90°; එකට 15° ගුණාකාර (15°, 75°, 105°…).</li><li><b>කවකටුව සහ බෙදුම් කටුව:</b> වෘත්ත/චාප ඇඳීම, මිනුම් ගෙන යාම.</li></ul></section>
+
+<section id="s7"><h2>7. සම්මත පරිමාණ</h2><ul><li>පූර්ණ: 1 : 1</li><li>විශාලන: 2 : 1, 5 : 1, 10 : 1</li><li>කුඩා කිරීම: 1 : 2, 1 : 5, 1 : 10, 1 : 50, 1 : 100</li></ul></section>
+
+<section id="s8"><h2>8. මාන යෙදීමේ නීති</h2><ul><li>ඒකකය mm; ඉලක්කම් පමණක් ලියයි (හිසකොටුවේ "සියලු මිනුම් මිලිමීටර වලිනි").</li><li>ඊතල හිස සිහින්, උල්; දිග : පළල = 3 : 1 (3 mm × 1 mm).</li><li>මායිමේ සිට පළමු මාන රේඛාවට අවම 8–10 mm.</li><li>එකම මිනුම තැන් දෙකක නොලියයි.</li><li>මැද රේඛා/මායිම් රේඛා මාන රේඛා ලෙස නොයෙදිය යුතුය.</li></ul>
+<svg viewBox="0 0 300 90" width="300" role="img" aria-label="මාන රේඛා උදාහරණය"><rect x="40" y="10" width="220" height="40" fill="none" stroke="currentColor" stroke-width="2"/><path d="M40 50v28M260 50v28M40 72H260" stroke="currentColor"/><path d="M40 72l9-2v4zM260 72l-9-2v4z" fill="currentColor"/><text x="150" y="68" text-anchor="middle" font-size="12" fill="currentColor">120</text></svg></section>
+
+<section id="s9"><h2>9. ප්‍රක්ෂේපණ ක්‍රම</h2>
+<p><b>තලරූපී:</b> <b>සමමිතික (Isometric)</b> – තිරස පිට 30° අක්ෂ දෙකක් + සිරස් අක්ෂය, සැබෑ මිනුම්. <b>ඇල (Oblique)</b> – ඉදිරිපස සැබෑ හැඩයෙන්, පැති අක්ෂය 45°; Cavalier (සම්පූර්ණ දිග) / Cabinet (භාගය).</p>
+<p><b>සෘජුකෝණික:</b> ඉදිරිපස, ඉහළ (සැලැස්ම), පැති පෙනුම් 2D තලයක වෙන වෙනම.</p>
+<div class="tw"><table><tr><th></th><th>පළමු කෝණය</th><th>තෙවන කෝණය</th></tr><tr><td>පිළිවෙළ</td><td>නිරීක්ෂකයා → වස්තුව → තලය</td><td>නිරීක්ෂකයා → තලය → වස්තුව</td></tr><tr><td>ඉහළ පෙනුම</td><td>ඉදිරිපසට පහළින්</td><td>ඉදිරිපසට ඉහළින්</td></tr><tr><td>වම් පැති පෙනුම</td><td>දකුණු පසින්</td><td>වම් පසින්</td></tr></table></div></section>
+
+<section id="s10"><h2>10. ඇඳීමේ සිමියුලේෂන්</h2>
+<div class="ct"><label>පැන්සල <select id="pc"><option value="2H">2H (ලා/සිහින්)</option><option value="H">H</option><option value="HB">HB (තද/ඝන)</option></select></label>
+<label>රේඛාව <select id="lk"></select></label>
+<label>Snap <select id="sn"><option value="0">නිදහස්</option><option value="t">T-රූල: 0/30/45/60/90</option><option value="i">Isometric 30°/90°</option></select></label></div>
+<div class="ct"><label>පැන්සල ආනතිය <input type="range" id="tl" min="30" max="90" value="60"> <b id="tv">60°</b></label><span id="fb"></span></div>
+<canvas id="cv" width="900" height="540" aria-label="ඇඳීමේ කැන්වසය"></canvas>
+<div class="ct"><button id="un">පසුගමනය</button><button id="re">ඉදිරියට</button><button id="cl">මකන්න</button><button id="gr" class="p">දැල</button><button id="bd" class="p">A3 රාමුව</button><button id="dl">PNG</button></div>
+<p class="mu">1 mm = 3 px. ඝන 0.7 mm (2.1 px), සිහින් 0.35 mm (1.05 px). 60° ආනතියේදී රේඛාව ඒකාකාරයි; වෙනත් කෝණවල අසමාන/ඝන වේ. Isometric: ක්ලික්/ඇදගෙන ගොස් කැටයක් ඇඳීමට උත්සාහ කරන්න (අක්ෂ 30°, 150°, 90°).</p></section>
+<section id="s11"><h2>11. කඩදාසිය පෙළගැස්වීම, මායිම් රාමුව සහ හිසකොටුව</h2>
+<ol><li>A4/A3 කොළය පුවරුවේ වම් සහ පහළ දාරයට ආසන්නව තිරස්ව (Landscape) තබන්න.</li><li>ටී-රූලේ හිස (Stock) වම් දාරයට තද කර, කොළයේ ඉහළ දාරය ටී-රූලේ තලය සමඟ සමාන්තර කරන්න.</li><li>වම් ඉහළ සහ දකුණු පහළ (විකර්ණ) මුල්ල අත්ලෙන් මැදින් පිටතට මදිමින් Drafting Tape/ක්ලිප් වලින් සවි කර, ඉතිරි මුලු දෙක සවි කරන්න.</li></ol>
+<p><b>මායිම් රාමුව</b> (HB/H, 0.7 mm): සම්මත – වම 20 mm, අනෙක් පැති 10 mm. පාසල් A4 – සතර පැත්තෙන් 10 mm → ඇතුළත 277 × 190 mm.</p>
+<p><b>හිසකොටුව:</b> රාමුවේ දකුණු පහළ කෙළවරට යාව. A3/කාර්මික 170 (හෝ 180) × 65 (හෝ 55) mm; A4 සරල: 140 × 32 mm හෝ උස 16–20 mm තීරුවක්. අකුරු උස: මාතෘකා/ඇඳීම් අංක 5 හෝ 7 mm; අනෙක් ඒවා සහ මාන ඉලක්කම් 3.5 mm (සමාන්තර Guidelines දෙකක් අතර).</p>
+<div class="tw"><table><tr><td>ආයතනය / පාසල (SCHOOL)</td><td colspan="2">මාතෘකාව (TITLE)</td></tr><tr><td>ඇන්දේ (DRAWN)</td><td>දිනය (DATE)</td><td>පරිමාණය (SCALE) · ඒකක: mm</td></tr><tr><td>පරීක්ෂා කළේ (CHECKED)</td><td>ප්‍රක්ෂේපණ සංකේතය</td><td>ඇඳීම් අංකය (DRG. NO)</td></tr></table></div></section>
+
+<section id="s12" hidden><h2>12. A4/A3 මධ්‍යගත කිරීමේ ගණකය + 1st/3rd Angle සජීවී සිමියුලේෂන්</h2>
+<style>.ci{width:64px}.cg{display:flex;flex-wrap:wrap;gap:8px 14px;margin:8px 0}.vg{transition:transform .7s ease}</style>
+<p>L, W, H = වස්තුවේ දිග, පළල, උස. A = රාමුව ඇතුළත පළල, B = (හිසකොටු තීරුව හැර) උස. තිරස් අතට L + W, සිරස් අතට H + W ඉඩ ඉල්ලයි.</p>
+<ul><li><b>ක්‍රමය A (සමාන පරතර 3):</b> X = (A − (L + W)) ÷ 3 , Y = (B − (H + W)) ÷ 3</li><li><b>ක්‍රමය B (රූප අතර d):</b> X = (A − (L + W) − d) ÷ 2 , Y = (B − (H + W) − d) ÷ 2</li></ul>
+<div class="cg"><label>කොළය <select id="sh" class="cc"><option>A4</option><option>A3</option></select></label><label>වම් මායිම <input id="ml" class="ci cc" type="number" value="10"></label><label>අනෙක් මායිම <input id="mo" class="ci cc" type="number" value="10"></label><label>හිසකොටු තීරුව <input id="ts" class="ci cc" type="number" value="20"></label>
+<label>L <input id="cL" class="ci cc" type="number" value="100"></label><label>W <input id="cW" class="ci cc" type="number" value="50"></label><label>H <input id="cH" class="ci cc" type="number" value="60"></label>
+<label>ක්‍රමය <select id="cm" class="cc"><option value="A">A (සමාන)</option><option value="B">B (d)</option></select></label><label>d <input id="cd" class="ci cc" type="number" value="20"></label>
+<label>ප්‍රක්ෂේපණය <select id="an" class="cc"><option value="1">පළමු කෝණ</option><option value="3">තෙවන කෝණ</option></select></label></div>
+<p id="co" style="font-weight:700;color:var(--ac)"></p>
+<svg id="cs" viewBox="0 0 297 210" width="100%" role="img" aria-label="කොළය මත පෙනුම් පිහිටීම" style="background:#fff;border:1px solid var(--bd);max-width:700px">
+<rect id="cb" fill="none" stroke="#111" stroke-width="0.7"/><rect id="ct" fill="#eef2fb" stroke="#111" stroke-width="0.5"/>
+<g id="vf" class="vg"><rect fill="#dbe8ff" stroke="#1d5fd1"/><text fill="#111" font-size="6" dy="-1">Front</text></g>
+<g id="vt" class="vg"><rect fill="#ffe8cc" stroke="#c76a00"/><text fill="#111" font-size="6" dy="-1">Top</text></g>
+<g id="vs" class="vg"><rect fill="#dcf5e0" stroke="#1f8a4c"/><text fill="#111" font-size="6" dy="-1" id="vst">Side</text></g></svg>
+<p class="mu">ප්‍රක්ෂේපණ තේරීම මාරු කර පෙනුම් ස්ථාන සජීවීව වෙනස් වන ආකාරය බලන්න. නිදර්ශනය: A=277, B=170, L=100, W=50, H=60 → X ≈ 42.33, Y = 20 mm.</p></section>
+
+<section id="s13"><h2>13. සෘජුකෝණික ප්‍රක්ෂේපණය – විශ්ලේෂණය</h2>
+<p>සිරස් තලය (VP) සහ තිරස් තලය (HP) අවකාශය වෘත්ත පාද 4කට බෙදයි. ප්‍රක්ෂේපක කිරණ එකිනෙකට සමාන්තර වන අතර තලයට 90°.</p>
+<div class="tw"><table><tr><th>ලක්ෂණය</th><th>පළමු කෝණය</th><th>තෙවන කෝණය</th></tr><tr><td>වස්තුව</td><td>1st Quadrant</td><td>3rd Quadrant</td></tr><tr><td>තලය</td><td>පාරාන්ධ; වස්තුව තලය ඉදිරියෙන්</td><td>පාරදෘශ්‍ය (වීදුරු); තලය වස්තුව ඉදිරියෙන්</td></tr><tr><td>පිළිවෙළ</td><td>නිරීක්ෂකයා → වස්තුව → තලය</td><td>නිරීක්ෂකයා → තලය → වස්තුව</td></tr><tr><td>ඉදිරිපස පෙනුම</td><td>XY ට ඉහළින්</td><td>XY ට පහළින්</td></tr><tr><td>ඉහළ පෙනුම</td><td>ඉදිරිපසට පහළින්</td><td>ඉදිරිපසට ඉහළින්</td></tr><tr><td>වම් පැති පෙනුම</td><td>ඉදිරිපසට දකුණින්</td><td>ඉදිරිපසට වමින්</td></tr><tr><td>දකුණු පැති පෙනුම</td><td>ඉදිරිපසට වමින්</td><td>ඉදිරිපසට දකුණින්</td></tr><tr><td>ISO සංකේතය</td><td>වමේ කේතු ඡින්නකය, දකුණේ සමකේන්ද්‍රීය වෘත්ත දෙක</td><td>වමේ වෘත්ත දෙක, දකුණේ කේතු ඡින්නකය</td></tr></table></div>
+<p class="mu">XY අක්ෂය පෙනුම් දෙක අතර මැදින්; පෙනුම් සම්බන්ධ කිරීමට 45° මිත්‍ර රේඛාව භාවිත කළ හැක.</p></section>
+
+<section id="s13b"><h2>13.1 පෙනුම් පිහිටීම (රූපසටහන්) සහ ISO සංකේත</h2>
+<p>XY = ඉදිරිපස හා ඉහළ පෙනුම් අතර වන අක්ෂය (කඩ රේඛාව). පළමු කෝණයේ දකුණු පෙනුම <b>වමේ</b>, වම් පෙනුම <b>දකුණේ</b>; තෙවන කෝණයේ වම් පෙනුම වමේ, දකුණු පෙනුම දකුණේ.</p>
+<div class="tw" style="display:flex;gap:14px;flex-wrap:wrap"><div><b>පළමු කෝණය</b><div id="l1"></div></div><div><b>තෙවන කෝණය</b><div id="l3"></div></div></div>
+<div style="display:flex;gap:24px;flex-wrap:wrap"><div>පළමු කෝණ සංකේතය<br><svg viewBox="0 0 110 50" width="150" aria-label="පළමු කෝණ සංකේතය"><g fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5,5 45,15 45,35 5,45"/><circle cx="85" cy="25" r="20"/><circle cx="85" cy="25" r="10"/></g></svg></div><div>තෙවන කෝණ සංකේතය<br><svg viewBox="0 0 110 50" width="150" aria-label="තෙවන කෝණ සංකේතය"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="25" cy="25" r="20"/><circle cx="25" cy="25" r="10"/><polygon points="65,5 105,15 105,35 65,45"/></g></svg></div></div>
+<p class="mu">සංකේතය හිසකොටුවේ තබන්න. සම්මත ISO/BS ඇඳීම්වල සංකේතයෙන් කෝණ ක්‍රමය හඳුනාගත හැක; ඇමරිකාව/කැනඩාව තෙවන කෝණයත්, යුරෝපය හා ආසියාවේ බොහෝ තැන් පළමු කෝණයත් භාවිත කරයි.</p></section>
+<section id="s14"><h2>14. ජ්‍යාමිතික නිර්මාණ සහ සමමිතික වෘත්ත</h2><ul><li><b>රේඛාවක් සමාන කොටස්වලට බෙදීම:</b> AB ට ආනතව AC අඳින්න; කවකටුවෙන් සමාන කොටස් ලකුණු කර අවසාන ලක්ෂ්‍ය B ට යා කර, මුලු මට්ටමෙන් ඊට සමාන්තර රේඛා අඳින්න.</li><li><b>සවිධි ෂඩාස්‍රය:</b> (i) පාදයට සමාන අරයෙන් වෘත්තයක් ඇඳ, එම අරයෙන් පරිධියේ චාප 6ක් කපන්න; (ii) T-රූලේ 30°-60° මුලු මට්ටමෙන් තිරස් සහ 60° පාද.</li><li><b>පංචාස්‍ර/අෂ්ටාස්‍ර:</b> බාහිර කෝණය = 360° ÷ n → පංචාස්‍රය 72°, ෂඩාස්‍රය 60°, අෂ්ටාස්‍රය 45°.</li><li><b>ස්පර්ශක/චාප:</b> ස්පර්ශකය අරයට 90°. රේඛා දෙකක් R අරයකින් (Fillet) යා කිරීමට දෙකටම R දුරින් සමාන්තර ඇඳ ඡේදන ලක්ෂ්‍යය කේන්ද්‍රය කරන්න.</li><li><b>සිව් කේන්ද්‍ර ක්‍රමය (Isometric වෘත්තය):</b> D පාද සහිත 30° රොම්බසයක් අඳින්න; පාද 4හි මධ්‍ය ලක්ෂ්‍ය ලකුණු කරන්න; මහා කෝණ (120°) ශීර්ෂ දෙකේ සිට ඉදිරියේ ඇති පාදවල මධ්‍ය ලක්ෂ්‍යවලට රේඛා 4ක් අඳින්න. ශීර්ෂ 2 + ඡේදන ලක්ෂ්‍ය 2 = කේන්ද්‍ර 4 (C₁–C₄); එම කේන්ද්‍රවලින් චාප 4ක් අඳින්න.</li></ul></section>
+
+<section id="s15"><h2>15. හරස්කඩ පෙනුම් (Sectional Views)</h2><ul><li>සැඟවුණු කුහර කඩ ඉරිවලින් නොපෙන්වා, වස්තුව කපන තලයකින් කපා ඉදිරිපස කොටස ඉවත් කළ ආකාරය ඇඳීම.</li><li><b>කැපුම් තල රේඛාව:</b> කෙළවර ඝන දාම රේඛාව (H), බලන දිශාව ඊතල 2ක් සහ A–A වැනි අකුරු.</li><li><b>Hatching:</b> 2H, 0.35 mm සිහින් අඛණ්ඩ රේඛා, තිරසට 45°, 2–3 mm සමාන පරතරය; කුහර මත නොඇඳේ.</li><li><b>Hatch නොකරන කොටස්:</b> ඇණ, මුරිච්චි, රිවට්, ඝන දඬු (Shafts), යතුරු (Keys), ඉල/වෙබ් (Ribs/Webs).</li></ul></section>
+
+<section id="s16"><h2>16. මාන සංකේත සහ ක්‍රම</h2><div class="tw"><table><tr><th>සංකේතය</th><th>තේරුම</th><th>උදාහරණය</th></tr><tr><td>Ø</td><td>විෂ්කම්භය</td><td>Ø50</td></tr><tr><td>R</td><td>අරය</td><td>R25</td></tr><tr><td>□</td><td>සමචතුරස්‍ර හරස්කඩ</td><td>□40</td></tr><tr><td>SØ / SR</td><td>ගෝල විෂ්කම්භය / අරය</td><td>SØ30</td></tr><tr><td>C / 2×45°</td><td>Chamfer</td><td>2×45°</td></tr></table></div>
+<ul><li><b>Aligned ක්‍රමය:</b> ඉලක්කම් මාන රේඛාවට සමාන්තරව, රේඛාව නොකඩා ඉහළින් මැදට; තිරස් මාන පහළ සිටත්, සිරස් මාන දකුණු පස සිටත් කියවිය හැකි සේ.</li><li><b>Unidirectional ක්‍රමය:</b> සියලු මාන ඉලක්කම් පහළ සිට තිරස්ව කියවිය හැකි ලෙස; මාන රේඛාව මැදින් කඩා හෝ ඉහළින් ලියයි.</li></ul></section><section id="s17"><h2>17. අමතර කරුණු (අනෙකුත් විෂය නිර්දේශවල සාමාන්‍යයෙන් ඇතුළත් වන ඒවා)</h2>
+<h3>අකුරු ලිවීම (Lettering – ISO 3098)</h3><ul><li>තනි පහරේ (Single-stroke) කැපිටල් අකුරු; සිරස් හෝ දකුණට 15° ඇල.</li><li>අකුරු උස h සම්මත: 2.5, 3.5, 5, 7, 10, 14, 20 mm. B-වර්ගයේ පහර ඝනකම d = h ÷ 10.</li><li>Guidelines දෙකක් (2H, ලා) අතර ලියන්න; අකුරු අතර පරතරය නිසි ලෙස සමාන ලෙස පෙනෙන සේ තබන්න.</li></ul>
+<h3>රේඛා ප්‍රමුඛතාව</h3><p>එකම ස්ථානයේ රේඛා පිහිටන විට: පෙනෙන (ඝන) රේඛාව → සැඟවුණු කඩ ඉරි → කැපුම් තල → මැද රේඛා → ප්‍රක්ෂේපණ රේඛා.</p>
+<h3>හරස්කඩ වර්ග</h3><ul><li><b>සම්පූර්ණ (Full):</b> වස්තුව සම්පූර්ණයෙන් කැපේ.</li><li><b>අර්ධ (Half):</b> සමමිතික වස්තුවක අඩක් කැපූ, අඩක් පිටත පෙනුම.</li><li><b>ඕෆ්සෙට් (Offset):</b> කැපුම් තලය පියවරවලින් වෙනස් වේ.</li><li><b>භ්‍රමණ (Revolved) / ඉවත් කළ (Removed):</b> හරස්කඩය පෙනුම මත හෝ පිටතින් වෙනම ඇඳේ.</li><li><b>අර්ධ කැඩුම් (Broken-out):</b> කුඩා ප්‍රදේශයක් පමණක් කැපේ.</li></ul>
+<h3>පෙනුම් තේරීම</h3><p>ඉදිරිපස පෙනුම ලෙස වස්තුවේ වැඩිම විස්තර පෙන්වන, සැඟවුණු රේඛා අඩුම දිශාව තෝරන්න. අවශ්‍ය අවම පෙනුම් ගණන පමණක් අඳින්න. Isometric රූපයකින් Orthographic පෙනුම් ලබා ගැනීම පුහුණු කරන්න.</p>
+<h3>ඉංජිනේරු වක්‍ර</h3><p>ඉලිප්සය, පරාවලය, අධිවලය, සර්පිලය (Helix/Spiral), සයික්ලොයිඩ් සහ ඉන්වොලියුට් – සමහර නිර්දේශවල ඇතුළත්; ඔබේ නිර්දේශයෙන් තහවුරු කරගන්න.</p>
+<h3>ඇඳීම් පිළිවෙළ</h3><ol><li>කඩදාසිය සවි කිරීම → 2. මායිම් + හිසකොටුව → 3. දැල් (layout) 2H ලාවට → 4. පෙනුම් ලා රේඛාවෙන් → 5. හරස්කඩ/Hatching → 6. රේඛා තද කිරීම (HB/H) → 7. මාන → 8. අකුරු, හිසකොටුව පිරවීම → 9. පරීක්ෂාව.</li></ol>
+<p class="mu">සටහන: මෙම අමතර කොටස් අන්තර්ජාලයේ ඇති සාමාන්‍ය ඉංජිනේරු ඇඳීම් විෂය නිර්දේශ (IESL, ඉන්දියානු, බංග්ලාදේශ ඩිප්ලෝමා) සමඟ සසඳා එකතු කළා. ශ්‍රී ලංකා උසස් පෙළ ඉංජිනේරු තාක්ෂණවේදය නිල නිර්දේශයේ සම්පූර්ණ පෙළ මට සොයාගත නොහැකි වූ නිසා, අන්තර්ගතය NIE නිර්දේශයෙන් තහවුරු කරගන්න.</p></section>
+
+<section id="s18"><h2>18. ස්වයං පරීක්ෂාව</h2>
+<details><summary>1. පළමු කෝණයේ ඉහළ පෙනුම කොහේ ඇඳේද?</summary><p>ඉදිරිපස පෙනුමට පහළින්.</p></details>
+<details><summary>2. තෙවන කෝණයේ වම් පැති පෙනුම කොහේද?</summary><p>ඉදිරිපස පෙනුමට වමින්.</p></details>
+<details><summary>3. A4, මායිම 10 mm: ඇතුළත ප්‍රමාණය?</summary><p>277 × 190 mm.</p></details>
+<details><summary>4. L=100, W=50, A=277 විට X (ක්‍රමය A)?</summary><p>(277 − 150) ÷ 3 ≈ 42.33 mm.</p></details>
+<details><summary>5. Hatching ආනතිය සහ පරතරය?</summary><p>45°, 2–3 mm; ඇණ, මුරිච්චි, ඝන දඬු මත නොඇඳේ.</p></details>
+<details><summary>6. ඊතල හිසෙහි දිග : පළල?</summary><p>3 : 1.</p></details></section></main>
+<main id="mh"><h1>ඉංජිනේරු ඇඳීම</h1><p class="mu">උසස් පෙළ ඉංජිනේරු තාක්ෂණවේදය · ISO 128 / BS 8888 / SLS</p><p><b>අවශ්‍ය කොටස තෝරන්න:</b></p>
+<button class="hc" data-go="1"><b>📚 පාඩම්</b>පැන්සල්, රේඛා, කඩදාසි, මාන, ප්‍රක්ෂේපණ, හරස්කඩ, ඇඳීමේ සිමියුලේෂන් සහ ප්‍රශ්න</button>
+<button class="hc" data-go="2"><b>📐 සූත්‍ර</b>පෙනුම් මධ්‍යගත කිරීමේ සූත්‍ර (X, Y) පහසුවෙන් තේරුම් ගන්න</button>
+<button class="hc" data-go="3"><b>🧮 ගණකය</b>ඔබේ මිනුම් ටයිප් කර පියවරෙන් පියවර පිළිතුර සහ රූපසටහන ලබා ගන්න</button></main>
+<main id="mf" hidden><h1>පෙනුම් මධ්‍යගත කිරීමේ සූත්‍ර</h1><section><h2>මේක වැඩ කරන්නේ කොහොමද? (පහසු පැහැදිලි කිරීම)</h2><p>අදහස සරලයි: කොළයේ ඇති <b>ඉඩ</b> මැද පෙනුම් දෙක තබා, <b>ඉතිරි හිස් ඉඩ</b> සමානව බෙදනවා.</p><div style="display:flex;height:40px;border:1px solid var(--bd);border-radius:6px;overflow:hidden;margin:8px 0"><div style="flex:1;background:#bcd3ff;color:#111;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 2px;text-align:center">X</div><div style="flex:3;background:#ffd9a8;color:#111;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 2px;text-align:center">ඉදිරිපස පෙනුම (L)</div><div style="flex:1;background:#bcd3ff;color:#111;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 2px;text-align:center">X</div><div style="flex:2;background:#ffd9a8;color:#111;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 2px;text-align:center">පැති පෙනුම (W)</div><div style="flex:1;background:#bcd3ff;color:#111;display:flex;align-items:center;justify-content:center;font-size:12px;padding:0 2px;text-align:center">X</div></div><p>තිරස් අතට පරතර <b>3ක්</b> (X) සහ පෙනුම් <b>2ක්</b> (L, W) ඇත. එබැවින්:</p><ol><li>L + W එකතු කරන්න</li><li>A වලින් එය අඩු කරන්න (ඉතිරි හිස් ඉඩ)</li><li>3 න් බෙදන්න → <b>X</b></li></ol><p>සිරස් අතටත් එසේමයි: H + W එකතු කර → B වලින් අඩු කර → 3 න් බෙදන්න → <b>Y</b>.</p><p>සූත්‍ර ලෙස: <b>X = (A − (L + W)) ÷ 3</b> &nbsp; <b>Y = (B − (H + W)) ÷ 3</b></p><p><b>ක්‍රමය 2:</b> පෙනුම් අතර පරතරය d දී ඇත්නම් d ද එකතු කර අඩු කර, දෙපස පරතර 2ක් නිසා <b>2 න්</b> බෙදන්න: X = (A − (L + W + d)) ÷ 2</p><p class="mu">A = කොළයේ දිග − වම්/දකුණු මායිම. B = කොළයේ උස − ඉහළ/පහළ මායිම (− හිසකොටුව). L, W, H = වස්තුවේ දිග, පළල, උස.</p></section><section><h2>උදාහරණය</h2><p>A4, මායිම් 10 මි.මී., L = 100, W = 50, H = 60:</p><p>A = 297 − (10 + 10) = 277 &nbsp; B = 210 − (10 + 10) = 190<br>X = (277 − (100 + 50)) ÷ 3 = 127 ÷ 3 = <b>42.33</b> මි.මී.<br>Y = (190 − (60 + 50)) ÷ 3 = 80 ÷ 3 = <b>26.67</b> මි.මී.</p><button class="p" data-go="3">🧮 ගණකයට යන්න</button></section></main>
+<main id="mc" hidden>
+<h1>A4 / A3 කඩදාසියේ පෙනුම් මධ්‍යගත කිරීමේ ගණකය</h1><p><button data-go="2">📐 සූත්‍ර බලන්න</button></p>
+
+<section><h2>දත්ත ඇතුළත් කරන්න (යතුරුපුවරුවෙන් ටයිප් කරන්න)</h2>
+<style>.qg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}.qg label{display:flex;flex-direction:column;font-size:14px}.qg input{font:inherit;padding:6px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg)}</style>
+<div class="ct"><button id="qb4" class="p">A4 (297 × 210)</button><button id="qb3">A3 (420 × 297)</button>
+<label><input type="radio" name="qm" value="A" checked class="qc"> ක්‍රමය 1: සමාන පරතර 3ක්</label><label><input type="radio" name="qm" value="B" class="qc"> ක්‍රමය 2: පරතරය d</label>
+<select id="qa" class="qc"><option value="1">පළමු කෝණ ප්‍රක්ෂේපණය</option><option value="3">තෙවන කෝණ ප්‍රක්ෂේපණය</option></select></div>
+<div class="qg">
+<label>කඩදාසියේ දිග (මි.මී.)<input id="qPL" class="qc" type="number" inputmode="decimal" step="any" value="297"></label>
+<label>කඩදාසියේ උස (මි.මී.)<input id="qPH" class="qc" type="number" inputmode="decimal" step="any" value="210"></label>
+<label>වම් මායිම් පරතරය (මි.මී.)<input id="qml" class="qc" type="number" inputmode="decimal" step="any" value="10"></label>
+<label>අනෙක් පැති 3 හි මායිම (මි.මී.)<input id="qmo" class="qc" type="number" inputmode="decimal" step="any" value="10"></label>
+<label>හිසකොටුවට පහළින් ඉඩ (මි.මී.)<input id="qts" class="qc" type="number" inputmode="decimal" step="any" value="0"></label>
+<label>වස්තුවේ දිග L (මි.මී.)<input id="qL" class="qc" type="number" inputmode="decimal" step="any" value="100"></label>
+<label>වස්තුවේ පළල W (මි.මී.)<input id="qW" class="qc" type="number" inputmode="decimal" step="any" value="50"></label>
+<label>වස්තුවේ උස H (මි.මී.)<input id="qH" class="qc" type="number" inputmode="decimal" step="any" value="60"></label>
+<label id="qdw" style="display:none">පෙනුම් අතර පරතරය d (මි.මී.)<input id="qd" class="qc" type="number" inputmode="decimal" step="any" value="20"></label></div>
+<p><button id="qgo" class="p">ගණනය කරන්න</button> <span class="mu">ටයිප් කරන විටම ස්වයංක්‍රීයව යාවත්කාලීන වේ.</span></p></section>
+<section><h2>පියවරෙන් පියවර විසඳුම</h2><div id="qs" style="font-size:16px"></div></section>
+<section><h2>කඩදාසි රූපසටහන</h2><p><span style="color:#1d5fd1">━ නිල් ඊතල: තිරස් පරතර (X)</span> &nbsp; <span style="color:#1f8a4c">━ කොළ ඊතල: සිරස් පරතර (Y)</span></p>
+<svg id="qsv" viewBox="0 0 297 210" width="100%" style="max-width:820px;border:1px solid var(--bd)" role="img" aria-label="කඩදාසිය මත පෙනුම් සහ පරතර"></svg></section>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const secs=['හැඳින්වීම','පැන්සල්','තුඩු','රේඛා','කඩදාසි','උපකරණ','පරිමාණ','මාන','ප්‍රක්ෂේපණ','සිමියුලේෂන්','කොළය/හිසකොටුව','මධ්‍යගත ගණකය','1st/3rd Angle','නිර්මාණ','හරස්කඩ','මාන සංකේත','අමතර කරුණු','ස්වයං පරීක්ෂාව'];
+$('#nv').innerHTML=secs.map((t,i)=>`<a href="#s${i+1}">${t}</a>`).join('');
+const mq=matchMedia('(prefers-color-scheme: dark)');$('#th').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme==='dark':mq.matches;r.dataset.theme=d?'light':'dark'};mq.addEventListener('change',()=>{delete document.documentElement.dataset.theme});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('section').forEach(s=>io.observe(s));
+const L=[['A','අඛණ්ඩ ඝන','',0.7,'0.7 mm (HB/H)','පෙනෙන දාර, මායිම්, Border'],
+['B','අඛණ්ඩ සිහින්','',0.35,'0.35/0.5 mm (2H)','මාන, ප්‍රක්ෂේපණ, යොමු, Hatching 45°, නිර්මාණ රේඛා'],
+['C','සිහින් නිදහස් අත','w',0.35,'0.35 mm (2H)','කෙටි කැඩුම් සීමා'],
+['D','සිහින් සිග්-සැග්','z',0.35,'0.35 mm (2H)','දිගු කැඩුම් සීමා'],
+['E/F','කෙටි කඩ ඉරි','9 3',0.35,'0.35/0.5 mm (H/2H)','සැඟවුණු දාර (කඩය ~3 mm, පරතරය ~1 mm)'],
+['G','සිහින් දාම','30 3 3 3',0.35,'0.35 mm (2H)','මැද රේඛා, සමමිතික අක්ෂ, පිච් වෘත්ත'],
+['H','කෙළවර ඝන දාම','h',0.35,'මැද 0.35 (2H), කෙළවර 0.7 (HB)','කැපුම් තල'],
+['K','ද්විත්ව කඩ දාම','30 3 3 3 3 3',0.35,'0.35 mm (2H)','විකල්ප/අන්ත පිහිටීම් (Phantom)']];
+function sv(d,w){const s=w*2.4,c='stroke="currentColor" fill="none"';let b;
+if(d==='w')b=`<path ${c} stroke-width="${s}" d="M5 15q10-10 20 0t20 0t20 0t20 0t20 0t20 0"/>`;
+else if(d==='z')b=`<path ${c} stroke-width="${s}" d="M5 15h30l6-8l8 16l6-8h60"/>`;
+else if(d==='h')b=`<path ${c} stroke-width="1.7" d="M5 15h22M93 15h22"/><path ${c} stroke-width="0.9" stroke-dasharray="12 2 2 2" d="M27 15h66"/>`;
+else b=`<path ${c} stroke-width="${s}" ${d?`stroke-dasharray="${d}"`:''} d="M5 15h110"/>`;
+return`<svg viewBox="0 0 120 30" width="130" height="30" aria-hidden="true">${b}</svg>`}
+$('#lt').innerHTML+=L.map(l=>`<tr><td><b>${l[0]}</b> ${l[1]}</td><td>${sv(l[2],l[3])}</td><td>${l[4]}</td><td>${l[5]}</td></tr>`).join('');
+$('#lk').innerHTML=L.map((l,i)=>`<option value="${i}">${l[0]} – ${l[1]}</option>`).join('');
+// canvas
+const cv=$('#cv'),g=cv.getContext('2d'),MM=3;
+let S=[],R=[],cur=null,grid=true,bord=false;
+const col={HB:'#111',H:'#333','2H':'#666'};
+function pos(e){const r=cv.getBoundingClientRect();return[(e.clientX-r.left)*cv.width/r.width,(e.clientY-r.top)*cv.height/r.height]}
+function snap(a,b,m){if(m==='0')return b;const dx=b[0]-a[0],dy=b[1]-a[1],len=Math.hypot(dx,dy),ang=Math.atan2(-dy,dx)*180/Math.PI;
+const set=m==='t'?[0,30,45,60,90,120,135,150,180,-30,-45,-60,-90,-120,-135,-150,-180]:[30,90,150,-30,-90,-150,0,180];
+let best=set[0],bd=1e9;for(const s of set){let d=Math.abs(((ang-s+540)%360)-180);if(d<bd){bd=d;best=s}}
+if(m==='i'){const iso=[30,90,150,-30,-90,-150];bd=1e9;for(const s of iso){const d=Math.abs(((ang-s+540)%360)-180);if(d<bd){bd=d;best=s}}}
+const r=best*Math.PI/180;return[a[0]+len*Math.cos(r),a[1]-len*Math.sin(r)]}
+function seg(s){const[x1,y1,x2,y2]=s.p,l=L[s.k],dd=l[2],t=s.t,bad=Math.abs(t-60)>8;
+let w=l[3]*MM;if(s.pc==='HB'&&l[3]<.7)w*=1.1;if(bad)w*=1+Math.abs(t-60)/40;
+g.save();g.strokeStyle=col[s.pc];g.globalAlpha=s.pc==='2H'?.75:1;g.lineWidth=w;g.lineCap='butt';
+const len=Math.hypot(x2-x1,y2-y1),ux=(x2-x1)/(len||1),uy=(y2-y1)/(len||1),nx=-uy,ny=ux;
+g.beginPath();g.moveTo(x1,y1);
+if(dd==='w'){for(let d=0;d<=len;d+=4){const o=Math.sin(d/6)*3;g.lineTo(x1+ux*d+nx*o,y1+uy*d+ny*o)}}
+else if(dd==='z'){const m=len/2;g.lineTo(x1+ux*(m-10),y1+uy*(m-10));g.lineTo(x1+ux*(m-4)+nx*10,y1+uy*(m-4)+ny*10);g.lineTo(x1+ux*(m+4)-nx*10,y1+uy*(m+4)-ny*10);g.lineTo(x1+ux*(m+10),y1+uy*(m+10));g.lineTo(x2,y2)}
+else if(dd==='h'){g.setLineDash([30,3,3,3]);g.lineTo(x2,y2);g.stroke();g.setLineDash([]);g.lineWidth=.7*MM;g.beginPath();const e=Math.min(24,len/3);g.moveTo(x1,y1);g.lineTo(x1+ux*e,y1+uy*e);g.moveTo(x2,y2);g.lineTo(x2-ux*e,y2-uy*e)}
+else{g.setLineDash(dd?dd.split(' ').map(Number):[]);g.lineTo(x2,y2)}
+g.stroke();g.restore()}
+function draw(){g.fillStyle='#fff';g.fillRect(0,0,900,540);
+if(grid){g.strokeStyle='#e3e6ec';g.lineWidth=1;g.beginPath();for(let x=0;x<=900;x+=30){g.moveTo(x,0);g.lineTo(x,540)}for(let y=0;y<=540;y+=30){g.moveTo(0,y);g.lineTo(900,y)}g.stroke()}
+if(bord){g.strokeStyle='#111';g.lineWidth=.7*MM;g.strokeRect(60,30,810,480);g.lineWidth=1.5;g.strokeRect(870-170*MM/3.4,510-65*MM/3.4,170*MM/3.4,65*MM/3.4);g.fillStyle='#555';g.font='11px sans-serif';g.fillText('හිසකොටුව 170×65 mm',870-170*MM/3.4+6,510-65*MM/3.4+16)}
+S.forEach(seg);if(cur)seg(cur)}
+function fb(t){const b=$('#fb'),ok=Math.abs(t-60)<=8;b.textContent=ok?'නිවැරදියි: '+t+'°':(t>68?'ආනතිය වැඩියි ('+t+'°) – රේඛාව ඝන/අසමාන':'ආනතිය අඩුයි ('+t+'°) – රේඛාව ඝන/අසමාන');b.style.background=ok?'#1f8a4c':'#c0392b';b.style.color='#fff'}
+$('#tl').oninput=e=>{$('#tv').textContent=e.target.value+'°';fb(+e.target.value)};fb(60);
+let st=null;
+cv.onpointerdown=e=>{cv.setPointerCapture(e.pointerId);st=pos(e);cur={p:[...st,...st],k:+$('#lk').value,pc:$('#pc').value,t:+$('#tl').value}};
+cv.onpointermove=e=>{if(!st)return;const q=snap(st,pos(e),$('#sn').value);cur.p=[...st,...q];draw()};
+cv.onpointerup=()=>{if(cur&&Math.hypot(cur.p[2]-cur.p[0],cur.p[3]-cur.p[1])>3){S.push(cur);R=[]}st=cur=null;draw()};
+$('#pc').onchange=e=>{if(e.target.value==='2H'&&+$('#lk').value===0)$('#lk').value=1;if(e.target.value==='HB'&&+$('#lk').value===1)$('#lk').value=0};
+$('#un').onclick=()=>{if(S.length)R.push(S.pop());draw()};$('#re').onclick=()=>{if(R.length)S.push(R.pop());draw()};
+$('#cl').onclick=()=>{S=[];R=[];draw()};
+$('#gr').onclick=()=>{grid=!grid;draw()};$('#bd').onclick=()=>{bord=!bord;draw()};
+$('#dl').onclick=()=>{const a=document.createElement('a');a.href=cv.toDataURL('image/png');a.download='drawing.png';a.click()};
+draw();
+function calc(){const q=i=>+$(i).value,sz=$('#sh').value==='A3'?[420,297]:[297,210],ml=q('#ml'),mo=q('#mo'),ts=q('#ts'),L=q('#cL'),W=q('#cW'),H=q('#cH'),d=q('#cd'),A=sz[0]-ml-mo,B=sz[1]-2*mo-ts,m=$('#cm').value,an=$('#an').value;
+let X,Y,gx,gy;if(m==='A'){X=(A-L-W)/3;Y=(B-H-W)/3;gx=X;gy=Y}else{X=(A-L-W-d)/2;Y=(B-H-W-d)/2;gx=gy=d}
+$('#cs').setAttribute('viewBox','0 0 '+sz[0]+' '+sz[1]);const S=(i,o)=>{for(const k in o)$(i).setAttribute(k,o[k])};
+S('#cb',{x:ml,y:mo,width:A,height:sz[1]-2*mo});const tw=Math.min(170,A);S('#ct',{x:ml+A-tw,y:sz[1]-mo-ts,width:tw,height:ts});
+const x0=ml+X,y0=mo+Y;let f,t,s;if(an==='1'){f=[x0,y0];t=[x0,y0+H+gy];s=[x0+L+gx,y0]}else{t=[x0,y0];f=[x0,y0+W+gy];s=[x0+L+gx,y0+W+gy]}
+const P=(id,p,w,h)=>{$(id).style.transform=`translate(${p[0]}px,${p[1]}px)`;const r=$(id+' rect');r.setAttribute('width',Math.max(w,0));r.setAttribute('height',Math.max(h,0))};
+P('#vf',f,L,H);P('#vt',t,L,W);P('#vs',s,W,H);$('#vst').textContent=an==='1'?'Left Side':'Right Side';
+$('#co').textContent=`A=${A}, B=${B} mm → X = ${X.toFixed(2)} mm, Y = ${Y.toFixed(2)} mm`+(X<0||Y<0?' ⚠ ඉඩ මදි – පරිමාණය කුඩා කරන්න':'')}
+document.querySelectorAll('.cc').forEach(e=>e.oninput=e.onchange=calc);calc();
+function lay(a){const B=(x,y,w,h,c,t)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}" stroke="#333"/><text x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle" font-size="9" fill="#111">${t}</text>`;
+let s=a===1?B(80,10,100,60,'#dbe8ff','Front')+B(80,90,100,50,'#ffe8cc','Top')+B(10,10,50,60,'#dcf5e0','Right')+B(200,10,50,60,'#dcf5e0','Left')+'<line x1="0" x2="260" y1="80" y2="80" stroke="#c0392b" stroke-dasharray="4 3"/>':B(80,10,100,50,'#ffe8cc','Top')+B(80,80,100,60,'#dbe8ff','Front')+B(10,80,50,60,'#dcf5e0','Left')+B(200,80,50,60,'#dcf5e0','Right')+'<line x1="0" x2="260" y1="70" y2="70" stroke="#c0392b" stroke-dasharray="4 3"/>';
+return `<svg viewBox="0 0 260 150" width="260" style="background:#fff;border:1px solid var(--bd)"><text x="2" y="${a===1?78:68}" font-size="8" fill="#c0392b">X—Y</text>${s}</svg>`}
+function lay(a){const B=(x,y,w,h,c,t)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}" stroke="#333"/><text x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle" font-size="9" fill="#111">${t}</text>`;
+const F=B(80,a===1?10:80,100,60,'#dbe8ff','ඉදිරිපස පෙනුම'),T=B(80,a===1?90:10,100,50,'#ffe8cc','ඉහළ පෙනුම (සැලැස්ම)'),sy=a===1?10:80,Lf=B(10,sy,50,60,'#dcf5e0',a===1?'දකුණු පැති':'වම් පැති'),Rt=B(200,sy,50,60,'#dcf5e0',a===1?'වම් පැති':'දකුණු පැති'),ly=a===1?80:70;
+return `<svg viewBox="0 0 260 150" width="260" style="background:#fff;border:1px solid var(--bd)"><text x="2" y="${ly-2}" font-size="8" fill="#c0392b">XY අක්ෂය</text>${F}${T}${Lf}${Rt}<line x1="0" x2="260" y1="${ly}" y2="${ly}" stroke="#c0392b" stroke-dasharray="4 3"/></svg>`}
+$('#l1').innerHTML=lay(1);$('#l3').innerHTML=lay(3);
+document.querySelector('nav a[href="#s12"]').remove();document.querySelector('nav a[href="#s13"]').textContent='පළමු/තෙවන කෝණ';
+const V=['mh','mm','mf','mc'];function tab(n){V.forEach((v,i)=>{$('#'+v).hidden=i!==n});$('#nv').style.display=n===1?'':'none';[0,1,2,3].forEach(i=>{$('#t'+i).className=i===n?'p':''});scrollTo(0,0);if(n===3)mc()}
+[0,1,2,3].forEach(i=>{$('#t'+i).onclick=()=>tab(i)});document.querySelectorAll('[data-go]').forEach(e=>{e.onclick=()=>tab(+e.dataset.go)});tab(0);
+function mc(){const q=i=>parseFloat($('#'+i).value)||0,PL=q('qPL'),PH=q('qPH'),ml=q('qml'),mo=q('qmo'),ts=q('qts'),L=q('qL'),W=q('qW'),H=q('qH'),d=q('qd'),mB=document.querySelector('input[name=qm]:checked').value==='B',one=$('#qa').value==='1',f=n=>+n.toFixed(2),bl='#3b82f6',gr='#22a05a';
+$('#qdw').style.display=mB?'':'none';
+const A=PL-ml-mo,B=PH-2*mo-ts;let X,Y;if(mB){X=(A-(L+W+d))/2;Y=(B-(H+W+d))/2}else{X=(A-(L+W))/3;Y=(B-(H+W))/3}
+const gx=mB?d:X,gy=mB?d:Y;
+const bar=a=>`<div style="display:flex;height:36px;border:1px solid var(--bd);border-radius:6px;overflow:hidden;font-size:12px;margin:6px 0">${a.map(([w,l,c])=>`<div style="flex:${Math.max(w,.01)};background:${c};color:#111;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap">${l}</div>`).join('')}</div>`,cb='#bcd3ff',cg='#b9e8c6',co='#ffd9a8',cp='#e6d4ff',bk=n=>`<span style="background:${co};color:#111;border-radius:50%;padding:1px 9px;font-weight:700">${n}</span>`;
+const blk=(col,sy,T,fm,an,bn,a,b,dd,res,cnt)=>{const u=a+b+dd,tot=T==='A'?A:B;return `<div style="border-left:5px solid ${col};padding:2px 12px;margin:12px 0"><p><b style="color:${col};font-size:18px">${sy} පරතරය</b> <span class="mu">${fm}</span></p><p>${bk(1)} වස්තු පෙනුම් දෙකට යන ඉඩ එකතු කරන්න:<br>${an} + ${bn}${dd?' + d':''} = ${f(a)} + ${f(b)}${dd?' + '+f(dd):''} = <b>${f(u)}</b></p><p>${bk(2)} මුළු ඉඩෙන් (${T} = ${f(tot)}) එය අඩු කරන්න → ඉතිරි හිස් ඉඩ:<br>${f(tot)} − ${f(u)} = <b>${f(tot-u)}</b></p><p>${bk(3)} හිස් ඉඩ පරතර ${cnt}කට සමානව බෙදන්න:<br>${f(tot-u)} ÷ ${cnt} = <b style="color:${col};font-size:18px">${f(res)} මි.මී.</b></p></div>`};
+const cnt=mB?2:3,dd=mB?d:0,fx=mB?'X = (A − (L + W + d)) ÷ 2':'X = (A − (L + W)) ÷ 3',fy2=mB?'Y = (B − (H + W + d)) ÷ 2':'Y = (B − (H + W)) ÷ 3';
+const hb=mB?[[X,'X',cb],[L,'ඉදිරිපස L',co],[d,'d',cp],[W,'පැති W',co],[X,'X',cb]]:[[X,'X',cb],[L,'ඉදිරිපස L',co],[X,'X',cb],[W,'පැති W',co],[X,'X',cb]];
+const o1=one?[H,'ඉදිරිපස H']:[W,'ඉහළ W'],o2=one?[W,'ඉහළ W']:[H,'ඉදිරිපස H'],vb=[[Y,'Y',cg],[o1[0],o1[1],co],[mB?d:Y,mB?'d':'Y',mB?cp:cg],[o2[0],o2[1],co],[Y,'Y',cg]];
+let h=`<p>${bk(0)} <b>මුලින්ම ඇඳීමට ඇති ඉඩ සොයමු</b><br>A = ${PL} − (${ml} + ${mo}) = <b>${f(A)}</b> (කොළයේ දිග − මායිම් දෙක)<br>B = ${PH} − (${mo} + ${mo})${ts?' − '+ts:''} = <b>${f(B)}</b> (කොළයේ උස − මායිම් දෙක${ts?' − හිසකොටුව':''})</p>`
++blk(bl,'තිරස් (X)',  'A',fx,'L','W',L,W,dd,X,cnt)+bar(hb)+blk(gr,'සිරස් (Y)','B',fy2,'H','W',H,W,dd,Y,cnt)+bar(vb);
+const S=$('#qsv');
+if(L+W>A||H+W>B||X<0||Y<0){$('#qs').innerHTML=h+'<p style="color:#c0392b"><b>⚠️ වස්තුවේ මිනුම් කඩදාසියේ ඇඳීමේ ඉඩට වඩා වැඩිය! කරුණාකර කුඩා කිරීමේ පරිමාණයක් (1:2 වැනි) භාවිත කරන්න හෝ මිනුම් පරීක්ෂා කරන්න.</b></p>';S.innerHTML='';return}
+$('#qs').innerHTML=h+`<p><b>පියවර 4 – ඇඳීමට</b><br>වම් මායිමේ සිට ${f(X)} මි.මී. ලකුණු කර ඉදිරිපස පෙනුම (${L} මි.මී.) ආරම්භ කරන්න; ඉන්පසු ${f(gx)} මි.මී. හිස් තබා පැති පෙනුම (${W} මි.මී.) අඳින්න. ඉහළ මායිමේ සිට ${f(Y)} මි.මී. පහළින් පළමු පෙනුම් පේළිය ආරම්භ කර, පේළි දෙක අතර ${f(gy)} මි.මී. තබන්න.</p>`;
+const fs=PL/54,x0=ml+X,y0=mo+Y,r1=one?H:W,r2=one?W:H,fy=one?y0:y0+W+gy,ty=one?y0+H+gy:y0,yy=fy+H/2,xx=x0+L/2,tw=Math.min(170,A);
+const bx=(x,y,w,h,c,a1,a2)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${c}" stroke="#333" stroke-width=".5"/><text x="${x+w/2}" y="${y+h/2}" text-anchor="middle" font-size="${fs*.8}" fill="#111">${a1}</text><text x="${x+w/2}" y="${y+h/2+fs}" text-anchor="middle" font-size="${fs*.8}" fill="#111">${a2}</text>`;
+const ar=(x1,y1,x2,y2,k,c,tx,ty2,t)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${c}" stroke-width=".6" marker-start="url(#m${k})" marker-end="url(#m${k})"/><text x="${tx}" y="${ty2}" font-size="${fs}" font-weight="700" fill="${c}" text-anchor="${k==='b'?'middle':'start'}">${t}</text>`;
+const mk=(k,c)=>`<marker id="m${k}" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L6 3L0 6z" fill="${c}"/></marker>`;
+S.setAttribute('viewBox',`0 0 ${PL} ${PH}`);
+S.innerHTML=`<defs>${mk('b',bl)}${mk('g',gr)}</defs><rect width="${PL}" height="${PH}" style="fill:var(--card)"/><rect x="${ml}" y="${mo}" width="${A}" height="${PH-2*mo}" fill="none" style="stroke:var(--fg)" stroke-width=".7"/>`+(ts?`<rect x="${ml+A-tw}" y="${PH-mo-ts}" width="${tw}" height="${ts}" style="fill:var(--bg);stroke:var(--fg)" stroke-width=".5"/><text x="${ml+A-tw/2}" y="${PH-mo-ts/2+2}" font-size="${fs}" text-anchor="middle" style="fill:var(--fg)">හිසකොටුව</text>`:'')
++bx(x0,fy,L,H,'#dbe8ff','ඉදිරිපස පෙනුම',L+' × '+H)+bx(x0,ty,L,W,'#ffe8cc','ඉහළ පෙනුම (සැලැස්ම)',L+' × '+W)+bx(x0+L+gx,fy,W,H,'#dcf5e0',one?'වම් පැති පෙනුම':'දකුණු පැති පෙනුම',W+' × '+H)
++ar(ml,yy,x0,yy,'b',bl,ml+X/2,yy-2,'X='+f(X))+ar(x0+L,yy,x0+L+gx,yy,'b',bl,x0+L+gx/2,yy-2,(mB?'d=':'X=')+f(gx))+ar(x0+L+gx+W,yy,ml+A,yy,'b',bl,x0+L+gx+W+X/2,yy-2,'X='+f(X))
++ar(xx,mo,xx,y0,'g',gr,xx+2,mo+Y/2+2,'Y='+f(Y))+ar(xx,y0+r1,xx,y0+r1+gy,'g',gr,xx+2,y0+r1+gy/2+2,(mB?'d=':'Y=')+f(gy))+ar(xx,y0+r1+gy+r2,xx,mo+B,'g',gr,xx+2,y0+r1+gy+r2+Y/2+2,'Y='+f(Y))}
+document.querySelectorAll('.qc').forEach(e=>{e.oninput=e.onchange=mc});$('#qgo').onclick=mc;
+$('#qb4').onclick=()=>{$('#qPL').value=297;$('#qPH').value=210;$('#qb4').className='p';$('#qb3').className='';mc()};
+$('#qb3').onclick=()=>{$('#qPL').value=420;$('#qPH').value=297;$('#qb3').className='p';$('#qb4').className='';mc()};
+</script></body></html>

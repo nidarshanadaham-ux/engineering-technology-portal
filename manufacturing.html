@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="si"><head><meta charset="utf-8"><title>Engineering Technology - 8 වන පාඩම</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#070d1a;--p:#0f1b33;--l:#1e3a5f;--c:#22d3ee;--t:#e2e8f0;--m:#94a3b8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--t);font:15px/1.7 'Noto Sans Sinhala','Iskoola Pota',sans-serif}
+nav{display:flex;gap:6px;overflow-x:auto;padding:8px;background:var(--p);border-bottom:1px solid var(--l);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+button,select{background:var(--l);color:var(--t);border:1px solid #2b5282;border-radius:6px;padding:7px 11px;font:inherit;cursor:pointer;white-space:nowrap}
+button.on,button:hover{background:var(--c);color:#041018}
+main{max-width:1200px;margin:auto;padding:14px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.cd{background:var(--p);border-left:3px solid var(--c);padding:8px 12px;border-radius:4px}.cd b{color:var(--c)}
+h1{font-size:1.6rem;margin:.3em 0}h2{color:var(--c)}
+.row{display:flex;flex-wrap:wrap;gap:12px}.cv{flex:1 1 420px;position:relative;min-height:340px;height:62vh}
+canvas{width:100%;height:100%;display:block;background:#0b1220;border:1px solid var(--l);border-radius:6px;touch-action:none}
+.pn{flex:0 0 290px;background:var(--p);padding:10px;border-radius:6px}
+.pn label{display:block;font-size:13px;color:var(--m)}.pn input[type=range]{width:100%}
+.pn .bt{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
+#out{font-size:13px;background:#050a14;padding:8px;border-radius:4px;margin-top:6px}
+.w{color:#fb923c}.ok{color:#4ade80}.note{color:var(--m);font-size:13px}
+.zb{position:absolute;right:8px;top:8px;display:flex;gap:4px}
+.q{background:var(--p);padding:8px 12px;margin:8px 0;border-radius:6px}.q label{display:block;cursor:pointer}
+section{scroll-margin-top:60px;padding:16px 0;border-bottom:1px solid var(--l)}#c3{touch-action:pan-y}.cv{height:70vh}.pn .bt button{flex:1 1 45%;font-weight:700;padding:10px 6px;font-size:14px;color:#fff}.go,.go:hover{background:#16a34a}.st,.st:hover{background:#dc2626}.au,.au:hover{background:#2563eb}.pa,.pa:hover{background:#d97706}.re,.re:hover{background:#6b7280}.pn .bt button:hover{filter:brightness(1.25);color:#fff}.pn h4{margin:12px 0 4px;color:var(--c);font-size:14px;border-bottom:1px solid var(--l)}.jg{display:grid;grid-template-columns:repeat(3,48px);gap:4px}.jg button{padding:10px 0;font-size:18px}.pn label.k{display:flex;gap:8px;align-items:center;padding:6px;border-radius:6px;background:#13233f;margin:3px 0;cursor:pointer}.pn input[type=checkbox]{width:20px;height:20px;accent-color:#22d3ee}.zb button{font-size:13px;padding:6px 8px}
+:root{color-scheme:light;--bg:#e9f1f9;--p:#fff;--l:#c3d5ea;--c:#0e7490;--t:#10243d;--m:#4a607c}
+:root{--panel-bg:#fff;--panel-soft:#eef4fb;--canvas-bg:#e6eef7;--output-bg:#f1f6fb;--nav-bg:linear-gradient(90deg,#0f5f8a,#2563eb);--nav-button-bg:#ffffff26;--nav-button-color:#fff;--nav-button-border:#ffffff55;--bar-bg:#dbe5f0}
+button.on,button:hover{background:var(--c);color:#fff}
+nav{background:var(--nav-bg)}nav button{background:var(--nav-button-bg);color:var(--nav-button-color);border-color:var(--nav-button-border)}nav button.on,nav button:hover{background:#fff;color:#0f5f8a}
+.cd:nth-child(4n+1){border-color:#0e7490}.cd:nth-child(4n+2){border-color:#7c3aed}.cd:nth-child(4n+3){border-color:#ea580c}.cd:nth-child(4n+4){border-color:#16a34a}
+section h2{border-left:5px solid #f59e0b;padding-left:8px}.cd{box-shadow:0 1px 4px #0f5f8a22}
+canvas{background:var(--canvas-bg)}#out{background:var(--output-bg)}.w{color:#c2410c}.ok{color:#15803d}
+.cv{flex:1 1 100%;height:72vh;min-height:420px}.pn{flex:1 1 100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;background:none;padding:0}.gp{background:var(--panel-bg);border:1px solid var(--l);border-radius:8px;padding:10px}.pn label.k{background:var(--panel-soft)}
+#dro{position:absolute;left:8px;top:8px;width:200px;background:#0d1f17;border:2px solid #475569;border-radius:8px;padding:6px 8px;font:12px/1.5 ui-monospace,Consolas,monospace;color:#86efac;box-shadow:0 2px 8px #0006}#dro .dr{display:flex;justify-content:space-between;border-bottom:1px solid #14532d}#dro .dr span{color:#4ade80;opacity:.85}#dro b{color:#bbf7d0;font-size:14px}#dro .dt{margin-bottom:4px;font-weight:700}.lg{color:#4ade80}.rd{color:#f87171}.bl{color:#60a5fa}.gy{color:#9ca3af}
+@media(max-width:600px){#dro{width:150px;font-size:11px}#dro b{font-size:12px}}
+.qo{display:block;width:100%;text-align:left;margin:4px 0;white-space:normal;background:var(--panel-soft)}.qo.good{background:#16a34a;color:#fff}.qo.bad{background:#dc2626;color:#fff}.qo:disabled{opacity:1;cursor:default}.ex{font-size:14px;margin-top:4px}
+
+.stage{flex:1 1 100%;min-width:0;position:relative}
+.zb{left:50%;right:auto;transform:translateX(-50%)}
+#dro{position:static;width:auto;display:grid;grid-template-columns:1fr 1fr;column-gap:10px;font-size:11px;line-height:1.45}#dro .dt{grid-column:1/-1}#dro b{font-size:12px}
+.pn.ov{display:flex;flex-direction:column;gap:8px;flex:none;background:none;padding:0;margin-top:10px}
+.ov .gp{padding:8px;font-size:13px}.ov h4{margin:0 0 4px}.ov label{line-height:1.25;font-size:12px}.ov input[type=range]{margin:0;height:16px}
+.pn.ov .bt button{padding:7px 4px;font-size:13px}
+.rr{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;margin-top:5px}.rr span{color:var(--m)}.rr b{font-size:14px}
+.bar{height:6px;background:var(--bar-bg);border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;border-radius:3px;transition:width .2s}
+.wn{background:var(--warn-bg,#fff1e6);color:var(--warn-text,#c2410c);border-left:3px solid #ea580c;padding:3px 6px;margin-top:5px;font-size:12px;border-radius:3px;font-weight:700}.wn.okk{background:var(--ok-bg,#e8f8ee);color:var(--ok-text,#15803d);border-color:#16a34a}
+@media(min-width:1000px){.pn.ov{position:absolute;top:8px;margin:0;max-height:max(404px,calc(72vh - 16px));overflow:auto;z-index:2}.ovl{left:8px;width:250px}.ovr{right:8px;width:300px}.stage{flex:none;width:var(--vw,100vw);margin-left:calc(50% - var(--vw,100vw)/2)}.ov .gp{background:var(--panel-bg)}}
+body{overflow-x:clip}
+.pn.ov{scrollbar-width:thin;user-select:none}.ov .gp{padding:7px 8px}.ov .pn label,.pn.ov label{margin:0 0 3px}
+#dro .dr{white-space:nowrap;overflow:hidden}#dro .dt{white-space:nowrap}
+.rr{margin-top:3px;font-size:12.5px}.rr b{font-size:13.5px}.bar{height:5px}.wn{margin-top:3px;padding:2px 6px}
+.theme-toggle{margin-left:auto;flex:0 0 auto}.theme-toggle[aria-pressed=true]{background:#22d3ee;color:#041018;border-color:#22d3ee}
+:root[data-theme=dark]{color-scheme:dark;--bg:#070d1a;--p:#0f1b33;--l:#1e3a5f;--c:#22d3ee;--t:#e2e8f0;--m:#94a3b8;--panel-bg:#0f1b33;--panel-soft:#13233f;--canvas-bg:#0b1220;--output-bg:#050a14;--nav-bg:#0f1b33;--nav-button-bg:#1e3a5f;--nav-button-color:#e2e8f0;--nav-button-border:#2b5282;--bar-bg:#1e3a5f;--warn-bg:#3a201d;--warn-text:#ff8f80;--ok-bg:#15302a;--ok-text:#4fd8b0}
+:root[data-theme=dark] nav button.on,:root[data-theme=dark] nav button:hover{background:#22d3ee;color:#041018}
+:root[data-theme=dark] .ov .gp{background:#0f1b33f2}
+:root[data-theme=dark] .w{color:#fb923c}:root[data-theme=dark] .ok{color:#4ade80}
+</style></head><body>
+<nav id="nav"></nav><main>
+<section id="home"><h1>ඉංජිනේරු තාක්ෂණවේදය (Engineering Technology) - 8 වන පාඩම</h1>
+<p>ද්‍රව්‍ය ගුණ, යන්ත්‍ර, ලෝහ හැඩගැන්වීම, සම්බන්ධකරණ සහ CNC. පිටුව පහළට Scroll කර සියලු කොටස් බලන්න (ඉහළ මෙනුවෙන් කෙලින්ම යා හැක). ★ ලකුණ = විෂය නිර්දේශයෙන් බැහැර අමතර දැනුම. සියලුම Simulation 2D වලින් ඇත. <b>ලේත් යන්ත්‍ර ප්‍රායෝගිකය (Lathe Practical) පමණක් 3D</b> වේ.</p>
+<p class="note">සටහන: පාඩම් පොතේ ඡායාරූප මෙම ඉල්ලීමට අමුණා නොතිබුණි. එබැවින් අන්තර්ගතය ඔබ දුන් මාතෘකා ලැයිස්තුව අනුව සකස් කළ සාමාන්‍ය තාක්ෂණික විස්තරයකි. පොත සමඟ සසඳා සත්‍යාපනය කරන්න. සියලු Simulation අධ්‍යාපනික ආකෘති පමණි; සැබෑ යන්ත්‍ර ආරක්ෂක නීතිවලට ආදේශකයක් නොවේ.</p></section>
+<section id="props" hidden></section><section id="mach" hidden></section><section id="form" hidden></section><section id="join" hidden></section><section id="cnc" hidden></section>
+<section id="lathe" hidden><h2>3D ලේත් යන්ත්‍ර ප්‍රායෝගිකය (3D Lathe Practical)</h2>
+<div class="row"><div class="stage"><div class="cv"><canvas id="c3"></canvas><div id="dro"></div><div class="zb"><button id="v1">3D</button><button id="v2">ඉදිරිපස</button><button id="v3">උඩ</button><button id="zi">🔍+</button><button id="zo">🔍−</button></div></div><div class="pn ov ovl" id="pl"></div><div class="pn ov ovr" id="pr"></div></div><div class="pn" id="pn"></div></div>
+<p id="info" class="note">යන්ත්‍ර කොටසක් ක්ලික්/ටැප් කර එහි කාර්යය දැනගන්න. කරකවා බැලීමට ඇදගන්න.</p>
+<p class="note">සරල කළ ආකෘතියකි: Tool Wear, උෂ්ණත්වය, බලය සහ Surface Finish අගයන් ඉගෙනීම සඳහා ඇස්තමේන්තු පමණි. නිර්දේශ අගයන් උදාහරණ ලෙස පමණි. වැරදි සැකසුම්වලදී සෑම විටම වැඩ කොටස කැඩෙන්නේ නැත; එය ද්‍රව්‍යය, මෙවලම සහ සැකසුම් මත රඳා පවතී. තවමත් ඇතුළත් නොවූ කැපුම්: Facing, Parting-off, Thread, Drilling, Boring, Chamfer.</p></section>
+<section id="sim" hidden><h2>2D Simulations</h2><div class="bt" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px"><select id="s2"></select><label>වේගය <input type="range" id="sp" min="10" max="100" value="40"></label></div>
+<canvas id="c2" width="600" height="300" style="height:auto;aspect-ratio:2/1"></canvas><p id="d2"></p></section>
+<section id="quiz" hidden><h2>බහුවරණ ප්‍රශ්න</h2><div id="qs"></div><button id="qb">ලකුණු බලන්න</button> <b id="qr"></b></section><section id="gloss" hidden></section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=i=>document.getElementById(i);
+const SEC=[['home','මුල් පිටුව'],['props','ද්‍රව්‍ය ගුණ'],['mach','යන්ත්‍ර'],['form','ලෝහ හැඩගැන්වීම'],['join','සම්බන්ධකරණ'],['cnc','CNC'],['lathe','3D ලේත් ප්‍රායෝගිකය'],['sim','2D Simulations'],['gloss','ශබ්දකෝෂය'],['quiz','ප්‍රශ්නාවලි']];
+const themeKey='et-lesson-8-theme';
+const themeButton=document.createElement('button');
+themeButton.type='button';
+themeButton.className='theme-toggle';
+themeButton.setAttribute('aria-label','පසුබිම් වර්ණය මාරු කරන්න');
+function setTheme(theme){document.documentElement.dataset.theme=theme;themeButton.textContent=theme==='dark'?'☀️ සුදු පසුබිම':'🌙 තද පසුබිම';themeButton.setAttribute('aria-pressed',String(theme==='dark'));localStorage.setItem(themeKey,theme)}
+setTheme(localStorage.getItem(themeKey)==='dark'?'dark':'light');
+themeButton.onclick=()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+const DATA={
+props:['ද්‍රව්‍යවල ගුණ (Properties of Materials)',[
+['ඝනත්වය (Density)','ඒකක පරිමාවක ස්කන්ධය (kg/m³). ඇලුමිනියම් සැහැල්ලුයි; ඊයම් බරයි.'],
+['පෘෂ්ඨික ආතතිය (Surface Tension)','ද්‍රව පෘෂ්ඨය ඇදී පවතින ගුණය. ද්‍රව පෑස්සුම් ලෝහය මත පැතිරීමට බලපායි.'],
+['දුස්ස්‍රාවිතාව (Viscosity)','ද්‍රවයක ගලා යාමේ ප්‍රතිරෝධය. ලිහිසි තෙල් තේරීමට වැදගත්.'],
+['ද්‍රවාංකය (Melting Point)','ඝනයක් ද්‍රවයක් බවට පත්වන උෂ්ණත්වය. වාත්තු කිරීම, පෑස්සීම.'],
+['තාපාංකය (Boiling Point)','ද්‍රවයක් වාෂ්ප වන උෂ්ණත්වය.'],
+['විඛාදන ප්‍රතිරෝධය (Corrosion Resistance)','රසායනික ක්‍රියාවෙන් ගෙවීමට ඇති ප්‍රතිරෝධය. උදා: Stainless Steel.'],
+['රසායනික අක්‍රියතාව (Chemical Inertness)','අනෙක් ද්‍රව්‍ය සමඟ ප්‍රතික්‍රියා නොකිරීම. උදා: රන්, PTFE.'],
+['ප්‍රතිරෝධිතාව (Resistivity)','ද්‍රව්‍යයක් විද්‍යුත් ධාරාවට දක්වන ප්‍රතිරෝධය.'],
+['සන්නායකතාව (Conductivity)','ධාරාව හෝ තාපය ගමන් කිරීමේ හැකියාව. උදා: කොපර්.'],
+['චුම්බක ප්‍රවාහ ඝනත්වය (Magnetic Flux Density)','ඒකක වර්ගඵලයක චුම්බක ප්‍රවාහය (ඒකකය: ටෙස්ලා, T).'],
+['නමනීයතාව (Ductility)','කම්බි ලෙස ඇදිය හැකි ගුණය. උදා: කොපර් කම්බි.'],
+['හැඩගැන්වීමේ හැකියාව (Malleability)','තලා තහඩු කළ හැකි ගුණය. උදා: ඇලුමිනියම් තහඩු.'],
+['දෘඪතාව (Hardness)','සීරීමට හෝ ඇතුල් වීමට ඇති ප්‍රතිරෝධය. උදා: කැපුම් මෙවලම්.'],
+['තදබලතාව (Toughness)','කැඩීමට පෙර ශක්තිය අවශෝෂණය කිරීමේ හැකියාව.'],
+['භංගුරතාව (Brittleness)','විරූපණය නොවී ඉරිතලා කැඩීම. උදා: වාත්තු යකඩ.'],
+['ප්‍රත්‍යාස්ථතාව (Elasticity)','බලය ඉවත් කළ විට මුල් හැඩයට පැමිණීම. උදා: Spring.'],
+['ප්ලාස්ටික් විරූපණය (Plasticity)','බලය ඉවත් කළත් ස්ථිරව හැඩය වෙනස් වීම.']]],
+mach:['යන්ත්‍ර සහ බල උපකරණ (Machines and Power Tools)',[
+['බල කියත් (Power Saw)','ලෝහ/දැව කැපීම. වැඩ කොටස තදින් සවි කරන්න.'],
+['විදින යන්ත්‍ර (Drilling Machines)','Drill bit භ්‍රමණය වෙමින් සිදුරු විදීම.'],
+['ලේත් යන්ත්‍ර (Lathe Machines)','වැඩ කොටස භ්‍රමණය වේ; මෙවලම ස්ථාවරව චලනය වේ. සිලින්ඩරාකාර හැඩ.'],
+['මිලින් යන්ත්‍ර (Milling Machines)','භ්‍රමණය වන Cutter මඟින් තල, ඛාංඩ කැපීම.'],
+['ඇඹරුම් යන්ත්‍ර (Grinding Machines)','භ්‍රමණය වන ඇඹරුම් රෝදයෙන් සියුම් නිමාවක්.'],
+['හැඩකරණ යන්ත්‍ර (Shaping Machines)','Ram එක ඉදිරියට පසුපසට ගමන් කරමින් තල හැඩ කැපීම.'],
+['බෝරින් යන්ත්‍ර (Boring Machines)','පවතින සිදුරක් විශාල කර නිවැරදි කිරීම.'],
+['ආරක්ෂාව','ආරක්ෂිත අස්පත්, හොඳින් සවි කළ වැඩ කොටස, ලිහිල් ඇඳුම් හෝ ආභරණ නොපැළඳීම, Chuck key ගලවා තැබීම.'],
+['පාලක අංග','පිරිවිතර, වේග තේරීම, ලිහිසි කිරීම, සිසිලනය, සීරුමාරු කිරීම, කොටස් මාරු කිරීම.']]],
+form:['ලෝහ හැඩගැන්වීම (Metal Forming)',[
+['සීතල හැඩගැන්වීම (Cold Forming)','කාමර උෂ්ණත්වයේදී. වැඩි බලයක් ඕනෑ; නිමාව හොඳයි; ශක්තිය වැඩිවේ.'],
+['උණුසුම් හැඩගැන්වීම (Hot Forming)','ලෝහය රත් කර. අඩු බලයක් ඕනෑ; විශාල විරූපණ කළ හැක. ආරක්ෂාව: රත් වූ ලෝහ, අත්වැසුම්.'],
+['කම්මල් වැඩ (Smithy)','උදුනේ රත් කර ඇණ ගා හැඩගැන්වීම.'],
+['නැමීම (Bending)','තහඩු/දඬු කෝණයකට නැවීම.'],
+['ඇඹරීම (Twisting)','අක්ෂයක් වටා ඇඹරීම.'],
+['ව්‍යාජනය (Forging)','පහර දී හෝ පීඩනයෙන් හැඩගැන්වීම.'],
+['රෝල් කිරීම (Rolling)','රෝල් දෙකක් අතරින් යැවීමෙන් සනකම අඩු කිරීම.'],
+['නෙරවුම් ක්‍රියාවලිය (Extruding)','Die එකක් හරහා ලෝහය තල්ලු කිරීම.']]],
+join:['යාන්ත්‍රික සම්බන්ධකරණ (Joining Methods)',[
+['ඇලවීම (Adhesive Bonding)','මැලියම් භාවිතය. විවිධ ද්‍රව්‍ය සම්බන්ධ කළ හැක.'],
+['ඉස්කුරුප්පු ඇණ සම්බන්ධතා (Screw Threads)','ගලවා ගත හැකි තාවකාලික සන්ධි.'],
+['බට් සන්ධිය (Butt Joint)','දාර දෙකක් එකිනෙක ගැටෙන සේ පෑස්සීම.'],
+['නැමූ තහඩු සන්ධිය (Folded Seam)','තහඩු දාර නවා අගුළු දැමීම.'],
+['රිවට් කිරීම (Riveting)','රිවට් ඇණ තළා සවි කිරීම; අර්ධ ස්ථිර.'],
+['මෘදු පෑස්සීම (Soft Soldering)','අඩු උෂ්ණත්ව ලෝහ මිශ්‍රණයකින් (Solder) පෑස්සීම.'],
+['දෘඪ පෑස්සීම (Brazing)','ඉහළ උෂ්ණත්වයේ පිත්තල/රිදී පිරවුමකින්.'],
+['කම්මල් පෑස්සීම (Forge Welding)','රත් කර ඇණ ගා ඒකාබද්ධ කිරීම.'],
+['විද්‍යුත් චාප පෑස්සීම (Arc Welding)','විදුලි චාපයේ තාපයෙන් ලෝහ ද්‍රවීකරණය. ආරක්ෂාව: Welding mask, අත්වැසුම්.'],
+['වායු පෑස්සීම (Gas Welding)','Oxy-acetylene දැල්ලෙන්. ආරක්ෂාව: ගෑස් සිලින්ඩර, ඇස් ආරක්ෂා කිරීම.'],
+['සන්ධි වර්ග','තාවකාලික (ඉස්කුරුප්පු), අර්ධ ස්ථිර (රිවට්), ස්ථිර (පෑස්සුම්, ඇලවීම). පොත සමඟ සත්‍යාපනය කරන්න.']]],
+cnc:['CNC තාක්ෂණය (Computer Numerical Control)',[
+['CNC යනු','කේත (G-code) මඟින් පරිගණකයකින් යන්ත්‍රය පාලනය. නිරවද්‍ය, නැවත නැවත එකම ප්‍රතිඵලය; ආරම්භක වියදම වැඩියි.'],
+['යන්ත්‍ර වර්ග','CNC Lathe, Milling, Laser Cutting, EDM, Bending, Grinding, Punch Press.'],
+['අක්ෂ (Axes)','Lathe: X (අරය/විෂ්කම්භය) සහ Z (දිග). Mill: X, Y, Z.'],
+['G-code','G00 වේගවත් චලනය, G01 රේඛීය කැපුම, M03 Spindle ON, M05 Spindle OFF, M30 වැඩසටහන අවසන්. Syntax පාලකය (Controller) අනුව වෙනස් විය හැක. ඔබේ යන්ත්‍ර අත්පොත බලන්න.']]]};
+DATA.mach[1].push(['Digital Readout (DRO)','Carriage සහ Cross Slide හි ස්ථානය (X, Z) ඉලක්කම්වලින් පෙන්වන සංදර්ශකය. X සාමාන්‍යයෙන් විෂ්කම්භය (Diameter) ලෙස පෙන්වයි; Z වැඩ කොටසේ කෙළවරේ සිට මැනේ. RPM, Feed සහ Cutting Speed ද පෙන්විය හැක.'],['වැඩ කොටස අල්ලා ගැනීම','3-jaw Chuck (වටකුරු දඬු), 4-jaw Chuck (අක්‍රමවත්/සමචතුරස්‍ර), Faceplate, Collet, Centres (කේන්ද්‍ර) අතර.'],['ලේත් ආරක්ෂාව','Chuck key ගලවන්න; ආරක්ෂිත අස්පත් පළඳින්න; ලිහිල් ඇඳුම්/ආභරණ නොපළඳින්න; යන්ත්‍රය දුවන විට මැනීම හෝ Chips අතින් ඉවත් කිරීම නොකරන්න.'],['මෙවලම උස සැකසීම','Cutting Tool තුඩ වැඩ කොටසේ කේන්ද්‍ර උසට (Centre Height) සැකසිය යුතුය. වැරදි උසක් Surface Finish නරක කරයි.'],['★ Cutting Tool කෝණ','Rake සහ Clearance (Relief) කෝණ. Aluminium වැනි මෘදු ද්‍රව්‍යවලට විශාල Rake කෝණයක් යොදයි.']);
+DATA.props[1].push(['★ ඝනත්ව සූත්‍රය','ρ = m / V (kg/m³).'],['★ තාප පිරියම් කිරීම (Heat Treatment)','Annealing (මෘදු කිරීම), Hardening (දැඩි කිරීම), Tempering (භංගුරතාව අඩු කිරීම).'],['★ දෘඪතා පරීක්ෂණ','Brinell, Rockwell, Vickers.']);
+DATA.mach[1].push(['ලේත් යන්ත්‍ර කොටස්','Bed, Headstock, Chuck, Spindle, Tool Post, Compound Rest, Cross Slide, Carriage, Lead Screw, Tailstock. 3D කොටසේ ක්ලික් කර බලන්න.'],['ලේත් කැපුම් ක්‍රියා','Straight/Step/Taper Turning, Facing, Grooving, Parting-off, Thread Cutting, Drilling, Boring, Chamfering.'],['★ මෙවලම් ද්‍රව්‍ය','HSS (High Speed Steel) සහ Carbide. Carbide වේගවත් වුවත් භංගුරයි.'],['★ කැපුම් ද්‍රව (Cutting Fluid)','සිසිලනය, ලිහිසි කිරීම, Chips ඉවත් කිරීම.'],['★ ඇඹරුම් රෝද','Aluminium Oxide සහ Silicon Carbide ඛාදක.'],['★ මිලින් වර්ග','Face, Slab, End Milling; Up සහ Down (Climb) Milling.']);
+DATA.form[1].push(['★ සීතල වැඩ දැඩි වීම (Work Hardening)','සීතල හැඩගැන්වීමේදී ලෝහය දැඩි වේ; Annealing මගින් මෘදු කළ හැක.']);
+DATA.join[1].push(['★ වායු පෑස්සුම් දැල්ල','Neutral, Carburising (ඉන්ධන වැඩි), Oxidising (ඔක්සිජන් වැඩි).'],['★ Flux','ඔක්සයිඩ් ඉවත් කර පෑස්සුම හොඳින් ඇලීමට උපකාරී වේ.']);
+DATA.cnc[1].push(['Machine Zero / Work Zero','යන්ත්‍රයේ ස්ථාවර මූල ලක්ෂ්‍යය සහ වැඩ කොටසේ මූල ලක්ෂ්‍යය.'],['Absolute (G90) සහ Incremental (G91)','Absolute: මූල ලක්ෂ්‍යයෙන්; Incremental: වත්මන් ස්ථානයෙන්. (Lathe පාලක සමහරක U, W භාවිත කරයි.)'],['උදාහරණ Lathe වැඩසටහන (Fanuc ආකාරයේ; පාලකය අනුව වෙනස් විය හැක)','M03 S800; G00 X42 Z2; G01 X38 Z-60 F0.2; G00 X45 Z2; M05; M30'],['★ Tool Offset','මෙවලමේ ස්ථානය පාලකයට දැනුම් දීම.']);
+for(const k in DATA){const[t,a]=DATA[k];$(k).innerHTML='<h2>'+t+'</h2><div class="g">'+a.map(x=>'<div class="cd"><b>'+x[0]+'</b><br>'+x[1]+'</div>').join('')+'</div>'}
+let lathe=null;
+function show(id){SEC.forEach(s=>$(s[0]).hidden=s[0]!=id);[...$('nav').children].forEach(b=>b.classList.toggle('on',b.dataset.i==id));
+ if(id=='lathe'){if(!lathe)lathe=initLathe();lathe.on=true}else if(lathe)lathe.on=false;sim2.on=id=='sim'}
+SEC.forEach(s=>{const b=document.createElement('button');b.textContent=s[1];b.dataset.i=s[0];b.onclick=()=>show(s[0]);$('nav').appendChild(b)});
+$('nav').appendChild(themeButton);
+/* ---------- 2D simulations ---------- */
+const T2={drill:['විදින යන්ත්‍රය (Drilling)','Drill bit භ්‍රමණය වෙමින් පහළට ගොස් සිදුරක් සාදයි. Feed වැඩි කළොත් bit එකට හානි විය හැක.'],
+mill:['මිලින් (Milling)','වැඩ මේසය ගමන් කරන අතර භ්‍රමණය වන Cutter එකෙන් ඛාංඩයක් (Slot) කැපේ.'],
+grind:['ඇඹරුම් (Grinding)','ඇඹරුම් රෝදය තුනී ස්ථරයක් ඉවත් කර සියුම් නිමාවක් දෙයි.'],
+shape:['හැඩකරණ (Shaping)','Ram එක ඉදිරියට යන විට කපයි (Cutting stroke), ආපසු එන විට නොකපයි.'],
+forge:['ව්‍යාජනය (Forging)','පහර දීමෙන් උස අඩු වී පළල වැඩි වේ (පරිමාව නොවෙනස්).'],
+roll:['රෝල් කිරීම (Rolling)','රෝල් අතරින් යන විට සනකම අඩු වී දිග වැඩි වේ.'],
+extr:['නෙරවුම (Extruding)','Ram එක ලෝහය Die හරහා තල්ලු කර කුඩා හරස්කඩක් සාදයි.'],
+bend:['නැමීම (Bending)','Punch එක තහඩුව V-Die එකට තල්ලු කර නවයි.'],
+laser:['CNC Laser කැපීම','Laser හිස පාර දිගේ ගමන් කර තහඩුව දිය කර කපයි.']};
+for(const k in T2)$('s2').add(new Option(T2[k][0],k));
+const FT='12px Noto Sans Sinhala,sans-serif',K0='#070d1a',rc=(x,a,b,w,h,c)=>{x.fillStyle=c;x.fillRect(a,b,w,h);x.strokeStyle='#1e293b';x.lineWidth=1;x.strokeRect(a+.5,b+.5,w,h)},cl=(v,a,b)=>Math.max(a,Math.min(b,v));
+const lb=(x,t,px,py,tx,ty,r)=>{x.strokeStyle='#334155';x.lineWidth=1;x.beginPath();x.moveTo(px,py);x.lineTo(tx,ty);x.stroke();x.fillStyle='#0f172a';x.font=FT;x.textAlign=r?'right':'left';x.fillText(t,r?tx-3:tx+3,ty-3);x.lineWidth=2;x.textAlign='left'};
+const MA={};
+MA.drill=(x,t,sp,pr,tr)=>{const d=tr*32,y0=115+d,tip=y0+68,hole=Math.max(0,tip-205),a=t/60*sp;rc(x,200,272,200,16,'#334155');rc(x,285,40,30,232,'#64748b');rc(x,280,215,40,34,'#475569');rc(x,230,215,140,8,'#94a3b8');rc(x,250,205,100,10,'#b0b8c4');rc(x,244,198,10,18,'#f59e0b');rc(x,346,198,10,18,'#f59e0b');rc(x,297,205,6,hole,K0);rc(x,240,30,120,50,'#1e3a5f');rc(x,250,10,50,22,'#334155');rc(x,312,18,34,14,'#475569');rc(x,293,80,14,y0-80,'#cbd5e1');rc(x,289,y0,22,18,'#94a3b8');rc(x,297,y0+18,6,50,'#22d3ee');x.strokeStyle=K0;for(let i=0;i<6;i++){const y=y0+20+((i*9+a)%54);x.beginPath();x.moveTo(297,y);x.lineTo(303,y-4);x.stroke()}const ag=-.2+tr*.9,ex=360+48*Math.cos(ag),ey=60+48*Math.sin(ag);x.strokeStyle='#e2e8f0';x.lineWidth=4;x.beginPath();x.moveTo(360,60);x.lineTo(ex,ey);x.stroke();x.fillStyle='#ef4444';x.beginPath();x.arc(ex,ey,6,0,7);x.fill();x.lineWidth=2;if(hole>0){x.fillStyle='#cbd5e1';for(let i=0;i<5;i++){x.beginPath();x.arc(300+(Math.random()-.5)*30,200-Math.random()*10,2,0,7);x.fill()}}lb(x,'Column (කුලුන)',285,150,270,150,1);lb(x,'Chuck (චක්)',311,y0+9,400,y0+9);lb(x,'Drill bit',303,y0+45,400,y0+45);lb(x,'Feed lever',405,80,420,50);lb(x,'Table (මේසය)',230,219,225,245,1);if(sp>.8){x.fillStyle='#fb923c';x.font=FT;x.fillText('Feed අධිකයි: bit කැඩීමේ අවදානම, රළු සිදුරක්',20,290)}};
+MA.grind=(x,t,sp,pr,tr)=>{const a=t/1000*sp*9;rc(x,230,255,140,18,'#334155');rc(x,270,185,60,72,'#475569');rc(x,100,105,140,50,'#1e3a5f');rc(x,230,126,30,8,'#94a3b8');x.strokeStyle='#475569';x.lineWidth=10;x.beginPath();x.arc(300,130,64,.45*Math.PI,2*Math.PI);x.stroke();x.lineWidth=2;x.fillStyle='#a8a29e';x.beginPath();x.arc(300,130,55,0,7);x.fill();x.fillStyle='#57534e';for(let i=0;i<14;i++){const g=a+i*.9,r=18+(i%4)*9;x.beginPath();x.arc(300+r*Math.cos(g),130+r*Math.sin(g),2,0,7);x.fill()}x.fillStyle='#334155';x.beginPath();x.arc(300,130,12,0,7);x.fill();rc(x,350,136,70,6,'#cbd5e1');rc(x,354,124,80,12,'#9ca3af');x.strokeStyle='#fbbf24';for(let i=0;i<10;i++){const l=10+Math.random()*35;x.beginPath();x.moveTo(355,134);x.lineTo(355+l*.4+Math.random()*10,134+l);x.stroke()}lb(x,'ඇඹරුම් රෝදය (Wheel)',270,100,250,50,1);lb(x,'Tool rest',400,142,410,185);lb(x,'වැඩ කොටස',420,124,430,100);x.fillStyle='#e2e8f0';x.font=FT;x.fillText('මෝටරය (Motor)',112,134);x.fillText('ඇස් ආරක්ෂකය අනිවාර්යයි; Wheel guard ඉවත් නොකරන්න',20,290)};
+MA.mill=(x,t,sp,pr,tr)=>{const wx=230-pr*120,a=t/10*sp*3,w=cl(210-wx,0,100);rc(x,50,262,300,20,'#334155');rc(x,60,30,45,232,'#1e3a5f');rc(x,100,30,170,50,'#1e3a5f');rc(x,120,10,60,22,'#334155');rc(x,203,80,14,30,'#cbd5e1');rc(x,200,110,20,12,'#94a3b8');rc(x,100,236,200,26,'#475569');rc(x,120,222,170,14,'#64748b');rc(x,wx-30,208,170,14,'#94a3b8');rc(x,wx,178,100,30,'#b0b8c4');rc(x,wx,178,w,6,K0);rc(x,204,122,12,62,'#22d3ee');x.strokeStyle=K0;for(let i=0;i<5;i++){const y=125+((i*12+a)%50);x.beginPath();x.moveTo(204,y);x.lineTo(216,y+6);x.stroke()}x.strokeStyle='#e2e8f0';x.beginPath();x.arc(wx+148,215,9,0,7);x.stroke();x.beginPath();x.moveTo(wx+148,215);x.lineTo(wx+148+9*Math.cos(a/6),215+9*Math.sin(a/6));x.stroke();lb(x,'Spindle (ස්පින්ඩලය)',217,95,290,100);lb(x,'End mill (කටරය)',216,150,290,150);lb(x,'වැඩ මේසය (Table)',wx+130,215,400,235);x.fillStyle='#0f172a';x.font=FT;x.fillText('මේසය චලනය වේ; Cutter එක භ්‍රමණය පමණි',20,290)};
+MA.shape=(x,t,sp,pr,tr)=>{const f=pr<.7?pr/.7:1-(pr-.7)/.3,tx=330+f*140,sw=pr<.7?cl(tx-380,0,90):90;rc(x,60,262,440,18,'#334155');rc(x,tx-200,125,200,26,'#94a3b8');rc(x,60,100,170,162,'#1e3a5f');x.strokeStyle='#22d3ee';x.beginPath();x.arc(145,200,28,0,7);x.stroke();rc(x,360,240,170,14,'#94a3b8');rc(x,385,254,110,16,'#475569');rc(x,380,200,120,40,'#b0b8c4');rc(x,380,200,sw,5,K0);rc(x,tx-14,148,28,14,'#64748b');rc(x,tx-3,160,6,40,'#22d3ee');lb(x,'Ram (රෑම්)',250,138,250,105);lb(x,'Tool head',tx,150,495,105,1);lb(x,'Table (වැඩ මේසය)',440,247,440,285);x.fillStyle='#0f172a';x.font=FT;x.fillText(pr<.7?'කැපුම් ගමන (Cutting stroke)':'ආපසු ගමන (Return stroke, නොකපයි)',20,20)};
+T2.drill[1]='Drill press: මෝටරය Belt මගින් Chuck එක කරකවයි. Lever එක අදින විට Quill එක පහළට ගොස් Bit එක වැඩ කොටසට ඇතුල් වේ. වැඩ කොටස Clamp කර ඇත. Feed වැඩි කළොත් bit කැඩීමට හා රළු සිදුරකට හේතු වේ.';T2.grind[1]='Bench grinder: මෝටරයෙන් ඇඹරුම් රෝදය කරකැවේ. වැඩ කොටස Tool rest මත තබා රෝදයේ පෘෂ්ඨයට සෙමින් ස්පර්ශ කරයි; ගිනි පුපුරු ඉවත් වන ද්‍රව්‍ය වේ. Tool rest රෝදයට ආසන්නව (≈2-3 mm) සීරුමාරු කරන්න.';T2.mill[1]='Vertical Milling Machine: Spindle එකේ End mill එක කරකැවේ. වැඩ මේසය Handwheel/Feed මගින් චලනය වී ඛාංඩයක් (Slot) කැපේ. Cutter එක භ්‍රමණය වන අතර වැඩ කොටස ගමන් කරයි.';T2.shape[1]='Shaper: Ram එක ඉදිරියට ගමන් කරන විට Tool එක කපයි; ආපසු එන විට නොකපයි. සෑම ගමනකටම පසු මේසය Feed වේ. තල පෘෂ්ඨ සහ ඛාංඩ සඳහා.';
+const sim2={on:false};
+function d2(t){const c=$('c2'),x=c.getContext('2d'),k=$('s2').value,sp=$('sp').value/100,pr=(t/1000*sp*.5)%1,tr=pr<.5?pr*2:2-pr*2;
+ x.clearRect(0,0,600,300);x.lineWidth=2;const M='#64748b',C='#22d3ee',K='#070d1a';if(MA[k]){MA[k](x,t,sp,pr,tr);$('d2').textContent=T2[k][1];return}
+ const spoke=(cx,cy,r,a)=>{x.strokeStyle=C;x.beginPath();x.arc(cx,cy,r,0,7);x.stroke();for(let i=0;i<4;i++){x.beginPath();x.moveTo(cx,cy);x.lineTo(cx+r*Math.cos(a+i*1.57),cy+r*Math.sin(a+i*1.57));x.stroke()}};
+ if(k=='drill'){const d=tr*60;x.fillStyle=M;x.fillRect(150,200,300,70);x.fillStyle=K;x.fillRect(293,200,14,d);x.fillStyle=C;x.fillRect(296,70+d,8,130);x.strokeStyle=K;for(let i=0;i<8;i++){const y=80+d+i*15+(t/40*sp)%15;x.beginPath();x.moveTo(296,y);x.lineTo(304,y-6);x.stroke()}
+  if(sp>.8){x.fillStyle='#fb923c';x.fillText('Feed අධිකයි: bit කැඩීමේ අවදානම',200,40)}}
+ if(k=='mill'){const x0=150+pr*200;x.fillStyle=M;x.fillRect(x0,200,200,50);x.fillStyle=K;x.fillRect(x0,200,Math.max(0,Math.min(200,300-x0)),20);spoke(300,190,30,t/100*sp*4);x.fillRect(298,100,4,60)}
+ if(k=='grind'){const wx=170+tr*260;x.fillStyle=M;x.fillRect(150,190,300,60);x.fillStyle='#475569';x.fillRect(150,190,wx-150,6);spoke(wx,150,45,t/100*sp*5);x.strokeStyle='#fbbf24';for(let i=0;i<6;i++){const a=Math.random()*20;x.beginPath();x.moveTo(wx+40,192);x.lineTo(wx+55+a,185-a);x.stroke()}}
+ if(k=='shape'){const rx=pr<.7?160+pr/.7*280:160+(1-(pr-.7)/.3)*280;x.fillStyle=M;x.fillRect(150,190,300,60);x.fillStyle=K;x.fillRect(150,190,pr<.7?rx-150:290,6);x.fillStyle=C;x.fillRect(rx-70,140,70,30);x.fillRect(rx-4,170,8,20)}
+ if(k=='forge'){const h=100-50*tr,w=8000/h;x.fillStyle=M;x.fillRect(200,250,200,20);x.fillStyle='#b45309';x.fillRect(300-w/2,250-h,w,h);x.strokeStyle=C;x.setLineDash([5,5]);x.strokeRect(260,150,80,100);x.setLineDash([]);x.fillStyle=C;x.fillRect(250,250-h-60,100,60)}
+ if(k=='roll'){x.fillStyle='#b45309';x.beginPath();x.moveTo(40,130);x.lineTo(300,140);x.lineTo(540,145);x.lineTo(540,155);x.lineTo(300,160);x.lineTo(40,170);x.fill();x.fillStyle=K;for(let i=0;i<20;i++){const px=40+((i*30+t/10*sp*3)%500);x.fillRect(px,px<300?132+(px-40)/26:140,2,4)}spoke(300,95,45,t/200*sp*3);spoke(300,205,45,-t/200*sp*3)}
+ if(k=='extr'){x.fillStyle=M;x.fillRect(150,90,200,20);x.fillRect(150,190,200,20);x.fillRect(350,90,10,50);x.fillRect(350,160,10,50);x.fillStyle='#b45309';x.fillRect(160+pr*150,110,190-pr*150,80);x.fillRect(360,140,pr*190,20);x.fillStyle=C;x.fillRect(110+pr*150,110,50,80)}
+ if(k=='bend'){const d=tr*45,th=Math.atan2(d,60),ex=90*Math.cos(th),ey=90*Math.sin(th);x.fillStyle=M;x.beginPath();x.moveTo(200,260);x.lineTo(240,190);x.lineTo(300,270);x.lineTo(360,190);x.lineTo(400,260);x.fill();x.strokeStyle='#fbbf24';x.lineWidth=6;x.beginPath();x.moveTo(240-ex,190-ey);x.lineTo(240,190);x.lineTo(300,190+d);x.lineTo(360,190);x.lineTo(360+ex,190-ey);x.stroke();x.fillStyle=C;x.fillRect(292,120+d-20,16,50)}
+ if(k=='laser'){const a=pr*6.28;x.fillStyle=M;x.fillRect(150,40,300,220);x.strokeStyle=K;x.beginPath();x.arc(300,150,70,0,a);x.stroke();const px=300+70*Math.cos(a),py=150+70*Math.sin(a);x.fillStyle=C;x.fillRect(px-6,py-40,12,35);x.fillStyle='#f87171';x.beginPath();x.arc(px,py,5,0,7);x.fill()}
+ $('d2').textContent=T2[k][1]}
+$('s2').onchange=()=>{$('d2').textContent=T2[$('s2').value][1]};
+(function L(t){if(sim2.on)d2(t);requestAnimationFrame(L)})(0);
+/* ---------- 3D Lathe ---------- */
+function initLatheOld(){
+const N=80,MAT={'Mild Steel':{c:0x8a97a6,v:30,k:1,t:'HSS හෝ Carbide'},'Aluminium':{c:0xcfd8e3,v:150,k:.4,t:'HSS (තියුණු, ඉහළ Rake)'},'Brass':{c:0xd4a537,v:80,k:.6,t:'HSS (Zero Rake)'},'Plastic':{c:0xeeeeee,v:200,k:.2,t:'HSS (තියුණු)'}};
+const INF={Bed:'Bed: යන්ත්‍රයේ පාදම; සියලු කොටස් දරයි.',Headstock:'Headstock: Spindle සහ Gearbox ඇති ප්‍රධාන කොටස.',Chuck:'Chuck: වැඩ කොටස තදින් අල්ලා ගනී.',Workpiece:'Workpiece: කපන ලෝහ දණ්ඩ.',Tailstock:'Tailstock: දිග දඬු අනෙක් කෙළවරින් දරයි (Centre).','Cutting Tool':'Cutting Tool: ද්‍රව්‍ය ඉවත් කරයි.','Tool Post':'Tool Post: මෙවලම තදින් අල්ලයි.',Carriage:'Carriage: Z දිශාවේ (දිගට) ගමන් කරයි.','Lead Screw':'Lead Screw: Thread කැපීමට Carriage එක චලනය කරයි.',Motor:'Motor: Belt/Gear හරහා Spindle එක කරකවයි.',Coolant:'Coolant Nozzle: කැපුම් ස්ථානයට සිසිලන ද්‍රවය යොමු කරයි.'};
+const s={L:120,D:40,rpm:600,feed:.2,doc:1,z:130,x:23,run:false,auto:false,op:'straight',mat:'Mild Steel',cool:false,tail:true,clamp:true,path:false,ghost:false,wear:0,temp:25,rem:0,rS:20,chat:false,vc:0,dep:0,frc:0};
+let P=[],spin=0,dirty=true,path=[],fr=0;
+const R=new THREE.WebGLRenderer({canvas:$('c3'),antialias:true}),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,1,3000);
+sc.background=new THREE.Color(0x0b1220);sc.add(new THREE.HemisphereLight(0xffffff,0x223344,.9));const dl=new THREE.DirectionalLight(0xffffff,.8);dl.position.set(100,200,150);sc.add(dl);
+const clk=[],Mt=c=>new THREE.MeshStandardMaterial({color:c,metalness:.5,roughness:.5});
+function bx(n,w,h,d,x,y,z,c,par){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),Mt(c));m.position.set(x,y,z);m.name=n;(par||sc).add(m);clk.push(m);return m}
+bx('Bed',320,10,70,-10,-45,10,0x334155);bx('Headstock',60,70,60,-135,-10,0,0x1e3a5f);
+const chg=new THREE.Group();chg.position.set(-95,0,0);sc.add(chg);const ch=new THREE.Mesh(new THREE.CylinderGeometry(28,28,20,32),Mt(0x94a3b8));ch.rotation.z=1.5708;ch.name='Chuck';chg.add(ch);clk.push(ch);for(let i=0;i<3;i++){const a=i*2.094,j=new THREE.Mesh(new THREE.BoxGeometry(14,12,9),Mt(0x334155));j.position.set(14,18*Math.cos(a),18*Math.sin(a));j.rotation.x=a;j.name='Chuck';chg.add(j);clk.push(j)}
+const ls=new THREE.Mesh(new THREE.CylinderGeometry(2.5,2.5,300,12),Mt(0xcbd5e1));ls.rotation.z=1.5708;ls.position.set(-10,-33,40);ls.name='Lead Screw';sc.add(ls);clk.push(ls);
+const tail=new THREE.Group();sc.add(tail);bx('Tailstock',40,50,40,0,-18,0,0x1e3a5f,tail);const tc=new THREE.Mesh(new THREE.ConeGeometry(4,16,12),Mt(0xe2e8f0));tc.rotation.z=1.5708;tc.position.set(-26,0,0);tc.name='Tailstock';tail.add(tc);clk.push(tc);
+const car=new THREE.Group();sc.add(car);bx('Carriage',44,10,60,0,-34,30,0x475569,car);
+const tg=new THREE.Group();sc.add(tg);const tip=bx('Cutting Tool',3,16,6,0,8,0,0xfacc15,tg);bx('Tool Post',16,12,16,0,20,0,0x64748b,tg);bx('Carriage',10,10,45,0,20,26,0x475569,tg);
+const fl=new THREE.Mesh(new THREE.PlaneGeometry(900,600),Mt(0x111c30));fl.rotation.x=-1.5708;fl.position.y=-120;sc.add(fl);[-120,95].forEach(x=>bx('Bed',40,70,60,x,-85,10,0x1f2937));[-8,28].forEach(z=>bx('Bed',320,4,8,-10,-38,z,0xcbd5e1));bx('Motor',50,36,36,-150,-5,-40,0x0f766e);bx('Coolant',3,3,36,0,38,36,0x38bdf8,tg);const hw=new THREE.Mesh(new THREE.CylinderGeometry(9,9,4,20),Mt(0xe5e7eb));hw.rotation.x=1.5708;hw.position.set(0,-34,64);hw.name='Carriage';car.add(hw);clk.push(hw);function mkP(n,c,sz){const g=new THREE.BufferGeometry(),pos=new Float32Array(n*3).fill(9999),o=new THREE.Points(g,new THREE.PointsMaterial({color:c,size:sz}));g.setAttribute('position',new THREE.BufferAttribute(pos,3));o.frustumCulled=false;sc.add(o);return{o,pos,v:Array.from({length:n},()=>[0,0,0,0]),i:0,n}}function emit(p,x,y,z,a,b,c){const i=p.i++%p.n;p.pos.set([x,y,z],i*3);p.v[i]=[a,b,c,1]}function upd(p,dt,g){for(let i=0;i<p.n;i++){const v=p.v[i];if(v[3]<=0)continue;v[1]-=g*dt;p.pos[i*3]+=v[0]*dt;p.pos[i*3+1]+=v[1]*dt;p.pos[i*3+2]+=v[2]*dt;if(p.pos[i*3+1]<-118){v[3]=0;p.pos[i*3+1]=9999}}p.o.geometry.attributes.position.needsUpdate=true}const chips=mkP(300,0xd1d5db,2.5),cool=mkP(300,0x38bdf8,1.8);const wp=new THREE.Group();wp.rotation.z=-1.5708;wp.position.x=-85;sc.add(wp);const wm=new THREE.Mesh(new THREE.BufferGeometry(),Mt(0x8a97a6));wm.name='Workpiece';wp.add(wm);const tc2=document.createElement('canvas');tc2.width=256;tc2.height=64;const g2=tc2.getContext('2d');g2.fillStyle='#bbb';g2.fillRect(0,0,256,64);for(let i=0;i<80;i++){g2.fillStyle=i%2?'rgba(255,255,255,.2)':'rgba(0,0,0,.2)';g2.fillRect(Math.random()*256,0,1+Math.random()*2,64)}g2.fillStyle='#222';g2.fillRect(0,0,6,64);wm.material.map=new THREE.CanvasTexture(tc2);wm.material.roughness=.35;clk.push(wm);
+const gh=new THREE.Mesh(new THREE.CylinderGeometry(1,1,1,24),new THREE.MeshBasicMaterial({color:0x22d3ee,wireframe:true,transparent:true,opacity:.25}));wp.add(gh);
+const pl=new THREE.Line(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({color:0xf43f5e}));sc.add(pl);
+function reset(){P=Array(N+1).fill(s.D/2);s.z=s.L+10;s.x=s.D/2+3;s.run=s.auto=false;s.wear=0;s.temp=25;s.rem=0;path=[];dirty=true;gh.scale.set(s.D/2,s.L,s.D/2);gh.position.y=s.L/2;sync()}
+function build(){const p=[new THREE.Vector2(0,0)];for(let i=0;i<=N;i++)p.push(new THREE.Vector2(Math.max(.1,P[i]),i*s.L/N));p.push(new THREE.Vector2(0,s.L));wm.geometry.dispose();wm.geometry=new THREE.LatheGeometry(p,40);wm.material.color.setHex(MAT[s.mat].c);dirty=false}
+/* panel */
+const pn=$('pn');const SL=[['rpm','Spindle RPM',50,3500,50],['feed','Feed Rate (mm/rev)',.05,.8,.05],['doc','Cutting Depth (mm)',.2,5,.2],['z','Tool Z - දිගට (mm)',0,170,1],['x','Tool X - අරය (mm)',0,30,.5],['D','වැඩ කොටසේ විෂ්කම්භය (mm)',16,50,2],['L','වැඩ කොටසේ දිග (mm)',60,150,10]];
+pn.innerHTML='<h4>1. යන්ත්‍රය පාලනය</h4><div class="bt"><button class="go" id="b1">▶ Spindle ආරම්භ</button><button class="st" id="b5">■ Spindle නවත්වන්න</button><button class="au" id="b2">⚙ ස්වයංක්‍රීය කැපීම</button><button class="pa" id="b3">⏸ Pause</button><button class="go" id="b6">⏵ Resume</button><button class="re" id="b4">↺ Reset</button></div><h4>2. අතින් මෙවලම චලනය</h4><div class="jg"><span></span><button id="jU">▲</button><span></span><button id="jL">◀</button><button id="jD">▼</button><button id="jR">▶</button></div><div class="note">▲▼ = X (අරය), ◀▶ = Z (දිග). ඔබාගෙන සිටින්න.</div><h4>3. කැපුම් වර්ගය සහ ද්‍රව්‍යය</h4>'+
+'<select id="op"><option value="straight">Straight Turning</option><option value="step">Step Turning</option><option value="taper">Taper Turning</option></select> <select id="mt">'+Object.keys(MAT).map(k=>'<option>'+k+'</option>').join('')+'</select>'+
+SL.map(a=>'<label>'+a[1]+': <b id="v_'+a[0]+'"></b><input type="range" id="r_'+a[0]+'" min="'+a[2]+'" max="'+a[3]+'" step="'+a[4]+'"></label>').join('')+
+['cool:💧 Coolant (සිසිලනය) ON','tail:Tailstock','clamp:Chuck එකට තදින් සවි කර ඇත','path:Tool Path පෙන්වන්න','ghost:මුල් හැඩය (Before) පෙන්වන්න'].map(a=>{const q=a.split(':');return '<label class="k"><input type="checkbox" id="k_'+q[0]+'"'+(['tail','clamp'].includes(q[0])?' checked':'')+'> '+q[1]+'</label>'}).join('')+'<div id="out"></div>';
+function sync(){SL.forEach(a=>{$('r_'+a[0]).value=s[a[0]];$('v_'+a[0]).textContent=(+s[a[0]]).toFixed(a[4]<1?1:0)})}
+SL.forEach(a=>$('r_'+a[0]).oninput=e=>{s[a[0]]=+e.target.value;if(a[0]=='D'||a[0]=='L')reset();else if(a[0]=='z'||a[0]=='x'){s.auto=false}sync()});
+$('b1').onclick=()=>{s.run=true};$('b5').onclick=()=>{s.run=false;s.auto=false};$('b2').onclick=()=>{s.run=s.auto=true;s.rS=Math.max(...P);s.z=s.L+10;s.x=s.rS+3};
+$('b3').onclick=()=>{s.run=false};$('b6').onclick=()=>{s.run=true};const J={z:0,x:0};[['jL','z',-1],['jR','z',1],['jU','x',1],['jD','x',-1]].forEach(a=>{const b=$(a[0]);b.onpointerdown=()=>{J[a[1]]=a[2];s.auto=false};b.onpointerup=b.onpointerleave=b.onpointercancel=()=>{J[a[1]]=0}});$('b4').onclick=reset;$('op').onchange=e=>s.op=e.target.value;$('mt').onchange=e=>{s.mat=e.target.value;dirty=true};
+['cool','tail','clamp','path','ghost'].forEach(k=>$('k_'+k).onchange=e=>s[k]=e.target.checked);
+/* camera */
+let th=.6,ph=1.2,ds=320;function setCam(){cam.position.set(ds*Math.sin(ph)*Math.sin(th),ds*Math.cos(ph),ds*Math.sin(ph)*Math.cos(th));cam.lookAt(0,0,0)}
+const cv=$('c3');let drag=null,moved=0;
+cv.onpointerdown=e=>{drag=[e.clientX,e.clientY];moved=0;cv.setPointerCapture(e.pointerId)};
+cv.onpointermove=e=>{if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];moved+=Math.abs(dx)+Math.abs(dy);th-=dx*.008;ph=Math.min(3,Math.max(.2,ph-dy*.008));drag=[e.clientX,e.clientY];setCam()};
+cv.onpointerup=e=>{drag=null;if(moved<6){const r=cv.getBoundingClientRect(),rc=new THREE.Raycaster();rc.setFromCamera(new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1),cam);const h=rc.intersectObjects(clk)[0];if(h)$('info').textContent=INF[h.object.name]||h.object.name}};
+cv.onwheel=e=>{if(!(e.ctrlKey||e.shiftKey))return;e.preventDefault();ds=Math.min(700,Math.max(120,ds+e.deltaY*.3));setCam()};cv.onpointercancel=()=>{drag=null};
+$('zi').onclick=()=>{ds=Math.max(120,ds-40);setCam()};$('zo').onclick=()=>{ds=Math.min(700,ds+40);setCam()};[['v1',.6,1.2],['v2',0,1.45],['v3',0,.25]].forEach(a=>{$(a[0]).onclick=()=>{th=a[1];ph=a[2];setCam()}});
+/* simulation step */
+function step(dt){const m=MAT[s.mat];let cut=false,dep=0;
+ if(s.run)spin+=s.rpm*.105*dt*.2;if(J.z||J.x){s.z=Math.min(s.L+30,Math.max(0,s.z+J.z*35*dt));s.x=Math.min(30,Math.max(0,s.x+J.x*12*dt))}
+ if(s.run&&s.auto){s.z-=s.feed*s.rpm/60*dt*5;if(s.z<=0){s.z=0;s.auto=false}
+  let t=s.op=='taper'?s.rS-s.doc*4*(s.z/s.L):s.op=='step'?(s.z>s.L/2?s.rS-s.doc:s.rS-2*s.doc):s.rS-s.doc;t=Math.max(.5,t);
+  s.x=s.z>s.L+1?s.rS+3:s.x+(t-s.x)*Math.min(1,dt*8)}
+ const xr=Math.max(.3,s.x),n=s.L/N;
+ if(s.run&&s.z<=s.L+1.5){for(let i=0;i<=N;i++){if(Math.abs(i*n-s.z)<=2&&P[i]>xr){dep=Math.max(dep,P[i]-xr);s.rem+=Math.PI*(P[i]*P[i]-xr*xr)*n/1000;P[i]=xr;dirty=true;cut=true}}}
+ const dia=2*(xr+dep);s.vc=Math.PI*dia*s.rpm/1000;s.dep=dep;const rel=s.vc/m.v;
+ s.frc=cut?m.k*s.feed*Math.max(dep,.1)*1000*(1+s.wear/100):0;
+ if(cut)s.wear=Math.min(100,s.wear+dt*rel*rel*(1+dep)*(s.cool?.5:1)*.4);
+ const tt=cut?25+110*rel*(.5+dep/3)*(s.cool?.5:1)*(1+s.wear/200):25;s.temp+=(tt-s.temp)*Math.min(1,dt*1.5);
+ s.chat=cut&&((!s.tail&&s.L/s.D>6)||dep*s.feed*s.L/s.D>2.2||s.rpm>3200);
+ wp.position.y=(s.run&&!s.clamp)?Math.sin(spin*3)*3:0;
+ wm.rotation.y=spin;chg.rotation.x=spin;tg.position.set(-85+s.z+(s.chat?Math.sin(fr*2)*.8:0),s.x,0);car.position.x=-85+s.z;
+ tail.position.x=-85+s.L+28;tail.visible=s.tail;gh.visible=s.ghost;pl.visible=s.path;
+ tip.material.color.setRGB(.98,.8*(1-s.wear/130),.08*(1-s.wear/100));
+ if(cut&&fr%3==0&&path.length<2500){path.push(new THREE.Vector3(-85+s.z,s.x,0));pl.geometry.setFromPoints(path)}
+ if(cut&&fr%2==0)emit(chips,-85+s.z,s.x,0,(Math.random()-.5)*30,20+Math.random()*30,25+Math.random()*30);if(s.cool)for(let k=0;k<2;k++)emit(cool,-85+s.z+(Math.random()-.5)*2,s.x+38,54,0,-65,-135);upd(chips,dt,250);upd(cool,dt,150);if(s.auto||J.z||J.x){sync()}
+ if(fr%8==0){const fin=Math.max(0,Math.min(100,100-s.feed*90-s.wear*.4-(s.chat?30:0)-(s.temp>200?10:0)-(s.clamp?0:15)));
+  const W=[];if(s.rpm>3200)W.push('RPM අධිකයි');if(s.doc>3)W.push('Cutting Depth අධිකයි');if(s.feed>.5)W.push('Feed අධිකයි');if(s.wear>66)W.push('මෙවලම දැඩි ලෙස ගෙවී ඇත');if(s.temp>200&&!s.cool)W.push('උෂ්ණත්වය ඉහළයි, Coolant භාවිත කරන්න');if(s.chat)W.push('කම්පන (Chatter) ඇත');if(s.run&&!s.clamp)W.push('අනතුරු: වැඩ කොටස නිසි ලෙස සවි වී නැත, යන්ත්‍රය නවත්වන්න');
+  $('out').innerHTML='තත්ත්වය: '+(s.run?(s.auto?'Auto කැපීම':'භ්‍රමණය වෙමින්'):'නවතා ඇත')+'<br>RPM: '+s.rpm+' | Cutting Speed: '+s.vc.toFixed(1)+' m/min<br>Feed: '+(s.feed*s.rpm).toFixed(0)+' mm/min | Depth: '+dep.toFixed(1)+' mm<br>Tool Wear: '+s.wear.toFixed(0)+'% ('+(s.wear<33?'අලුත්':s.wear<66?'සාමාන්‍ය':'දැඩි')+') | උෂ්ණත්වය ≈ '+s.temp.toFixed(0)+'°C<br>Surface Finish: '+fin.toFixed(0)+'/100 | කැපුම් බලය ≈ '+s.frc.toFixed(0)+' (සාපේක්ෂ)<br>ඉවත් කළ ද්‍රව්‍ය: '+s.rem.toFixed(1)+' cm³ | අවසාන විෂ්කම්භය: '+(2*Math.min(...P)).toFixed(1)+' mm'+
+  '<br><span class="note">'+s.mat+' සඳහා Vc ≈ '+m.v+' m/min (ඉගෙනුම් අගය) → RPM ≈ '+Math.round(1000*m.v/(Math.PI*s.D))+' ('+s.D+' mm සඳහා); මෙවලම: '+m.t+'</span>'+(W.length?'<br><span class="w">⚠ '+W.join('; ')+'</span>':'<br><span class="ok">අනතුරු නැත</span>')}}
+function size(){const w=cv.clientWidth,h=cv.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+new ResizeObserver(size).observe(cv);let last=performance.now();const o={on:false};
+(function L(t){requestAnimationFrame(L);if(!o.on)return;const dt=Math.min(.05,(t-last)/1000);last=t;fr++;step(dt);if(dirty)build();R.render(sc,cam)})(0);
+reset();build();setCam();size();return o}
+MA.grind=(x,t,sp)=>{const a=t/1000*sp*9;rc(x,170,262,260,18,'#475569');rc(x,270,196,60,66,'#64748b');rc(x,215,130,170,66,'#2b6cb0');rc(x,222,142,156,10,'#1e4e8c');rc(x,222,166,156,10,'#1e4e8c');[[160,'#a8a29e',1],[440,'#d6d3d1',2]].forEach(w=>{const cx=w[0];x.strokeStyle='#2b6cb0';x.lineWidth=12;x.beginPath();x.arc(cx,165,58,.85*Math.PI,2.15*Math.PI);x.stroke();x.lineWidth=1;x.fillStyle=w[1];x.beginPath();x.arc(cx,165,52,0,7);x.fill();x.strokeStyle='#1e293b';x.stroke();x.fillStyle='#57534e';for(let i=0;i<16;i++){const g=a*w[2]*.6+i*.8,r=16+(i%4)*9;x.beginPath();x.arc(cx+r*Math.cos(g),165+r*Math.sin(g),w[2]==1?2.4:1.2,0,7);x.fill()}x.fillStyle='#334155';x.beginPath();x.arc(cx,165,12,0,7);x.fill()});x.fillStyle='rgba(56,189,248,.35)';x.fillRect(108,92,104,34);x.strokeStyle='#0369a1';x.strokeRect(108,92,104,34);rc(x,96,207,60,8,'#9ca3af');rc(x,96,215,70,6,'#e5e7eb');x.strokeStyle='#d97706';x.lineWidth=2;for(let i=0;i<9;i++){const l=10+Math.random()*40;x.beginPath();x.moveTo(150,214);x.lineTo(150-l,214+l*.35+Math.random()*10);x.stroke()}lb(x,'ඇඹරුම් රෝදය (රළු)',130,150,20,60);lb(x,'ඇස් ආවරණ (Eye shield)',108,105,10,92);lb(x,'Tool rest',100,218,20,250);lb(x,'වැඩ කොටස',98,211,20,278);lb(x,'සියුම් රෝදය (Fine)',470,150,470,60);lb(x,'මෝටරය (Motor)',300,160,300,110)};
+T2.grind[1]='Bench grinder: මෝටරයේ දෙපස ඇඹරුම් රෝද (රළු සහ සියුම්) ඇත. වැඩ කොටස Tool rest මත තබා රෝදයේ පෘෂ්ඨයට සෙමින් ස්පර්ශ කරන විට ගිනි පුපුරු විසිවේ. Tool rest රෝදයට ආසන්නව (≈2-3 mm) සීරුමාරු කරන්න. ඇස් ආවරණ (Eye shield) සහ Wheel guard අනිවාර්යයි.';
+function initLathe(){
+const sv=()=>document.documentElement.style.setProperty('--vw',document.documentElement.clientWidth+'px');sv();addEventListener('resize',sv);
+const N=80,X0=-88,cl=(v,a,b)=>Math.max(a,Math.min(b,v)),MAT={'Mild Steel':{c:0x9aa6b4,v:30,k:1,t:'HSS හෝ Carbide'},'Aluminium':{c:0xd5dde8,v:150,k:.4,t:'HSS (තියුණු, ඉහළ Rake)'},'Brass':{c:0xd4a537,v:80,k:.6,t:'HSS (Zero Rake)'},'Plastic':{c:0xf1f5f9,v:200,k:.2,t:'HSS (තියුණු)'}};
+const INF={Bed:'Bed: නිරවද්‍ය Ways සහිත ශක්තිමත් වාත්තු යකඩ පාදම. Carriage සහ Tailstock එහි ගමන් කරයි.',Headstock:'Headstock: Spindle සහ Gearbox ඇති ප්‍රධාන කොටස.','Gear lever':'වේග තේරීමේ ලීවර/Knob: Spindle RPM වෙනස් කරයි.','Speed chart':'වේග සටහන: ලීවර ස්ථාන අනුව RPM අගයන්.',Chuck:'Chuck: Jaws 3කින් වැඩ කොටස තදින් අල්ලයි (3-jaw self-centering).',Motor:'Motor: Belt/Gear මගින් Spindle එක කරකවයි.',Carriage:'Carriage (Saddle + Apron): Bed දිගේ Z දිශාවට ගමන් කරයි. Apron Handwheel එකෙන් අතින් චලනය කළ හැක.','Cross Slide':'Cross Slide: මෙවලම X දිශාවට (වැඩ කොටසට ළං/ඈත්) ගෙන යයි. Handwheel එකෙන් පාලනය.','Compound Rest':'Compound Rest: කෝණයකට හරවා Taper කැපීමට සහ කෙටි චලන සඳහා.','Tool Post':'Tool Post: මෙවලම නියමිත උසට ඉස්කුරුප්පුවලින් තදින් අල්ලා ගනී.','Cutting Tool':'Cutting Tool: Tool Post එකේ තදින් සවි වී ඇත. තුඩ වැඩ කොටසේ කේන්ද්‍ර උසට සකසයි. ද්‍රව්‍ය ඉවත් කරයි.','Lead Screw':'Lead Screw: Thread කැපීමේදී Carriage එක නිරවද්‍යව ගමන් කරවයි.','Feed Rod':'Feed Rod: ස්වයංක්‍රීය Feed සඳහා Carriage එක ගමන් කරවයි.',Tailstock:'Tailstock: Live Centre එකෙන් දිග වැඩ කොටසේ කෙළවරට ආධාර දෙයි. Quill එකෙන් Drill ද සවි කළ හැක.',Workpiece:'Workpiece: කපන ලෝහ දණ්ඩ.',Coolant:'Coolant Nozzle: කැපුම් ස්ථානයට සිසිලන ද්‍රවය යොමු කරයි.','Chip tray':'Chip tray: Chips සහ Coolant රැස් කරයි.',Cabinet:'Cabinet (Stand): යන්ත්‍රය දරයි.'};
+const s={L:120,D:40,rpm:600,feed:.2,doc:1,z:130,x:23,run:false,auto:false,op:'straight',mat:'Mild Steel',cool:false,tail:true,clamp:true,path:false,ghost:false,wear:0,temp:25,rem:0,rS:20,chat:false,vc:0,dep:0,frc:0,tm:0};
+let P=[],spin=0,dirty=true,path=[],fr=0;
+const cv=$('c3'),R=new THREE.WebGLRenderer({canvas:cv,antialias:true}),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,1,1,3000);
+R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.shadowMap.enabled=true;sc.background=new THREE.Color(0xdbe7f3);sc.add(new THREE.HemisphereLight(0xffffff,0x8899aa,.85));
+const dl=new THREE.DirectionalLight(0xffffff,.9);dl.position.set(150,300,250);dl.castShadow=true;dl.shadow.mapSize.set(1024,1024);Object.assign(dl.shadow.camera,{left:-300,right:300,top:300,bottom:-300,near:10,far:900});sc.add(dl);
+const clk=[],Mt=(c,m,r)=>new THREE.MeshStandardMaterial({color:c,metalness:m==null?.4:m,roughness:r==null?.55:r}),B=(w,h,d)=>new THREE.BoxGeometry(w,h,d);
+function add(par,g,c,n,x,y,z,m,r){const o=new THREE.Mesh(g,Mt(c,m,r));o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;if(n){o.name=n;clk.push(o)}par.add(o);return o}
+const cyl=(par,r,h,c,n,x,y,z,a,m,rg)=>{const o=add(par,new THREE.CylinderGeometry(r,r,h,24),c,n,x,y,z,m,rg);if(a=='x')o.rotation.z=1.5708;if(a=='z')o.rotation.x=1.5708;return o},sph=(par,r,c,n,x,y,z)=>add(par,new THREE.SphereGeometry(r,12,12),c,n,x,y,z);
+const M1=0x2b6cb0,CI=0x5b6573,CH=0xe5e7eb;
+const fl=add(sc,new THREE.PlaneGeometry(1200,800),0xc5d0dc,0,0,-140,0,0,.95);fl.rotation.x=-1.5708;fl.castShadow=false;
+add(sc,B(340,14,70),CI,'Bed',0,-64,0);[-14,14].forEach(z=>add(sc,B(340,3,8),CH,'Bed',0,-56,z,.8,.3));[-125,105].forEach(x=>add(sc,B(56,69,70),M1,'Cabinet',x,-105.5,0));add(sc,B(170,6,84),0x9ca3af,'Chip tray',-10,-100,0);
+add(sc,B(70,86,70),M1,'Headstock',-142,-14,0);add(sc,B(70,8,60),0x1e4e8c,'Headstock',-142,33,0);add(sc,B(40,24,2),0xf8fafc,'Speed chart',-142,-5,36);[-158,-142,-126].forEach(x=>cyl(sc,5,10,0x111827,'Gear lever',x,-28,40,'z'));add(sc,B(46,34,34),0x0f766e,'Motor',-150,-20,-52);
+const chg=new THREE.Group();chg.position.set(X0-11,0,0);sc.add(chg);cyl(chg,32,22,0x94a3b8,'Chuck',0,0,0,'x',.7,.3);for(let i=0;i<3;i++){const a=i*2.094,j=add(chg,B(16,14,10),0x374151,'Chuck',11,19*Math.cos(a),19*Math.sin(a));j.rotation.x=a;add(chg,B(5,5,5),0x111827,'Chuck',-1,30*Math.cos(a+1.047),30*Math.sin(a+1.047))}
+const car=new THREE.Group();sc.add(car);add(car,B(64,16,76),CI,'Carriage',0,-47,0);add(car,B(64,36,8),CI,'Carriage',0,-60,42);cyl(car,14,5,CH,'Carriage',0,-62,50,'z',.8,.3);cyl(car,2.5,14,0x111827,'Carriage',10,-52,55,'z');[-68,-80].forEach((y,i)=>cyl(sc,3,330,CH,i?'Feed Rod':'Lead Screw',-5,y,56,'x',.8,.3));
+const xs=new THREE.Group();car.add(xs);add(xs,B(60,8,100),0x4b5563,'Cross Slide',0,-35,10);cyl(xs,11,5,CH,'Cross Slide',0,-35,62,'z',.8,.3);cyl(xs,2,10,0x111827,'Cross Slide',7,-35,66,'z');
+add(xs,B(50,8,50),0x6b7280,'Compound Rest',0,-27,0);cyl(xs,3,14,CH,'Compound Rest',0,-27,32,'z');sph(xs,5,0x111827,'Compound Rest',0,-27,41);
+add(xs,B(36,33,36),0x374151,'Tool Post',0,-6.5,0);[-8,8].forEach(z=>cyl(xs,3,7,CH,'Tool Post',0,13.5,z));cyl(xs,2.5,30,0x9ca3af,'Tool Post',0,25,10);sph(xs,5,0x111827,'Tool Post',0,41,10);
+add(xs,B(12,14,65),0xaab4c0,'Cutting Tool',0,-7,-12.5,.7,.3);const ins=add(xs,B(10,4,9),0xfacc15,'Cutting Tool',0,-2,-40,.3,.4);cyl(xs,2,40,0x9ca3af,'Coolant',24,17,-10);cyl(xs,2,30,0x38bdf8,'Coolant',24,37,-25,'z');
+const tail=new THREE.Group();sc.add(tail);add(tail,B(46,12,60),CI,'Tailstock',0,-51,0);add(tail,B(40,62,44),M1,'Tailstock',0,-14,0);cyl(tail,10,26,CH,'Tailstock',-33,0,0,'x',.8,.3);const cn=add(tail,new THREE.ConeGeometry(6,14,16),0xcbd5e1,'Tailstock',-53,0,0,.8,.3);cn.rotation.z=1.5708;cyl(tail,14,5,CH,'Tailstock',24,0,0,'x',.8,.3);cyl(tail,2,12,0x111827,'Tailstock',27,0,10,'z');
+const wp=new THREE.Group();wp.rotation.z=-1.5708;wp.position.x=X0;sc.add(wp);const wm=new THREE.Mesh(new THREE.BufferGeometry(),Mt(0x9aa6b4,.4,.35));wm.name='Workpiece';wm.castShadow=true;wp.add(wm);clk.push(wm);
+const tc2=document.createElement('canvas');tc2.width=256;tc2.height=64;const g2=tc2.getContext('2d');g2.fillStyle='#bbb';g2.fillRect(0,0,256,64);for(let i=0;i<80;i++){g2.fillStyle=i%2?'rgba(255,255,255,.2)':'rgba(0,0,0,.2)';g2.fillRect(Math.random()*256,0,1+Math.random()*2,64)}g2.fillStyle='#222';g2.fillRect(0,0,6,64);wm.material.map=new THREE.CanvasTexture(tc2);
+const gh=new THREE.Mesh(new THREE.CylinderGeometry(1,1,1,24),new THREE.MeshBasicMaterial({color:0x0e7490,wireframe:true,transparent:true,opacity:.3}));wp.add(gh);const pl=new THREE.Line(new THREE.BufferGeometry(),new THREE.LineBasicMaterial({color:0xe11d48}));sc.add(pl);
+function mkP(n,c,sz){const g=new THREE.BufferGeometry(),pos=new Float32Array(n*3).fill(9999),o=new THREE.Points(g,new THREE.PointsMaterial({color:c,size:sz}));g.setAttribute('position',new THREE.BufferAttribute(pos,3));o.frustumCulled=false;sc.add(o);return{o,pos,v:Array.from({length:n},()=>[0,0,0,0]),i:0,n}}
+function emit(p,x,y,z,a,b,c){const i=p.i++%p.n;p.pos.set([x,y,z],i*3);p.v[i]=[a,b,c,1]}
+function upd(p,dt,g){for(let i=0;i<p.n;i++){const v=p.v[i];if(v[3]<=0)continue;v[1]-=g*dt;p.pos[i*3]+=v[0]*dt;p.pos[i*3+1]+=v[1]*dt;p.pos[i*3+2]+=v[2]*dt;if(p.pos[i*3+1]<-135){v[3]=0;p.pos[i*3+1]=9999}}p.o.geometry.attributes.position.needsUpdate=true}
+const chips=mkP(300,0x6b7280,3),cool=mkP(300,0x0ea5e9,2.2);
+function reset(){P=Array(N+1).fill(s.D/2);s.z=s.L+10;s.x=s.D/2+3;s.run=s.auto=false;s.wear=0;s.temp=25;s.rem=0;s.tm=0;path=[];pl.geometry.setFromPoints([]);dirty=true;gh.scale.set(s.D/2,s.L,s.D/2);gh.position.y=s.L/2;sync()}
+function build(){const p=[new THREE.Vector2(0,0)];for(let i=0;i<=N;i++)p.push(new THREE.Vector2(Math.max(.1,P[i]),i*s.L/N));p.push(new THREE.Vector2(0,s.L));wm.geometry.dispose();wm.geometry=new THREE.LatheGeometry(p,40);wm.material.color.setHex(MAT[s.mat].c);dirty=false}
+const pn=$('pn'),SL=[['rpm','Spindle RPM',50,3500,50],['feed','Feed Rate (mm/rev)',.05,.8,.05],['doc','Cutting Depth (mm)',.2,5,.2],['z','Tool Z - දිගට (mm)',0,170,1],['x','Tool X - අරය (mm)',0,32,.5],['D','විෂ්කම්භය (mm)',16,50,2],['L','දිග (mm)',60,150,10]];
+pn.innerHTML='<div class=gp><h4>1. යන්ත්‍රය පාලනය</h4><div class=bt><button class=go id=b1>▶ Spindle ආරම්භ</button><button class=st id=b5>■ Spindle නවත්වන්න</button><button class=au id=b2>⚙ ස්වයංක්‍රීය කැපීම</button><button class=pa id=b3>⏸ Pause</button><button class=go id=b6>⏵ Resume</button><button class=re id=b4>↺ Reset</button><button class=st id=b7>⛔ හදිසි නැවතුම (E-Stop)</button></div></div>'+
+'<div class=gp><h4>2. අතින් මෙවලම චලනය (Handwheel)</h4><div class=jg><span></span><button id=jU>▲</button><span></span><button id=jL>◀</button><button id=jD>▼</button><button id=jR>▶</button></div><div class=note>▲ = මෙවලම වැඩ කොටසට ළං (පසුපසට), ▼ = ඈත් (ඉදිරියට); ◀▶ = Z (වමට/දකුණට). ඔබාගෙන සිටින්න.</div></div>'+
+'<div class=gp><h4>3. කැපුම් වර්ගය සහ ද්‍රව්‍යය</h4><select id=op><option value=straight>Straight Turning</option><option value=step>Step Turning</option><option value=taper>Taper Turning</option></select> <select id=mt>'+Object.keys(MAT).map(k=>'<option>'+k+'</option>').join('')+'</select></div>'+
+'<div class=gp><h4>4. සැකසුම්</h4>'+SL.map(a=>'<label>'+a[1]+': <b id=v_'+a[0]+'></b><input type=range id=r_'+a[0]+' min='+a[2]+' max='+a[3]+' step='+a[4]+'></label>').join('')+'</div>'+
+'<div class=gp><h4>5. විකල්ප</h4>'+['cool:💧 Coolant (සිසිලනය) ON','tail:Tailstock සවි කරන්න','clamp:Chuck එකට තදින් සවි කර ඇත','path:Tool Path පෙන්වන්න','ghost:මුල් හැඩය (Before) පෙන්වන්න'].map(a=>{const q=a.split(':');return '<label class=k><input type=checkbox id=k_'+q[0]+(['tail','clamp'].includes(q[0])?' checked':'')+'> '+q[1]+'</label>'}).join('')+'</div><div class=gp><h4>6. Simulation ප්‍රතිඵල</h4><div id=out></div></div>';
+{const g=[...pn.querySelectorAll('.gp')],f=n=>g.find(x=>x.firstChild.textContent.startsWith(n+'.')),L=$('pl'),Rr=$('pr');[1,2].forEach(n=>L.appendChild(f(n)));Rr.appendChild($('dro'));[4,6].forEach(n=>Rr.appendChild(f(n)))}
+function sync(){SL.forEach(a=>{const e=$('r_'+a[0]);if(document.activeElement!==e)e.value=s[a[0]];$('v_'+a[0]).textContent=(+s[a[0]]).toFixed(a[4]<1?1:0)})}
+SL.forEach(a=>$('r_'+a[0]).oninput=e=>{s[a[0]]=+e.target.value;if(a[0]=='D'||a[0]=='L')reset();else if(a[0]=='z'||a[0]=='x')s.auto=false;sync()});
+$('b1').onclick=()=>{s.run=true};$('b5').onclick=$('b7').onclick=()=>{s.run=false;s.auto=false};$('b2').onclick=()=>{s.run=s.auto=true;s.rS=Math.max(...P);s.z=s.L+10;s.x=s.rS+3};$('b3').onclick=()=>{s.run=false};$('b6').onclick=()=>{s.run=true};$('b4').onclick=reset;
+$('op').onchange=e=>s.op=e.target.value;$('mt').onchange=e=>{s.mat=e.target.value;dirty=true};['cool','tail','clamp','path','ghost'].forEach(k=>$('k_'+k).onchange=e=>s[k]=e.target.checked);
+const J={z:0,x:0};[['jL','z',-1],['jR','z',1],['jU','x',-1],['jD','x',1]].forEach(a=>{const b=$(a[0]);b.onpointerdown=()=>{J[a[1]]=a[2];s.auto=false};b.onpointerup=b.onpointerleave=b.onpointercancel=()=>{J[a[1]]=0}});
+let th=.45,ph=1.2,ds=430,zd=false;function setCam(){cam.position.set(ds*Math.sin(ph)*Math.sin(th),-25+ds*Math.cos(ph),ds*Math.sin(ph)*Math.cos(th));cam.lookAt(0,-25,10)}
+let drag=null,moved=0;cv.onpointerdown=e=>{drag=[e.clientX,e.clientY];moved=0;cv.setPointerCapture(e.pointerId)};
+cv.onpointermove=e=>{if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];moved+=Math.abs(dx)+Math.abs(dy);th-=dx*.008;ph=cl(ph-dy*.008,.2,2.9);drag=[e.clientX,e.clientY];setCam()};
+cv.onpointerup=e=>{drag=null;if(moved<6){const r=cv.getBoundingClientRect(),rc2=new THREE.Raycaster();rc2.setFromCamera(new THREE.Vector2((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1),cam);const h=rc2.intersectObjects(clk)[0];if(h)$('info').textContent=INF[h.object.name]||h.object.name}};
+cv.onpointercancel=()=>{drag=null};cv.onwheel=e=>{if(!(e.ctrlKey||e.shiftKey))return;e.preventDefault();zd=true;ds=cl(ds+e.deltaY*.3,150,800);setCam()};
+$('zi').onclick=()=>{zd=true;ds=cl(ds-50,150,800);setCam()};$('zo').onclick=()=>{zd=true;ds=cl(ds+50,150,800);setCam()};[['v1',.45,1.2],['v2',0,1.5],['v3',0,.3]].forEach(a=>{$(a[0]).onclick=()=>{th=a[1];ph=a[2];setCam()}});
+const row=(a,b)=>'<div class=dr><span>'+a+'</span><b>'+b+'</b></div>';
+function dro(){const m=Math.floor(s.tm/60)+':'+String(Math.floor(s.tm%60)).padStart(2,'0');const H='<div class=dt>'+(s.run?'<span class=lg>● SPINDLE FWD</span>':'<span class=rd>● SPINDLE STOP</span>')+'<br>'+(s.auto?'<span class=bl>AUTO</span>':'<span class=gy>MANUAL</span>')+(s.cool?' <span class=bl>COOLANT</span>':'')+' <span class=gy>T01</span></div>'+row('X ⌀ (mm)',(2*s.x).toFixed(2))+row('Z (mm)',(s.z-s.L).toFixed(2))+row('S (RPM)',s.rpm)+row('F (mm/rev)',s.feed.toFixed(2))+row('F (mm/min)',(s.feed*s.rpm).toFixed(0))+row('Vc (m/min)',s.vc.toFixed(1))+row('Depth (mm)',s.dep.toFixed(2))+row('Tool wear %',s.wear.toFixed(0))+row('Temp °C',s.temp.toFixed(0))+row('Time',m);if(H!==dro.l){dro.l=H;$('dro').innerHTML=H}}
+function step(dt){const m=MAT[s.mat];let cut=false,dep=0;if(s.run){spin+=s.rpm*.105*dt*.2;s.tm+=dt}
+ if(J.z||J.x){s.z=cl(s.z+J.z*35*dt,0,s.L+30);s.x=cl(s.x+J.x*12*dt,0,32)}
+ if(s.run&&s.auto){s.z-=s.feed*s.rpm/60*dt*5;if(s.z<=0){s.z=0;s.auto=false;s.x=Math.max(...P)+3}else{let t=s.op=='taper'?s.rS-s.doc*4*(s.z/s.L):s.op=='step'?(s.z>s.L/2?s.rS-s.doc:s.rS-2*s.doc):s.rS-s.doc;t=Math.max(.5,t);s.x=s.z>s.L+1?s.rS+3:s.x+(t-s.x)*Math.min(1,dt*8)}}
+ const xr=Math.max(.3,s.x),n=s.L/N;
+ if(s.run&&s.z<=s.L+1.5){for(let i=0;i<=N;i++){if(Math.abs(i*n-s.z)<=2&&P[i]>xr){dep=Math.max(dep,P[i]-xr);s.rem+=Math.PI*(P[i]*P[i]-xr*xr)*n/1000;P[i]=xr;dirty=true;cut=true}}}
+ const dia=cut?2*(xr+dep):2*P[cl(Math.round(s.z/n),0,N)];s.vc=Math.PI*dia*s.rpm/1000;s.dep=dep;const rel=s.vc/m.v;
+ s.frc=cut?m.k*s.feed*Math.max(dep,.1)*1000*(1+s.wear/100):0;if(cut)s.wear=Math.min(100,s.wear+dt*rel*rel*(1+dep)*(s.cool?.5:1)*.4);
+ const tt=cut?25+110*rel*(.5+dep/3)*(s.cool?.5:1)*(1+s.wear/200):25;s.temp+=(tt-s.temp)*Math.min(1,dt*1.5);
+ s.chat=cut&&((!s.tail&&s.L/s.D>6)||dep*s.feed*s.L/s.D>2.2||s.rpm>3200);
+ wp.position.z=(s.run&&!s.clamp)?Math.sin(spin*3)*3:0;wm.rotation.y=spin;chg.rotation.x=spin;
+ car.position.x=X0+s.z+(s.chat?Math.sin(fr*2)*.7:0);xs.position.z=s.x+45;tail.position.x=X0+s.L+60;tail.visible=s.tail;gh.visible=s.ghost;pl.visible=s.path;
+ ins.material.color.setRGB(.98,.8*(1-s.wear/130),.08*(1-s.wear/100));
+ if(cut&&fr%3==0&&path.length<2500){path.push(new THREE.Vector3(X0+s.z,0,s.x));pl.geometry.setFromPoints(path)}
+ if(cut&&fr%2==0)emit(chips,X0+s.z,0,s.x,(Math.random()-.5)*30,20+Math.random()*30,25+Math.random()*30);
+ if(s.cool)for(let k=0;k<2;k++)emit(cool,X0+s.z+24+(Math.random()-.5)*2,37,s.x+5,-96,-129,-20);
+ upd(chips,dt,250);upd(cool,dt,150);if(s.auto||J.z||J.x)sync();if(fr%4==0)dro();
+ if(fr%8==0){const fin=cl(100-s.feed*90-s.wear*.4-(s.chat?30:0)-(s.temp>200?10:0)-(s.clamp?0:15),0,100);const W=[];if(s.rpm>3200)W.push('RPM අධිකයි');if(s.doc>3)W.push('Cutting Depth අධිකයි');if(s.feed>.5)W.push('Feed අධිකයි');if(s.wear>66)W.push('මෙවලම දැඩි ලෙස ගෙවී ඇත');if(s.temp>200&&!s.cool)W.push('උෂ්ණත්වය ඉහළයි, Coolant භාවිත කරන්න');if(s.chat)W.push('කම්පන (Chatter) ඇත');if(s.run&&!s.clamp)W.push('අනතුරු: වැඩ කොටස නිසි ලෙස සවි වී නැත, යන්ත්‍රය නවත්වන්න');
+  {const rl=s.vc/m.v,G='#15803d',O='#c2410c',Rd='#dc2626',Bl='#0369a1',Gy='#64748b',
+rr=(l,v,c,bp)=>'<div class=rr><span>'+l+'</span><b style="color:'+c+'">'+v+'</b></div>'+(bp==null?'':'<div class=bar><i style="width:'+Math.round(cl(bp,0,100))+'%;background:'+c+'"></i></div>'),
+tc=s.temp<60?Bl:s.temp<120?G:s.temp<200?O:Rd,vcC=s.vc<1?Gy:rl<=1.1?G:rl<=1.6?O:Rd,wC=s.wear<33?G:s.wear<66?O:Rd,fC=fin>=70?G:fin>=40?O:Rd;
+const HH=rr('තත්ත්වය',s.run?(s.auto?'Auto කැපීම':'භ්‍රමණය වෙමින්'):'නවතා ඇත',s.run?G:Gy)+rr('Cutting Speed',s.vc.toFixed(1)+' m/min',vcC)+rr('Tool Wear',s.wear.toFixed(0)+'% ('+(s.wear<33?'අලුත්':s.wear<66?'සාමාන්‍ය':'දැඩි')+')',wC,s.wear)+rr('උෂ්ණත්වය',s.temp.toFixed(0)+' °C',tc,s.temp/3)+rr('Surface Finish',fin.toFixed(0)+'/100',fC,fin)+rr('කැපුම් බලය',s.frc.toFixed(0)+' (සාපේක්ෂ)','#7c3aed')+rr('ඉවත් කළ ද්‍රව්‍ය',s.rem.toFixed(1)+' cm³',Bl)+rr('අවසාන විෂ්කම්භය',(2*Math.min(...P)).toFixed(1)+' mm','#4338ca')+'<div class=note style="margin-top:6px">'+s.mat+' සඳහා Vc ≈ '+m.v+' m/min → RPM ≈ '+Math.round(1000*m.v/(Math.PI*s.D))+' ('+s.D+' mm); මෙවලම: '+m.t+'</div>'+(W.length?W.map(x=>'<div class=wn>⚠ '+x+'</div>').join(''):'<div class="wn okk">✔ අනතුරු නැත</div>');if(HH!==step.o){step.o=HH;$('out').innerHTML=HH}}}}
+function size(){const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;let pr=Math.min(devicePixelRatio||1,2);if(w*h*pr*pr>2.4e6)pr=Math.max(.75,Math.sqrt(2.4e6/(w*h)));R.setPixelRatio(pr);R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();if(!zd){ds=innerWidth>=1000?cl(380/(Math.max(.4,(w-600)/w)*.728*cam.aspect),380,800):cl(360/(.728*cam.aspect),430,800);setCam()}}
+new ResizeObserver(size).observe(cv);let last=performance.now();const o={on:false};
+(function L(t){requestAnimationFrame(L);if(!o.on)return;const dt=Math.max(0,Math.min(.05,(t-last)/1000));last=t;fr++;step(dt);if(dirty)build();R.render(sc,cam)})(0);
+reset();build();setCam();size();return o}
+const QQ=[['ලෝහ කම්බි ලෙස ඇදිය හැකි ගුණය කුමක්ද?',['භංගුරතාව','නමනීයතාව (Ductility)','දෘඪතාව'],1,'නමනීයතාව: ඇදීමෙන් කම්බි සෑදිය හැකි ගුණය (උදා: කොපර්).'],['Cutting Speed සූත්‍රය?',['π × D × N / 1000','D × N','π × N / D'],0,'D (mm), N (RPM) සඳහා Vc = π×D×N/1000 (m/min).'],['Ø40 mm දණ්ඩක් RPM 600 හි කැපුම් වේගය ආසන්න වශයෙන්?',['75 m/min','25 m/min','150 m/min'],0,'π × 40 × 600 / 1000 ≈ 75.4 m/min.'],['Lathe හි මෙවලම X දිශාවට (වැඩ කොටසට ළං/ඈත්) ගෙන යන්නේ?',['Cross Slide','Tailstock','Lead Screw'],0,'Cross Slide X දිශාවට ද Carriage Z දිශාවට ද ගමන් කරයි.'],['දිග වැඩ කොටසක අනෙක් කෙළවරට ආධාර දෙන්නේ?',['Tailstock','Headstock','Tool Post'],0,'Tailstock හි Live Centre එක වැඩ කොටසේ කෙළවරට ආධාර දෙයි.'],['Lathe හි Cutting Tool තුඩ සැකසිය යුත්තේ?',['වැඩ කොටසේ කේන්ද්‍ර උසට','ඕනෑම උසකට','කේන්ද්‍රයට වඩා බොහෝ පහළට'],0,'Centre height වැරදි වූ විට Surface Finish නරක වේ.'],['Lathe වල ආරක්ෂිත පිළිවෙත?',['Chuck key ගලවා තැබීම','ලිහිල් ඇඳුම් ඇඳීම','යන්ත්‍රය දුවන විට මැනීම'],0,'Chuck key ඉතිරි වුවහොත් විසි වී අනතුරු සිදුවිය හැක.'],['M03 යනු?',['Spindle ඔන් (ඉදිරි භ්‍රමණය)','Coolant ඕෆ්','වැඩසටහන් අවසානය'],0,'M03 Spindle CW; M05 නැවතුම; M30 වැඩසටහන් අවසානය (සාමාන්‍ය අර්ථ).'],['සීතල හැඩගැන්වීමේ ලක්ෂණය?',['ලෝහය රතු වන තෙක් රත් කරයි','රත් නොකර හැඩගන්වයි','ද්‍රවීකරණය කර වාත්තු කරයි'],1,'සීතල හැඩගැන්වීම කාමර උෂ්ණත්වයේදී කෙරේ; Work Hardening වේ.'],['Tool Wear වැඩි වූ විට?',['Surface Finish නරක වී කැපුම් බලය වැඩි වේ','වැඩ කොටස සුමට වේ','කැපුම් බලය අඩු වේ'],0,'ගෙවුණු මෙවලම කැපීමට වැඩි බලයක් ඕනෑ කරයි.'],['මෘදු පෑස්සීම සහ දෘඪ පෑස්සීම (Brazing) අතර වෙනස?',['Brazing ඉහළ උෂ්ණත්වයේ සිදු කරයි','දෙකම එකම උෂ්ණත්වයේ','මෘදු පෑස්සීම ශක්තිමත්ම'],0,'Brazing පිරවුම් ලෝහය ඉහළ උෂ්ණත්වයකින් දියවේ; සන්ධිය ශක්තිමත්.'],['විද්‍යුත් චාප පෑස්සීමේදී අනිවාර්ය ආරක්ෂාව?',['Welding mask සහ අත්වැසුම්','සාමාන්‍ය කණ්නාඩි','කිසිවක් අවශ්‍ය නැත'],0,'චාපය ඇස් සහ සම හානි කරයි.']];
+let qOk=0,qN=0;function renderQ(){qOk=qN=0;$('qs').innerHTML=QQ.map((q,i)=>'<div class=q><b>'+(i+1)+'. '+q[0]+'</b>'+q[1].map((o,j)=>'<button class=qo data-i='+i+' data-j='+j+'>'+o+'</button>').join('')+'<div class=ex></div></div>').join('');$('qr').textContent='ලකුණු: 0 / '+QQ.length}
+$('qb').textContent='↺ නැවත ආරම්භ කරන්න';$('qb').onclick=renderQ;renderQ();
+$('qs').onclick=e=>{const b=e.target.closest('.qo');if(!b)return;const bx=b.parentNode;if(bx.dataset.d)return;bx.dataset.d=1;const q=QQ[+b.dataset.i],j=+b.dataset.j;[...bx.querySelectorAll('.qo')].forEach((x,k)=>{x.disabled=true;if(k==q[2])x.classList.add('good');else if(k==j)x.classList.add('bad')});qN++;if(j==q[2])qOk++;bx.querySelector('.ex').innerHTML=(j==q[2]?'<b class=ok>✔ නිවැරදියි!</b> ':'<b class=w>✘ වැරදියි. නිවැරදි පිළිතුර: '+q[1][q[2]]+'</b> ')+q[3];$('qr').textContent='ලකුණු: '+qOk+' / '+QQ.length+' (පිළිතුරු දුන්: '+qN+')'};
+const GL=[['Chuck','වැඩ කොටස අල්ලා ගෙන කරකවන උපාංගය'],['Spindle','වැඩ කොටස/මෙවලම කරකවන ප්‍රධාන අක්ෂය'],['Carriage','Bed දිගේ Z දිශාවට ගමන් කරන කොටස'],['Cross Slide','මෙවලම X දිශාවට ගෙන යන කොටස'],['Compound Rest','කෝණයකට හරවා කෙටි චලන/Taper සඳහා'],['Tool Post','මෙවලම අල්ලා ගන්නා කොටස'],['Tailstock','දිග වැඩ කොටසට ආධාර දෙන/Drill අල්ලන කොටස'],['Lead Screw','Thread කැපීමට නිරවද්‍ය චලනය දෙන ඉස්කුරුප්පුව'],['DRO (Digital Readout)','X, Z ස්ථාන ඉලක්කම්වලින් පෙන්වන සංදර්ශකය'],['RPM','විනාඩියකට භ්‍රමණ ගණන'],['Feed Rate','භ්‍රමණයකට මෙවලම ගමන් කරන දුර (mm/rev)'],['Depth of Cut','එක් වරකට ඉවත් කරන ස්ථරයේ ගැඹුර'],['Cutting Speed','වැඩ කොටසේ පෘෂ්ඨයේ වේගය (m/min)'],['Chatter','කැපීමේදී ඇතිවන අනවශ්‍ය කම්පනය'],['Tool Wear','මෙවලම ගෙවී යාම'],['G-code','CNC යන්ත්‍ර පාලන කේත භාෂාව'],['Work Hardening','සීතල විරූපණයෙන් ලෝහය දැඩි වීම']];
+$('gloss').innerHTML='<h2>පාරිභාෂික ශබ්දකෝෂය</h2><div class=g>'+GL.map(x=>'<div class=cd><b>'+x[0]+'</b><br>'+x[1]+'</div>').join('')+'</div>';
+/* ---------- quiz ---------- */
+const Q=[['ලෝහ කම්බි ලෙස ඇදිය හැකි ගුණය?',['භංගුරතාව','නමනීයතාව','දෘඪතාව'],1],['Cutting Speed = ?',['π×D×N/1000','D×N','π×N/D'],0],['Lathe හි Z අක්ෂය?',['වැඩ කොටසේ අරය','වැඩ කොටසේ අක්ෂය දිගේ','සිරස්'],1],['රිවට් කිරීම සාමාන්‍යයෙන් කුමන සන්ධි වර්ගයද?',['අර්ධ ස්ථිර','සම්පූර්ණයෙන් තාවකාලික','නැත'],0],['CNC වැඩසටහන් භාෂාව?',['HTML','G-code','SQL'],1]];
+$('qs').innerHTML=Q.map((q,i)=>'<div class="q"><b>'+(i+1)+'. '+q[0]+'</b>'+q[1].map((o,j)=>'<label><input type="radio" name="q'+i+'" value="'+j+'"> '+o+'</label>').join('')+'</div>').join('');
+$('qb').onclick=()=>{let n=0;Q.forEach((q,i)=>{const r=document.querySelector('input[name=q'+i+']:checked');if(r&&+r.value==q[2])n++});$('qr').textContent='ලකුණු: '+n+' / '+Q.length};
+$('qb').onclick=renderQ;renderQ();
+SEC.forEach(s=>$(s[0]).hidden=false);
+function show(id){$(id).scrollIntoView({behavior:'smooth'})}
+const io=new IntersectionObserver(es=>es.forEach(e=>{const id=e.target.id;if(id=='lathe'){if(e.isIntersecting&&!lathe)lathe=initLathe();if(lathe)lathe.on=e.isIntersecting}if(id=='sim')sim2.on=e.isIntersecting;if(e.isIntersecting)[...$('nav').children].forEach(b=>b.classList.toggle('on',b.dataset.i==id))}),{threshold:.15});
+SEC.forEach(s=>io.observe($(s[0])));
+</script></body></html>
